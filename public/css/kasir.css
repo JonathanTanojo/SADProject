@@ -8,4 +8,8 @@ body{
     background-color: E5E5E5;
 }
 
-
+.nav-item{
+    size: 50px;
+    color: black;
+    
+}
