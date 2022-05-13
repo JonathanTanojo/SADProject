@@ -6,6 +6,7 @@
 
 body{
     background-color: E5E5E5;
+    scroll-behavior: smooth;
 }
 .navbar ul{
     display: flex;
@@ -20,4 +21,8 @@ li img{
 }
 .active img{
     opacity: 100%;
+}
+
+p{
+    font-size: 10px;
 }
