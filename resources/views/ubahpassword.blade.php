@@ -12,7 +12,10 @@
 integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
 crossorigin="anonymous" 
 referrerpolicy="no-referrer" />
+<script src="login.js"></script>
 <link rel ="stylesheet" href = "stylelogin.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
@@ -33,7 +36,7 @@ referrerpolicy="no-referrer" />
     <p>Tirta Anugerah</p>
 </div>
 <div class="background">
-    <form method="post" action="">
+    <form method="" action="">
         <div class="login">
             <div class="input-icons">
                 <label class="title" for="user">Username :</label><br>
@@ -41,9 +44,36 @@ referrerpolicy="no-referrer" />
                 <input type="text" id="user" name="user" placeholder="Masukkan Username" class="text" required>
             </div>  
             <br>
-                <button class="button" value="login "type="submit">Ubah Kata Sandi</button>
-        </div>
-    </form>
+                <!-- <button class="button" id="myBtn" value="ubah" type="">Ubah Kata Sandi</button>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <button class="button" value="ubah" type="">Ubah Kata Sandi</button>
+                        <p>Some text in the Modal..</p>
+                    </div>
+                </div> -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ubah Kata Sandi</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                       Yakin mengubah kata sandi?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <a href = "/"><button type="submit" class="btn btn-outline-success">Save changes</button></a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </form>
 </div>
 <script>
 function myFunction() {
