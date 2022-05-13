@@ -7,9 +7,17 @@
 body{
     background-color: E5E5E5;
 }
+.navbar ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 
-.nav-item{
-    size: 50px;
-    color: black;
-    
+}
+li img{
+    width: 50px;
+    opacity: 50%;
+}
+.active img{
+    opacity: 100%;
 }
