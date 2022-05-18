@@ -62,3 +62,19 @@ tr.table-putih{
 tr.table-ungu{
     background-color: #f3f1ff;
 }
+/* Edit Produk */
+.detail{
+    background: #413B93;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.restok{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
