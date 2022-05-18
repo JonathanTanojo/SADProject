@@ -22,7 +22,7 @@
                         <img src="img/cashier.png" alt="">
                     </a>
                 </li>
-                <li >
+                <li>
                     <a href="produk" class="nav-link">
                         <img src="img/box.png" alt="">
                     </a>

@@ -14,5 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('navbar');
+    return view('nuser');
 });
+Route::get('cashier', function () {
+    return view('ncashier');
+});
+
+Route::get('laporan', function () {
+    return view('nlaporan');
+});
+
+Route::get('produk', function () {
+    return view('nproduk');
+});
+
+Route::get('supplier', function () {
+    return view('nsupplier');
+});
+
+Route::get('user', function () {
+    return view('nuser');
+});
+

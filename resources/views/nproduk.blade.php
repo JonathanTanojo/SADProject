@@ -17,12 +17,12 @@
         <!-- Bottom Navbar -->
         <nav class="navbar col-12 fixed-bottom">
             <ul class="navbar-nav nav-justified w-100">
-                <li class="active">
+                <li >
                     <a href="cashier" class="nav-link">
                         <img src="img/cashier.png" alt="">
                     </a>
                 </li>
-                <li >
+                <li class="active">
                     <a href="produk" class="nav-link">
                         <img src="img/box.png" alt="">
                     </a>
