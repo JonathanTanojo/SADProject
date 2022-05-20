@@ -78,3 +78,22 @@ tr.table-ungu{
     justify-content: center;
     align-items: center;
 }
+.contentbawah{
+    margin-top: 50px;
+    margin-left: 30px;
+}
+.judul{
+    margin-top: 10px;
+}
+.inputbox{
+    margin-top: 2px;
+}
+.inputbox input[type="Text"]{
+    padding-left: 5px;
+}
+.inputbox input[type="number"]{
+    padding-left: 5px;
+}
+.inputbox input[type="date"]{
+    padding-left: 5px;
+}

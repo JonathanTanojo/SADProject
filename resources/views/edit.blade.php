@@ -29,7 +29,68 @@
             <div class="col-12 contentbawah">
                 <form action="">
                     @csrf
-                    
+                    <div class="judul col-4">
+                        <label for="">
+                            Nama Produk
+                        </label>
+                    </div>
+                    <div class="inputbox col-8">
+                        <input type="text" name="" id="" value="Filma" readonly>
+                    </div>
+                    <div class="judul col-4">
+                        <label for="">
+                            Kategori Produk
+                        </label>
+                    </div>
+                    <div class="inputbox col-8">
+                        <select name="" id="">
+                            <option value="">Minyak Goreng</option>
+                            <option value="">Makanan Ringan</option>
+                            <option value="">Makanan Berat</option>
+                            <option value="">Minuman</option>
+                        </select>
+                    </div>
+                    <div class="judul col-4">
+                        <label for="">
+                            Nama Supplier
+                        </label>
+                    </div>
+                    <div class="inputbox col-8">
+                        <input type="text" name="" id="" value="Toko Jaya Abadi" readonly>
+                    </div>
+                    <div class="judul col-4">
+                        <label for="">
+                            Harga Beli
+                        </label>
+                    </div>
+                    <div class="inputbox col-8">
+                        <input type="number" name="" id="" value="120.000" readonly>
+                    </div>
+                    <div class="judul col-4">
+                        <label for="">
+                            Harga Jual
+                        </label>
+                    </div>
+                    <div class="inputbox col-8">
+                        <input type="number" name="" id="" value="120.000" readonly>
+                    </div>
+                    <div class="judul col-5">
+                        <label for="">
+                            Tanggal Perubahan
+                        </label>
+                    </div>
+                    <div class="inputbox col-8">
+                        <input type="date" name="" id="" value="2022-02-10" readonly>
+                    </div>
+                    <div class="button col-10" >
+                        <input type="button" value="Hapus" style="margin-right: 11px;">
+                    </div>
+                    <div class="button col-10" >
+                        <input type="button" value="Batal" style="margin-right: 11px;">
+                    </div>
+                    <div class="button col-10" >
+                        <input type="button" value="Simpan" style="margin-right: 11px;">
+                    </div>
                 </form>
             </div>
         </div>
