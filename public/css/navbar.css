@@ -7,6 +7,10 @@
 body{
     background-color: E5E5E5;
 }
+.navbar{
+    background-color: white;
+    border-radius: 10px;
+}
 .navbar ul{
     display: flex;
     flex-direction: row;
