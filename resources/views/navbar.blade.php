@@ -15,7 +15,7 @@
 <body>
     <div class="col-12">
         <!-- Bottom Navbar -->
-        <nav class="navbar col-12 fixed-bottom">
+        <nav class="navbar col-12 fixed-bottom" style="background-color: white; border-radius: 10px">
             <ul class="navbar-nav nav-justified w-100">
                 <li class="active">
                     <a href="cashier" class="nav-link">

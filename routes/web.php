@@ -14,14 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
     return view('produk');
 });
 Route::get('edit', function () {
     return view('edit');
-=======
-    return view('nuser');
->>>>>>> navbar
 });
 Route::get('cashier', function () {
     return view('ncashier');
@@ -41,5 +37,8 @@ Route::get('supplier', function () {
 
 Route::get('user', function () {
     return view('nuser');
+});
+Route::get('navbar', function () {
+    return view('navbar');
 });
 
