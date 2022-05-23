@@ -43,8 +43,17 @@
             </ul>
         </nav>
     </div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio adipisci earum
-        dignissimos perferendis quis suscipit ea, soluta impedit tempora exercitationem et eaque
-        aliquam eum vero incidunt? Nulla tenetur nostrum doloremque?</p>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">#</th>
+                    <th scope="col">#</th>
+                    <th scope="col">#</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
 </body>
 </html>
