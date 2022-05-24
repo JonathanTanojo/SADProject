@@ -35,6 +35,7 @@ referrerpolicy="no-referrer" />
 </div>
 <div class="background">
     <form method="POST" action="{{url('/login')}}">
+        @csrf
         <div class="login">
             <div class="input-icons">
                 <label class="title" for="user">Username :</label><br>
@@ -49,7 +50,7 @@ referrerpolicy="no-referrer" />
             </div>  
                 <button class="button" value="login "type="submit">Login</button>
             <div class="signup"> 
-                <a href="/signup">Lupa Password?</a>
+                <a href="/ubahpass">Lupa Password?</a>
             </div>
         </div>
     </form>

@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('login');
 });
-Route::get('/signup', function () {
+Route::get('/ubahpass', function () {
     return view('ubahpassword');
 });
+
+//POST
+Route::post('/login','App\Http\Controllers\logincontroller@login');
+
