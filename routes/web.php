@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/keuangan', function () {
     return view('keuangan');
 });
+
+Route::get('/','App\Http\Controllers\keuanganController@viewKeuangan');

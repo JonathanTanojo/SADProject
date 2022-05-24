@@ -20,6 +20,8 @@
     <title>Stok Produk</title>
 </head>
 <body>
+<form method="POST" action="{{url('/keuangan')}}">
+  @csrf
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 100vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="top col-12">
@@ -53,96 +55,44 @@
                       </tr>
                     </thead>
                     <tbody style="font-size: 11px">
-                      <tr class="table-putih tengah">
-                        <td>Kapal Api</td>
-                        <td>12</td>
-                        <td>Rp 10.000</td>
-                        <td>Rp 120.000</td>
-                        <td>Rp 24.000</td>
+                    <?php
+                    $color = NULL;
+                    $color1 = "white";
+                    $color2 = "#F3F1FF";
+                    for ($x=1;$x<=10;$x++){
+                      $color == $color1 ? $color=$color2 : $color=$color1;
+                      echo"<div style='background-color:$color'>$x</div>";
+                    }
+                    ?>
+                    <!-- @foreach($tabel as $kasimuncul)
+                      <tr name='ganjil' class="table-putih tengah">
+                        <td>{{$kasimuncul->NAMA_BARANG}}</td>
+                        <td>{{$kasimuncul->TERJUAL}}</td>
+                        <td>{{$kasimuncul->HARGA_SATUAN}}</td>
+                        <td>{{$kasimuncul->UANG_MASUK}}</td>
+                        <td>{{$kasimuncul->Laba}}</td>
                         <td style="display: flex">
                             <a href="#row1" style="background-color: #f3f1ff"><img src="img/edit-icon.png" alt="" style="width: 15px;"></a>
                             <a href="" ><img src="img/trash_can.png" alt="" style="width: 15px; margin-left:5px"></a>
                         </td>
                       </tr>
-                      <tr class="table-ungu tengah">
-                        <td>Kapal Api</td>
-                        <td>12</td>
-                        <td>Rp 10.000</td>
-                        <td>Rp 120.000</td>
-                        <td>Rp 24.000</td>
+                      <tr name='genap'class="table-ungu tengah">
+                        <td>{{$kasimuncul->NAMA_BARANG}}</td>
+                        <td>{{$kasimuncul->TERJUAL}}</td>
+                        <td>{{$kasimuncul->HARGA_SATUAN}}</td>
+                        <td>{{$kasimuncul->UANG_MASUK}}</td>
+                        <td>{{$kasimuncul->Laba}}</td>
                         <td style="display: flex">
                             <a href="#row1" style="background-color: #f3f1ff"><img src="img/edit-icon.png" alt="" style="width: 15px;"></a>
                             <a href="" ><img src="img/trash_can.png" alt="" style="width: 15px; margin-left:5px"></a>
                         </td>
-                      </tr>
-                      <tr class="table-putih tengah">
-                        <td>Kapal Api</td>
-                        <td>12</td>
-                        <td>Rp 10.000</td>
-                        <td>Rp 120.000</td>
-                        <td>Rp 24.000</td>
-                        <td style="display: flex">
-                            <a href="#row1" style="background-color: #f3f1ff"><img src="img/edit-icon.png" alt="" style="width: 15px;"></a>
-                            <a href="" ><img src="img/trash_can.png" alt="" style="width: 15px; margin-left:5px"></a>
-                        </td>
-                      </tr>
-                      <tr class="table-ungu tengah">
-                        <td>Kapal Api</td>
-                        <td>12</td>
-                        <td>Rp 10.000</td>
-                        <td>Rp 120.000</td>
-                        <td>Rp 24.000</td>
-                        <td style="display: flex">
-                            <a href="#row1" style="background-color: #f3f1ff"><img src="img/edit-icon.png" alt="" style="width: 15px;"></a>
-                            <a href="" ><img src="img/trash_can.png" alt="" style="width: 15px; margin-left:5px"></a>
-                        </td>
-                      </tr> <tr class="table-putih tengah">
-                        <td>Kapal Api</td>
-                        <td>12</td>
-                        <td>Rp 10.000</td>
-                        <td>Rp 120.000</td>
-                        <td>Rp 24.000</td>
-                        <td style="display: flex">
-                            <a href="#row1" style="background-color: #f3f1ff"><img src="img/edit-icon.png" alt="" style="width: 15px;"></a>
-                            <a href="" ><img src="img/trash_can.png" alt="" style="width: 15px; margin-left:5px"></a>
-                        </td>
-                      </tr>
-                      <tr class="table-ungu tengah">
-                        <td>Kapal Api</td>
-                        <td>12</td>
-                        <td>Rp 10.000</td>
-                        <td>Rp 120.000</td>
-                        <td>Rp 24.000</td>
-                        <td style="display: flex">
-                            <a href="#row1" style="background-color: #f3f1ff"><img src="img/edit-icon.png" alt="" style="width: 15px;"></a>
-                            <a href="" ><img src="img/trash_can.png" alt="" style="width: 15px; margin-left:5px"></a>
-                        </td>
-                      </tr> <tr class="table-putih tengah">
-                        <td>Kapal Api</td>
-                        <td>12</td>
-                        <td>Rp 10.000</td>
-                        <td>Rp 120.000</td>
-                        <td>Rp 24.000</td>
-                        <td style="display: flex">
-                            <a href="#row1" style="background-color: #f3f1ff"><img src="img/edit-icon.png" alt="" style="width: 15px;"></a>
-                            <a href="" ><img src="img/trash_can.png" alt="" style="width: 15px; margin-left:5px"></a>
-                        </td>
-                      </tr>
-                      <tr class="table-ungu tengah">
-                        <td>Kapal Api</td>
-                        <td>12</td>
-                        <td>Rp 10.000</td>
-                        <td>Rp 120.000</td>
-                        <td>Rp 24.000</td>
-                        <td style="display: flex">
-                            <a href="#row1" style="background-color: #f3f1ff"><img src="img/edit-icon.png" alt="" style="width: 15px;"></a>
-                            <a href="" ><img src="img/trash_can.png" alt="" style="width: 15px; margin-left:5px"></a>
-                        </td>
-                      </tr>
+                      </tr> 
+                      @endforeach -->
                     </tbody>
                   </table>
             </div>
         </div>
     </div>
 </body>
+</form>
 </html>
