@@ -43,6 +43,18 @@
             </ul>
         </nav>
     </div>
+
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            <a href="/"><button>Transaksi Baru</button></a>
+          </div>
+          <div class="col">
+            <a href="/"><button>Riwayat Transaksi</button></a>
+          </div>
+        </div>
+      </div>
+
     <div class="table-responsive">
         <table class="table">
             <thead>
