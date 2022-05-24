@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/kasir.css" />
+    <script src="js/kasir.js"></script>
     <title>Kasir</title>
 </head>
 <body>
@@ -20,7 +21,7 @@
                         <img src="img/box.png" alt="">
                     </a>
                 </li>
-                <li >
+                <li>
                     <a href="/" class="nav-link">
                         <img src="img/cash-report.png" alt="">
                     </a>
@@ -47,25 +48,24 @@
     <div class="container">
         <div class="row">
           <div class="col">
-            <a href="/"><button>Transaksi Baru</button></a>
+            <a href="/kasir"><button class="btn active">Transaksi Baru</button></a>
           </div>
           <div class="col">
-            <a href="/"><button>Riwayat Transaksi</button></a>
+            <a href="/kasir"><button class="btn">Riwayat Transaksi</button></a>
           </div>
         </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">#</th>
+                        <th scope="col">#</th>
+                        <th scope="col">#</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
       </div>
-
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">#</th>
-                    <th scope="col">#</th>
-                    <th scope="col">#</th>
-                </tr>
-            </thead>
-        </table>
-    </div>
 </body>
 </html>

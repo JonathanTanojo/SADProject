@@ -29,4 +29,23 @@ p{
 
 .container{
     margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.row{
+    margin-bottom: 5px;
+}
+
+.btn{
+    position: relative;
+    border-radius: 10px;
+    background-color: #E0E4FF;
+    border-style: none;
+    cursor: pointer;
+    
+}
+
+.btn .active{
+    background-color: #413B93;
 }
