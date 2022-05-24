@@ -34,7 +34,7 @@ referrerpolicy="no-referrer" />
     <p>Tirta Anugerah</p>
 </div>
 <div class="background">
-    <form method="post" action="">
+    <form method="POST" action="{{url('/login')}}">
         <div class="login">
             <div class="input-icons">
                 <label class="title" for="user">Username :</label><br>
