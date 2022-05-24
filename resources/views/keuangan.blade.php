@@ -59,9 +59,16 @@
                     $color = NULL;
                     $color1 = "white";
                     $color2 = "#F3F1FF";
-                    for ($x=1;$x<=10;$x++){
+                    for ($x=0;$x<sizeof($tabel);$x++){
                       $color == $color1 ? $color=$color2 : $color=$color1;
-                      echo"<div style='background-color:$color'>$x</div>";
+                      echo"
+                      <tr style='background-color:$color'>
+                        <td>{$tabel[$x]->NAMA_BARANG}</td>
+                        <td>{$tabel[$x]->TERJUAL}</td>
+                        <td>{$tabel[$x]->HARGA_SATUAN}</td>
+                        <td>{$tabel[$x]->UANG_MASUK}</td>
+                        <td>{$tabel[$x]->Laba}</td>
+                      </tr>";
                     }
                     ?>
                     <!-- @foreach($tabel as $kasimuncul)
