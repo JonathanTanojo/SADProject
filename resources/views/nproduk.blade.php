@@ -8,8 +8,9 @@
     <script src="https://kit.fontawesome.com/31f04b09a4.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ URL::asset('css/navbar.css') }}" rel="stylesheet" type="text/css" >
 
-    <link rel="stylesheet" href="css/navbar.css" />
+
     <title>Kasir</title>
 </head>
 <body>
@@ -19,27 +20,27 @@
             <ul class="navbar-nav nav-justified w-100">
                 <li >
                     <a href="cashier" class="nav-link">
-                        <img src="img/cashier.png" alt="">
+                        <img src="{{ asset('img/cashier.png'); }}" alt="">
                     </a>
                 </li>
                 <li class="active">
-                    <a href="produk" class="nav-link">
-                        <img src="img/box.png" alt="">
+                    <a href="/" class="nav-link">
+                        <img src="{{ asset('img/box.png'); }}" alt="">
                     </a>
                 </li>
                 <li>
                     <a href="laporan" class="nav-link">
-                        <img src="img/cash-report.png" alt="">
+                        <img src="{{ asset('img/cash-report.png'); }}" alt="">
                     </a>
                 </li>
                 <li>
                     <a href="supplier" class="nav-link">
-                        <img src="img/truck.png" alt="">
+                        <img src="{{ asset('img/truck.png'); }}" alt="">
                     </a>
                 </li>
                 <li>
                     <a href="user" class="nav-link">
-                        <img src="img/user.png" alt="">
+                        <img src="{{ asset('img/user.png'); }}" alt="">
                     </a>
                 </li>
             </ul>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\produkcontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () { return view('produk');});
 Route::get('/','App\Http\Controllers\produkcontroller@tableproduk');
 
-Route::get('edit', function () {
-    return view('edit');
-});
+// Route::get('edit', function () {
+//     return view('editproduk');
+// });
+Route::get('/edit/{id}', [produkcontroller::class,"details"]);
+
 Route::get('tmbhprdk', function () {
     return view('addproduk');
 });

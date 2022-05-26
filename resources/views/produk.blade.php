@@ -64,11 +64,10 @@
                         <td>{$tabel[$x]->Harga_Beli}</td>
                         <td>{$tabel[$x]->Harga_Jual}</td>
                         <td>{$tabel[$x]->Jumlah}</td>
-                        <td> <a href='edit'><img src='img/edit-icon.png'></a></td>
+                        <td> <a href='edit/{$tabel[$x]-> ID}'><img src='img/edit-icon.png'></a></td>
                       </tr>";
                     }
                     ?>
-
                     </tbody>
                   </table>
             </div>
