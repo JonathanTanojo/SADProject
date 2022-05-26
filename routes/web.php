@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('produk');
-});
+// Route::get('/', function () { return view('produk');});
+Route::get('/','App\Http\Controllers\produkcontroller@tableproduk');
+
 Route::get('edit', function () {
     return view('edit');
 });
@@ -44,4 +44,5 @@ Route::get('user', function () {
 Route::get('navbar', function () {
     return view('navbar');
 });
+
 

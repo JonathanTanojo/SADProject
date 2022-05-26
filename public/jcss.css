@@ -47,7 +47,13 @@
 .kontentable{
     font-size: 12px;
     margin-top: 15px;
+    height: 745px;
+    overflow-y: auto;
 }
+.kontentable img{
+    width: 15px;
+}
+
 .header{
     text-align: center;
     background: #E0E4FF;

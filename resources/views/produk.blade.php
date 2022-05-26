@@ -18,7 +18,7 @@
 <body>
     @include("nproduk")
     <div class="container">
-        <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 100vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
+        <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="top col-12">
                 <div class="col-4"style="margin-left: 5px;">
                     <div class="combbox">
@@ -58,15 +58,17 @@
                     for ($x=0;$x<sizeof($tabel);$x++){
                       $color == $color1 ? $color=$color2 : $color=$color1;
                       echo"
-                      <tr style='background-color:$color'>
+                      <tr style='background-color:$color; text-align: center;'>
                         <td>{$tabel[$x]->Barang}</td>
                         <td>{$tabel[$x]->Kategori}</td>
                         <td>{$tabel[$x]->Harga_Beli}</td>
                         <td>{$tabel[$x]->Harga_Jual}</td>
                         <td>{$tabel[$x]->Jumlah}</td>
+                        <td> <a href='edit'><img src='img/edit-icon.png'></a></td>
                       </tr>";
                     }
                     ?>
+
                     </tbody>
                   </table>
             </div>
