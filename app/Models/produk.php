@@ -12,10 +12,10 @@ class produk extends Model
     public function tableproduk(){
         $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
         $run = DB::select($server);
-        $value = "SELECT BARANG_NAMA AS `Barang`, BARANG_KATEGORI AS `Kategori`, BARANG_PRICE AS `Harga Beli`, BARANG_PRICE AS `Harga Jual`, BARANG_QTY AS `Jumlah`
-        FROM BARANG;";
+        $value = "SELECT BARANG_NAMA AS `Barang`, BARANG_KATEGORI AS `Kategori`, BARANG_PRICE AS `Harga_Beli`, BARANG_PRICE AS `Harga_Jual`, BARANG_QTY AS `Jumlah`".
+        "FROM BARANG;";
 
-        $meja = DB::select($value);
-        return $meja;
+        $produk = DB::select($value);
+        return $produk;
     }
 }

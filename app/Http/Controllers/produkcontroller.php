@@ -10,6 +10,6 @@ class produkcontroller extends Controller
     public function tableproduk(){
         $user = new produk();
         $tabel = $user->tableproduk();
-        return view('keuangan',compact(['tabel']));
+        return view('produk',compact(['tabel']));
     }
 }

@@ -51,48 +51,22 @@
                       </tr>
                     </thead>
                     <tbody style="font-size: 11px">
-                        <tbody style="font-size: 11px">
-                            <?php
-                            $color = NULL;
-                            $color1 = "white";
-                            $color2 = "#F3F1FF";
-                            for ($x=0;$x<sizeof($tabel);$x++){
-                              $color == $color1 ? $color=$color2 : $color=$color1;
-                              echo"
-                              <tr style='background-color:$color'>
-                                <td>{$tabel[$x]->NAMA_BARANG}</td>
-                                <td>{$tabel[$x]->TERJUAL}</td>
-                                <td>{$tabel[$x]->HARGA_SATUAN}</td>
-                                <td>{$tabel[$x]->UANG_MASUK}</td>
-                                <td>{$tabel[$x]->Laba}</td>
-                              </tr>";
-                            }
-                            ?>
-                            <!-- @foreach($tabel as $kasimuncul)
-                              <tr name='ganjil' class="table-putih tengah">
-                                <td>{{$kasimuncul->NAMA_BARANG}}</td>
-                                <td>{{$kasimuncul->TERJUAL}}</td>
-                                <td>{{$kasimuncul->HARGA_SATUAN}}</td>
-                                <td>{{$kasimuncul->UANG_MASUK}}</td>
-                                <td>{{$kasimuncul->Laba}}</td>
-                                <td style="display: flex">
-                                    <a href="#row1" style="background-color: #f3f1ff"><img src="img/edit-icon.png" alt="" style="width: 15px;"></a>
-                                    <a href="" ><img src="img/trash_can.png" alt="" style="width: 15px; margin-left:5px"></a>
-                                </td>
-                              </tr>
-                              <tr name='genap'class="table-ungu tengah">
-                                <td>{{$kasimuncul->NAMA_BARANG}}</td>
-                                <td>{{$kasimuncul->TERJUAL}}</td>
-                                <td>{{$kasimuncul->HARGA_SATUAN}}</td>
-                                <td>{{$kasimuncul->UANG_MASUK}}</td>
-                                <td>{{$kasimuncul->Laba}}</td>
-                                <td style="display: flex">
-                                    <a href="#row1" style="background-color: #f3f1ff"><img src="img/edit-icon.png" alt="" style="width: 15px;"></a>
-                                    <a href="" ><img src="img/trash_can.png" alt="" style="width: 15px; margin-left:5px"></a>
-                                </td>
-                              </tr>
-                              @endforeach -->
-                            </tbody>
+                        <?php
+                    $color = NULL;
+                    $color1 = "white";
+                    $color2 = "#F3F1FF";
+                    for ($x=0;$x<sizeof($tabel);$x++){
+                      $color == $color1 ? $color=$color2 : $color=$color1;
+                      echo"
+                      <tr style='background-color:$color'>
+                        <td>{$tabel[$x]->Barang}</td>
+                        <td>{$tabel[$x]->Kategori}</td>
+                        <td>{$tabel[$x]->Harga_Beli}</td>
+                        <td>{$tabel[$x]->Harga_Jual}</td>
+                        <td>{$tabel[$x]->Jumlah}</td>
+                      </tr>";
+                    }
+                    ?>
                     </tbody>
                   </table>
             </div>
