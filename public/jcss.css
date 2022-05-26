@@ -62,6 +62,15 @@ tr.table-putih{
 tr.table-ungu{
     background-color: #f3f1ff;
 }
+.addbutton{
+    position: absolute;
+    top: 790px;
+    left: 348px;
+}
+.addbutton img{
+    width: 35px;
+}
+
 /* Edit Produk */
 .detail{
     background: #413B93;

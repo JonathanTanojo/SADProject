@@ -16,7 +16,7 @@
     <title>Stok Produk</title>
 </head>
 <body>
-    @include("navbar")
+    @include("nproduk")
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 100vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="top col-12">
@@ -74,6 +74,8 @@
                     </tbody>
                   </table>
             </div>
+            <div class="addbutton"> <a href="tmbhprdk"><img src="img/add.png" alt=""></a></div>
+
         </div>
     </div>
 </body>

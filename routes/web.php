@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('edit', function () {
     return view('edit');
 });
+Route::get('tmbhprdk', function () {
+    return view('addproduk');
+});
 Route::get('cashier', function () {
     return view('ncashier');
 });
