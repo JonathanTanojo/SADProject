@@ -28,7 +28,36 @@
                 <input class="searchBox" type="text" placeholder="Search...">
                 {{-- <button type="submit"><i class="fa fa-search"></i></button> --}}
             </div>
-            
+            <div class="kontentable col-12">
+                <table class="table align-middle">
+                    <thead class="align-middle header">
+                      <tr>
+                        <th scope="col">Nama Barang</th>
+                        <th scope="col">Harga</th>
+                        <th scope="col">Jumlah</th>
+                        <th scope="col">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody style="font-size: 11px">
+                        <?php
+                    $color = NULL;
+                    $color1 = "white";
+                    $color2 = "#F3F1FF";
+                    for ($x=0;$x<sizeof($tabel);$x++){
+                      $color == $color1 ? $color=$color2 : $color=$color1;
+                      echo"
+                      <tr style='background-color:$color; text-align: center;'>
+                        <td>{$tabel[$x]->Barang}</td>
+                        <td>{$tabel[$x]->Kategori}</td>
+                        <td>{$tabel[$x]->Harga_Beli}</td>
+                        <td>{$tabel[$x]->Harga_Jual}</td>
+                        <td> <a href='edit/{$tabel[$x]-> ID}'><img src='img/edit-icon.png'></a></td>
+                      </tr>";
+                    }
+                    ?>
+                    </tbody>
+                  </table>
+            </div>
         </div>
     </div>
 </body>
