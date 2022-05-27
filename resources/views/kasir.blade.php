@@ -49,7 +49,7 @@
         <div class="row">
           <div class="col">
             <a href="/kasir"><button class="btn active">Transaksi Baru</button></a>
-          </div>
+          </div>    
           <div class="col">
             <a href="/kasir"><button class="btn">Riwayat Transaksi</button></a>
           </div>
