@@ -54,7 +54,7 @@
                         <th scope="col">Laba</th>
                       </tr>
                     </thead>
-                    <tbody style="font-size: 11px">
+                    <tbody style="font-size: 11px;text-align:center">
                     <?php
                     $color = NULL;
                     $color1 = "white";
@@ -93,7 +93,7 @@
                             <a href="#row1" style="background-color: #f3f1ff"><img src="img/edit-icon.png" alt="" style="width: 15px;"></a>
                             <a href="" ><img src="img/trash_can.png" alt="" style="width: 15px; margin-left:5px"></a>
                         </td>
-                      </tr> 
+                      </tr>
                       @endforeach -->
                     </tbody>
                   </table>
