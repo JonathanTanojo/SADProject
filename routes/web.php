@@ -48,4 +48,13 @@ Route::get('navbar', function () {
     return view('navbar');
 });
 
+Route::get('/kasir', function () {
+    return view('kasir', [
+        "title" => "Kasir"
+    ]);
+});
+
+Route::get('sproduk', function () {
+    return view('produk');
+});
 

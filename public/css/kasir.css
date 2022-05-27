@@ -4,29 +4,6 @@
     font-family: Poppins;
 }
 
-body{
-    background-color: E5E5E5;
-    scroll-behavior: smooth;
-}
-.navbar ul{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-
-}
-li img{
-    width: 50px;
-    opacity: 50%;
-}
-.active img{
-    opacity: 100%;
-}
-
-p{
-    font-size: 10px;
-}
-
 .container{
     margin-top: 20px;
     margin-left: 5px;
@@ -43,7 +20,7 @@ p{
     background-color: #E0E4FF;
     border-style: none;
     cursor: pointer;
-    
+
 }
 
 .btn .active{

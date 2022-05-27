@@ -78,7 +78,7 @@ tr.table-ungu{
 }
 
 /* Edit Produk */
-.detail{
+.baru{
     background: #413B93;
     border-radius: 10px;
     color: white;
@@ -87,7 +87,7 @@ tr.table-ungu{
     justify-content: center;
     align-items: center;
 }
-.restok{
+.detail{
     display: flex;
     text-align: center;
     justify-content: center;
@@ -161,4 +161,10 @@ tr.table-ungu{
     padding: 7px 10px 7px 10px;
     border-radius: 15px;
     border: none;
+}
+.searchbox input[type="text"]{
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.25);
+
 }
