@@ -16,29 +16,29 @@
         <!-- Bottom Navbar -->
         <nav class="navbar col-12 fixed-bottom">
             <ul class="navbar-nav nav-justified w-100">
+                <li >
+                    <a href="cashier" class="nav-link">
+                        <img src="{{ asset('img/cashier.png'); }}" alt="">
+                    </a>
+                </li>
                 <li class="active">
                     <a href="/" class="nav-link">
-                        <img src="img/box.png" alt="">
+                        <img src="{{ asset('img/box.png'); }}" alt="">
                     </a>
                 </li>
                 <li>
-                    <a href="/" class="nav-link">
-                        <img src="img/cash-report.png" alt="">
+                    <a href="laporan" class="nav-link">
+                        <img src="{{ asset('img/cash-report.png'); }}" alt="">
                     </a>
                 </li>
                 <li>
-                    <a href="/" class="nav-link">
-                        <img src="img/cashier.png" alt="">
+                    <a href="supplier" class="nav-link">
+                        <img src="{{ asset('img/truck.png'); }}" alt="">
                     </a>
                 </li>
                 <li>
-                    <a href="/" class="nav-link">
-                        <img src="img/truck.png" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="/" class="nav-link">
-                        <img src="img/user.png" alt="">
+                    <a href="user" class="nav-link">
+                        <img src="{{ asset('img/user.png'); }}" alt="">
                     </a>
                 </li>
             </ul>
@@ -49,7 +49,7 @@
         <div class="row">
           <div class="col">
             <a href="/kasir"><button class="btn active">Transaksi Baru</button></a>
-          </div>    
+          </div>
           <div class="col">
             <a href="/kasir"><button class="btn">Riwayat Transaksi</button></a>
           </div>
