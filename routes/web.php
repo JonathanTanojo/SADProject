@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\produkcontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +14,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () { return view('produk');});
+Route::get('/','App\Http\Controllers\produkcontroller@tableproduk');
+
+// Route::get('edit', function () {
+//     return view('editproduk');
+// });
+Route::get('/edit/{id}', [produkcontroller::class,"details"]);
+
+Route::get('tmbhprdk', function () {
+    return view('addproduk');
+});
+Route::get('cashier', function () {
+    return view('ncashier');
 });
 
-Route::get('/supplier', function () {
-    return view('supplier');
+Route::get('laporan', function () {
+    return view('nlaporan');
 });
 
-Route::get('/kasir', function () {
-    return view('kasir');
+Route::get('produk', function () {
+    return view('nproduk');
 });
+
+Route::get('supplier', function () {
+    return view('nsupplier');
+});
+
+Route::get('user', function () {
+    return view('nuser');
+});
+Route::get('navbar', function () {
+    return view('navbar');
+});
+
+

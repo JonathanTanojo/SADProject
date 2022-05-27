@@ -8,38 +8,39 @@
     <script src="https://kit.fontawesome.com/31f04b09a4.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ URL::asset('css/navbar.css') }}" rel="stylesheet" type="text/css" >
 
-    <link rel="stylesheet" href="css/navbar.css" />
+
     <title>Kasir</title>
 </head>
 <body>
     <div class="col-12">
         <!-- Bottom Navbar -->
-        <nav class="navbar col-12 fixed-bottom" style="background-color: white; border-radius: 10px">
+        <nav class="navbar col-12 fixed-bottom">
             <ul class="navbar-nav nav-justified w-100">
-                <li class="active">
+                <li >
                     <a href="cashier" class="nav-link">
-                        <img src="img/cashier.png" alt="">
+                        <img src="{{ asset('img/cashier.png'); }}" alt="">
                     </a>
                 </li>
-                <li >
-                    <a href="produk" class="nav-link">
-                        <img src="img/box.png" alt="">
+                <li class="active">
+                    <a href="/" class="nav-link">
+                        <img src="{{ asset('img/box.png'); }}" alt="">
                     </a>
                 </li>
                 <li>
                     <a href="laporan" class="nav-link">
-                        <img src="img/cash-report.png" alt="">
+                        <img src="{{ asset('img/cash-report.png'); }}" alt="">
                     </a>
                 </li>
                 <li>
                     <a href="supplier" class="nav-link">
-                        <img src="img/truck.png" alt="">
+                        <img src="{{ asset('img/truck.png'); }}" alt="">
                     </a>
                 </li>
                 <li>
                     <a href="user" class="nav-link">
-                        <img src="img/user.png" alt="">
+                        <img src="{{ asset('img/user.png'); }}" alt="">
                     </a>
                 </li>
             </ul>

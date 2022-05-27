@@ -15,9 +15,9 @@
 <body>
     <div class="col-12">
         <!-- Bottom Navbar -->
-        <nav class="navbar col-12 fixed-bottom" style="background-color: white; border-radius: 10px">
+        <nav class="navbar col-12 fixed-bottom">
             <ul class="navbar-nav nav-justified w-100">
-                <li class="active">
+                <li>
                     <a href="cashier" class="nav-link">
                         <img src="img/cashier.png" alt="">
                     </a>
@@ -32,7 +32,7 @@
                         <img src="img/cash-report.png" alt="">
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="supplier" class="nav-link">
                         <img src="img/truck.png" alt="">
                     </a>

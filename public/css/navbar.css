@@ -7,6 +7,10 @@
 body{
     background-color: E5E5E5;
 }
+.navbar{
+    background-color: white;
+    border-radius: 10px;
+}
 .navbar ul{
     display: flex;
     flex-direction: row;
@@ -15,7 +19,7 @@ body{
 
 }
 li img{
-    width: 50px;
+    width: 40px;
     opacity: 50%;
 }
 .active img{
