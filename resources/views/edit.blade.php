@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,7 +26,7 @@
                     <label>Restok Produk</label>
                 </div>
             </div>
-            
+
             <div class="col-12 contentbawah">
                 <form action="">
                     @csrf
