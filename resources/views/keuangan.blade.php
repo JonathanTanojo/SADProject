@@ -29,10 +29,11 @@
                     <div class="combbox">
                         <select name="filter_produk_kategori" id="filter_produk" >
                             <option value="" selected disabled hidden>Filter</option>
-                            <option value="mykgrg">Minyak Goreng</option>
-                            <option value="mknringan">Makanan Ringan</option>
-                            <option value="mknberat">Makanan Berat</option>
+                            <option value="sembako">Sembako</option>
+                            <option value="bahanpokok">Bahan Pokok</option>
+                            <option value="makanant">Makanan</option>
                             <option value="minum">Minuman</option>
+                            <option value="rokok">Rokok</option>
                         </select>
                     </div>
                 </div>
