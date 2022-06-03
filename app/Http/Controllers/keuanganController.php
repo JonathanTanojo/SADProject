@@ -12,4 +12,12 @@ class keuanganController extends Controller
         $tabel = $user->tableKeuangan();
         return view('keuangan',compact(['tabel']));
     }
+
+    public function moneys(Request $req)
+    {
+        $kategoribarang= $req->kategoribarang;
+
+        $req->session()->put('moneys', [$kategoribarang]);
+        return view('keuangan');
+    }
 }

@@ -27,11 +27,11 @@
             <div class="top col-12">
                 <div class="col-4"style="margin-left: 5px;">
                     <div class="combbox">
-                        <select name="filter_produk_kategori" id="filter_produk" >
+                        <select name="kategoribarang" id="kategoribarang" onchange="kategori()">
                             <option value="" selected disabled hidden>Filter</option>
                             <option value="sembako">Sembako</option>
                             <option value="bahanpokok">Bahan Pokok</option>
-                            <option value="makanant">Makanan</option>
+                            <option value="makanan">Makanan</option>
                             <option value="minum">Minuman</option>
                             <option value="rokok">Rokok</option>
                         </select>
@@ -72,30 +72,7 @@
                       </tr>";
                     }
                     ?>
-                    <!-- @foreach($tabel as $kasimuncul)
-                      <tr name='ganjil' class="table-putih tengah">
-                        <td>{{$kasimuncul->NAMA_BARANG}}</td>
-                        <td>{{$kasimuncul->TERJUAL}}</td>
-                        <td>{{$kasimuncul->HARGA_SATUAN}}</td>
-                        <td>{{$kasimuncul->UANG_MASUK}}</td>
-                        <td>{{$kasimuncul->Laba}}</td>
-                        <td style="display: flex">
-                            <a href="#row1" style="background-color: #f3f1ff"><img src="img/edit-icon.png" alt="" style="width: 15px;"></a>
-                            <a href="" ><img src="img/trash_can.png" alt="" style="width: 15px; margin-left:5px"></a>
-                        </td>
-                      </tr>
-                      <tr name='genap'class="table-ungu tengah">
-                        <td>{{$kasimuncul->NAMA_BARANG}}</td>
-                        <td>{{$kasimuncul->TERJUAL}}</td>
-                        <td>{{$kasimuncul->HARGA_SATUAN}}</td>
-                        <td>{{$kasimuncul->UANG_MASUK}}</td>
-                        <td>{{$kasimuncul->Laba}}</td>
-                        <td style="display: flex">
-                            <a href="#row1" style="background-color: #f3f1ff"><img src="img/edit-icon.png" alt="" style="width: 15px;"></a>
-                            <a href="" ><img src="img/trash_can.png" alt="" style="width: 15px; margin-left:5px"></a>
-                        </td>
-                      </tr>
-                      @endforeach -->
+                   
                     </tbody>
                   </table>
             </div>
