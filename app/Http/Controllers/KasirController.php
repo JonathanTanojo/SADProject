@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class KasirController extends Controller
 {
-    DB::select('select * from users where active = ?', [1])
+    public funtion KasirController()
+    {
+        
+    }
 }
