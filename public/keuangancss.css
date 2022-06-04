@@ -20,6 +20,21 @@
     border-radius: 5px;
     color: black;
 }
+.laporan{
+    background: #413B93;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.detail{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
 .searchbox input[type="text"]{
     background: #FFFFFF;
     border-radius: 5px;

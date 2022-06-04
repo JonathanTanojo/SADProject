@@ -35,16 +35,15 @@ Route::get('supplier', function () {
 Route::get('user', function () {
     return view('nuser');
 });
-
-Route::get('/login', function () {
-    return view('login');
-});
 Route::get('/ubahpass', function () {
     return view('ubahpassword');
 });
+Route::prefix('/')->group(function(){
+    Route::get('', function () {return view('login');});
+    Route::post('','App\Http\Controllers\logincontroller@login');
 
+});
 //POST
-Route::post('/login','App\Http\Controllers\logincontroller@login');
 
 // Route::get('/keuangan', function () {
 //     return view('keuangan');
