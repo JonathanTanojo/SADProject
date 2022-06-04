@@ -3,12 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     background-color: #f3f1ff;
+    font-family: "Poppins";
 }
+
 body{
     color : black;
     font-family: "Poppins", sans-serif;
     min-height: 100vh;
-    font-weight: bold;
 }
 
 header{
@@ -34,11 +35,11 @@ header{
     padding: 15px;
   }
 
-  
+
 [class*="col-"] {
     width: 100%;
   }
-  
+
   @media only screen and (min-width: 768px) {
     /* For desktop: */
     .col-1 {width: 8.33%;}
@@ -96,19 +97,40 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
+    border-radius: 7px;
+    line-height: 34px;
+    width: 312px;
+    padding-left: 10px;
 }
 .login input[type="password"]{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
+    border-radius: 7px;
+    line-height: 34px;
+    width: 312px;
+    padding-left: 10px;
 }
 
 form button{
-    color: black;
-    background:white;
-    cursor: pointer;
-    transition: all 0.3s ease; 
-    padding:5px;
+    width: 250px;
+    height: 34px;
+    margin-left: 30px;
+    margin-top: 20px;
+    color: white;
+    background: #413B93;
+    border-radius: 10px;
+}
+.btnubah{
+    width: 250px;
+    height: 34px;
+    margin-left: 30px;
+    margin-top: 20px;
+    color: white;
+    background: #413B93;
+    border-radius: 10px;
 }
 
 form button:hover{
@@ -136,7 +158,7 @@ color: white;
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
-  
+
   /* Modal Content/Box */
   .modal-content {
     background-color: #fefefe;
@@ -145,7 +167,7 @@ color: white;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
   }
-  
+
   /* The Close Button */
   .close {
     color: #aaa;
@@ -153,10 +175,13 @@ color: white;
     font-size: 28px;
     font-weight: bold;
   }
-  
+
   .close:hover,
   .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
   }
+.text input[type="Text"]{
+
+}

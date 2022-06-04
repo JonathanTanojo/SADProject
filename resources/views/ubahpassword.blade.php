@@ -4,24 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
-integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
-crossorigin="anonymous" 
-referrerpolicy="no-referrer" />
-<script src="login.js"></script>
-<link rel ="stylesheet" href = "stylelogin.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <title>Document</title>
+    {{-- JS --}}
+    <script src="login.js"></script>
+    {{-- CSS --}}
+    <link rel ="stylesheet" href = "stylelogin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Ubah Password</title>
 </head>
-<body>
+<body style="background-color: #f3f1ff;">
     <header>
         <h1>Login<h1>
-</header>
+    </header>
 <br>
 <div class="head">
     <p><b>Lupa Password</b></p>
@@ -41,8 +35,11 @@ referrerpolicy="no-referrer" />
             <div class="input-icons">
                 <label class="title" for="user">Username :</label><br>
                 <i class="fa fa-user icon"></i>
-                <input type="text" id="user" name="user" placeholder="Masukkan Username" class="text" required>
-            </div>  
+                <input type="text" id="user" name="user" placeholder="Masukkan Username" class="text" style="margin-top: 5px" required>
+                <div class="signup">
+                    <a href="/login" style="text-decoration: none;color:grey;display:flex;justify-content:flex-end">Ingat Kata Sandi</a>
+                </div>
+            </div>
             <br>
                 <!-- <button class="button" id="myBtn" value="ubah" type="">Ubah Kata Sandi</button>
                 <div id="myModal" class="modal">
@@ -52,7 +49,7 @@ referrerpolicy="no-referrer" />
                         <p>Some text in the Modal..</p>
                     </div>
                 </div> -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Ubah Kata Sandi</button>
+                <button type="button" class="btnubah" data-bs-toggle="modal" data-bs-target="#exampleModal">Ubah Kata Sandi</button>
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
