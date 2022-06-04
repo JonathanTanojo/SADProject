@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('navbar', function () {
+Route::get('/', function () {
     return view('navbar');
 });
 Route::get('cashier', function () {
@@ -45,8 +45,9 @@ Route::get('/ubahpass', function () {
 
 //POST
 Route::post('/login','App\Http\Controllers\logincontroller@login');
-Route::get('/keuangan', function () {
-    return view('keuangan');
-});
 
-Route::get('/','App\Http\Controllers\keuanganController@viewKeuangan');
+// Route::get('/keuangan', function () {
+//     return view('keuangan');
+// });
+
+Route::get('/keuangan','App\Http\Controllers\keuanganController@viewKeuangan');
