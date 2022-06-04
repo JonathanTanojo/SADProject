@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/akun', function () {
     return view('akun');
 });
 Route::get('cashier', function () {
