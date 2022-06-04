@@ -20,12 +20,12 @@
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
-                <div class="detail col-6">
+                <a href="" class="detail col-6" style="text-decoration: none">
                     <label>Detail Produk</label>
-                </div>
-                <div class="restok col-6 ">
+                </a>
+                <a href="" class="restok col-6" style="text-decoration: none;color:black">
                     <label>Restok Produk</label>
-                </div>
+                </a>
             </div>
             <div class="kontendata col-11" style="margin-top: 55px;margin-left: 36px;">
                 <form action="">
@@ -36,7 +36,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="{{$i -> BARANG_NAMA }}" readonly>
+                        <input type="text" name="" id="" value="{{$i -> BARANG_NAMA }}">
                     </div>
                     <div class="judul col-5">
                         <label for="">
@@ -56,7 +56,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="Nama Supplier" readonly>
+                        {{-- <input type="text" name="" id="" value ="{{$d -> NamaSupplier }}" readonly> --}}
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -64,7 +64,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="{{$i -> BARANG_PRICE }}" readonly>
+                        <input type="number" name="" id="" value="{{$i -> BARANG_HARGA_BELI }}">
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -72,7 +72,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="{{$i -> BARANG_PRICE }}" readonly>
+                        <input type="number" name="" id="" value="{{$i -> BARANG_HARGA_JUAL }}">
                     </div>
                     <div class="judul col-6">
                         <label for="">
@@ -82,15 +82,17 @@
                     <div class="inputbox col-8">
                         <input type="date" name="" id="" value="2022-02-10" readonly>
                     </div>
-                    <div class="col-12" style="display: flex; margin-top: 40px;">
-                        <div class="buttonhapus" >
+                    <div class="col-12" style="display: flex; margin-top: 30px;">
+                        <div class="buttonhapus">
                             <input type="button" value="Hapus" style="margin-right: 11px;">
                         </div>
                         <div class="" style="display: flex">
-                            <div class="buttonbatal" >
-                                <input type="button" value="Batal" style="margin-right: 11px;">
+                            <div class="buttonbatal">
+                                <a href="/">
+                                    <input type="button" value="Batal" style="margin-right: 11px;">
+                                </a>
                             </div>
-                            <div class="buttonsimpan" >
+                            <div class="buttonsimpan">
                                 <input type="button" value="Simpan" style="margin-right: 11px;">
                             </div>
                         </div>
