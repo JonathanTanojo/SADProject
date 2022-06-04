@@ -13,11 +13,11 @@ class keuanganController extends Controller
         return view('keuangan',compact(['tabel']));
     }
 
-    public function moneys(Request $req)
-    {
-        $kategoribarang= $req->kategoribarang;
+    // public function moneys(Request $req)
+    // {
+    //     $kategoribarang= $req->kategoribarang;
 
-        $req->session()->put('moneys', [$kategoribarang]);
-        return view('keuangan');
-    }
+    //     $req->session()->put('moneys', [$kategoribarang]);
+    //     return view('keuangan');
+    // }
 }

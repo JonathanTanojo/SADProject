@@ -4,6 +4,7 @@ namespace App\Models;
 use DB;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB as FacadesDB;
 
 class keuangan extends Model
 {
@@ -22,6 +23,7 @@ class keuangan extends Model
         //}
 
         $meja = DB::select($value);
+       
         return $meja;
     }
 }
