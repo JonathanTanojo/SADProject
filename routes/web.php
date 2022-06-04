@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('navbar');
+    return view('akun');
 });
 Route::get('cashier', function () {
     return view('ncashier');
