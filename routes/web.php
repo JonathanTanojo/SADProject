@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('nuser');
+Route::get('navbar', function () {
+    return view('navbar');
 });
 Route::get('cashier', function () {
     return view('ncashier');
