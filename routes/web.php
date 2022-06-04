@@ -36,3 +36,12 @@ Route::get('user', function () {
     return view('nuser');
 });
 
+Route::get('/login', function () {
+    return view('login');
+});
+Route::get('/ubahpass', function () {
+    return view('ubahpassword');
+});
+
+//POST
+Route::post('/login','App\Http\Controllers\logincontroller@login');
