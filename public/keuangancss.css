@@ -9,11 +9,13 @@
     justify-content: space-between;
 }
 .combbox select{
-    background-color: #413B93;
+    background-color: #ffffff;
     border-radius: 5px;
-    color: #FFFFFF;
+    color: black;
     width: -webkit-fill-available;
     height: 35px;
+    border: none;
+    margin-right: 5px;
 }
 .combbox option{
     background: #ffffff;
@@ -61,7 +63,7 @@
 /* Table */
 .kontentable{
     font-size: 12px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 .header{
     text-align: center;
