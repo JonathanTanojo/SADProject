@@ -53,7 +53,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="/produk"><button class="button" value="login" type="submit">Login</button></a>
+                <a href="produk"><button class="button" value="login" type="submit">Login</button></a>
             </div>
         </form>
     </div>
