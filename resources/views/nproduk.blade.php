@@ -10,7 +10,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ URL::asset('css/navbar.css') }}" rel="stylesheet" type="text/css" >
 
-
     <title>Kasir</title>
 </head>
 <body>

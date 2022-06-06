@@ -132,15 +132,16 @@ tr.table-ungu{
     height: 35px;
 }
 .buttonhapus input[type="button"]{
-
     background-color: #FF0000;
     color: white;
     font-size: 15px;
     width: 100px;
     height: 40px;
-    padding: 7px 10px 7px 10px;
+    /* padding: 7px 10px 7px 10px; */
     border-radius: 15px;
     border: none;
+    background-image: url(../public/img/trashcan.png); /* 16px x 16px */
+    background-repeat: no-repeat;  /* make the background image appear only once */
 }
 .buttonbatal input[type="button"]{
     background-color: #FF0000;
