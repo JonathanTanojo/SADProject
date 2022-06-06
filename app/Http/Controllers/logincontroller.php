@@ -26,7 +26,7 @@ class LoginController extends Controller
         $flag_exist = $user->isExist($username,$password);
 
 
-        if ($flag_exist){
+        if ($flag_exist == true){
             Session::put('login', $user);
             Session::put('pass', $password);
             // $req->session()->flash('authentication');
