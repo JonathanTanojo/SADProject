@@ -4,15 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use DB;
 
-class KasirModel extends Model
+class TransaksiBaru extends Model
 {
     use HasFactory;
 
-    public function newQuery()
+    public function all()
     {
-        
+        return self::$data;
     }
 }
-

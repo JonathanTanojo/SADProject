@@ -17,10 +17,10 @@
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
-                <div class="baru col-6">
+                <div class="baru col-6" style="background-color: #413B93">
                     <label>Transaksi Baru</label>
                 </div>
-                <div class="detail col-6 ">
+                <div class="detail col-6 " style="background-color: #E0E4FF">
                     <label>Riwayat Transaksi</label>
                 </div>
             </div>
@@ -32,14 +32,15 @@
                 <table class="table align-middle">
                     <thead class="align-middle header">
                       <tr>
-                        <th scope="col">Nama Barang</th>
-                        <th scope="col">Harga</th>
+                        <th scope="col">ID Transaksi</th>
+                        <th scope="col">Tanggal</th>
                         <th scope="col">Jumlah</th>
                         <th scope="col">Total</th>
+                        <th scope="col">Lihat</th>
                       </tr>
                     </thead>
                     <tbody style="font-size: 11px">
-                        <?php
+                    <?php
                     $color = NULL;
                     $color1 = "white";
                     $color2 = "#F3F1FF";

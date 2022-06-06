@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\produkcontroller;
 use App\Http\Controllers\suppliercontroller;
+use App\Models\TransaksiBaru;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,14 +53,22 @@ Route::get('/ubahpass', function () {
 Route::prefix('/')->group(function(){
     Route::get('', function () {return view('login');});
     Route::post('','App\Http\Controllers\logincontroller@login');
+});
 
-    Route::get('navbar', function () {
+Route::get('navbar', function () {
     return view('navbar');
 });
 
-Route::get('/kasir', function () {
-    return view('kasir', [
-        "title" => "Kasir"
+Route::get('/riwayat', function () {
+    return view('riwayat', [
+        "title" => "Riwayat Transaksi"
+    ]);
+});
+
+Route::get('/baru', function () {
+    return view('baru', [
+        "title" => "Transaksi Baru",
+        "data" => TransaksiBaru::all()
     ]);
 });
 
@@ -73,8 +82,6 @@ Route::get('/keuangan', function () {
 //POST
 
 Route::get('/','App\Http\Controllers\keuanganController@viewKeuangan');
-// Route::get('/keuangan', function () {
-//     return view('keuangan');
-// });
+
 
 Route::get('/keuangan','App\Http\Controllers\keuanganController@viewKeuangan');
