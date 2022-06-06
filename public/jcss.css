@@ -93,6 +93,21 @@ tr.table-ungu{
     justify-content: center;
     align-items: center;
 }
+.detailrestok{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.restokrestok{
+    background: #413B93;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
 .contentbawah{
     margin-top: 50px;
     margin-left: 30px;
@@ -162,4 +177,35 @@ tr.table-ungu{
     padding: 7px 10px 7px 10px;
     border-radius: 15px;
     border: none;
+}
+.daftarsupplier{
+    background: #413B93;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.riwayatsupplier{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+.detaildetail{
+    background: #413B93;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.laporandetail{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }

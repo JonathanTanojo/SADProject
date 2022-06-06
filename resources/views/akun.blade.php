@@ -25,6 +25,7 @@
     <title>Stok Produk</title>
 </head>
 <body>
+    @include("nuser")
     <div class="container">
         <div class="backgroundcolor-ungumudah" style="border-radius: 10px;background-color: #F3F1FF; height: 100vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="backgroundcolor-ungutua" style="border-radius: 10px;background-color: #665DB6; height: 14vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
@@ -102,7 +103,9 @@
             <div class="logout col-12">
                 <form action="">
                     @csrf
-                    <input type="button" value="Keluar Akun">
+                    <a href="/">
+                        <input type="button" value="Keluar Akun">
+                    </a>
                 </form>
             </div>
         </div>

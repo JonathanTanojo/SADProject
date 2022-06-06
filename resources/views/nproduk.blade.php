@@ -23,7 +23,7 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a href="/" class="nav-link">
+                    <a href="produk" class="nav-link">
                         <img src="{{ asset('img/box.png'); }}" alt="">
                     </a>
                 </li>

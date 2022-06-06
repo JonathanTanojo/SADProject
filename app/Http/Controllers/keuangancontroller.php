@@ -12,6 +12,11 @@ class keuanganController extends Controller
         $tabel = $user->tableKeuangan();
         return view('keuangan',compact(['tabel']));
     }
+    public function detailKeuangan(){
+        $user = new keuangan;
+        $tabel = $user->detailKeuangan();
+        return view('detaillaporan',compact(['tabel']));
+    }
 
     // public function moneys(Request $req)
     // {
