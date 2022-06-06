@@ -34,7 +34,7 @@
         <p>Tirta Anugerah</p>
     </div>
     <div class="background">
-        <form method="POST" action="{{url('/login')}}">
+        <form method="POST" action="{{url('/produk')}}">
             @csrf
             <div class="login">
                 <div class="input-icons">
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="button" value="login "type="submit">Login</button>
+                <a href="produk"><button class="button" value="login" type="submit">Login</button></a>
             </div>
         </form>
     </div>
