@@ -2,13 +2,20 @@
 
 namespace App\Models;
 
+use DB;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class login extends Model
 {
     use HasFactory;
-    public function isExist($data){
-        return true;
+    public function isExist($username, $password){
+        $admin = "SELECT count(*) is_exist FROM PENGGUNA WHERE USERNAME= '".$username."' AND USER_KATASANDI= '".$password."';";
+        $login = DB::select($admin);
+
+        if($login[0]->is_exist == 1){
+            return true;
+        }
+        return false;
     }
 }

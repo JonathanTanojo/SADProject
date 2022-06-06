@@ -15,26 +15,27 @@ class LoginController extends Controller
     }
 
     public function login(Request $req){
-        $user = $_POST['user'];
+        $username = $_POST['user'];
         $password = $req->input('password');
         $data = [
-            'user' => $user,
+            'user' => $username,
             'password' => $password
         ];
 
         $user = new login;
-        $flag_exist = $user->isExist($data);
+        $flag_exist = $user->isExist($username,$password);
 
 
-        if ($flag_exist){
+        if ($flag_exist == true){
             Session::put('login', $user);
             Session::put('pass', $password);
             // $req->session()->flash('authentication');
 
-            return redirect('/ubahpass');
+            return redirect('/produk');
 
         } else {
-            return redirect('/login');
+            Session::flash('error', "Invalid signin, please try again");
+            return redirect('/');
         }
 
     }

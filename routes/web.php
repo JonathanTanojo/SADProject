@@ -22,6 +22,8 @@ Route::get('user', function () {
 // Route::get('/', function () { return view('produk');});
 Route::get('produk','App\Http\Controllers\produkcontroller@tableproduk');
 
+Route::post('/produk','App\Http\Controllers\logincontroller@login');
+
 Route::get('supplier','App\Http\Controllers\suppliercontroller@tableproduk');
 
 Route::get('/supplier/edit/{id}',[suppliercontroller::class,"details"]);
