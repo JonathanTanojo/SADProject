@@ -70,7 +70,14 @@
                         <td style='text-align: center;'>{$tabel[$x]->Kategori}</td>
                         <td style='text-align: center;'>{$tabel[$x]->notlp}</td>
                         <td style='text-align: center;'>{$tabel[$x]->alamat}</td>
-                        <td style='text-align: center;'> <a href='edit/{$tabel[$x]-> ID}'><img src='img/edit-icon.png'></a><a href='edit/{$tabel[$x]-> ID}'><img src='img/trash_can.png'></a></td>
+                        <td style='text-align: center;'>
+                            <div style='display:flex'>
+                            <div>
+                            <a href='/supplier/edit/{$tabel[$x]-> ID}'><img src='img/edit-icon.png'></a></div>
+                            <div style='padding-left:5px'>
+                            <a href='/supplier/edit/{$tabel[$x]-> ID}'><img src='img/trash_can.png'></a></div>
+                            </div>
+                            </td>
                       </tr>";
                     }
                     ?>

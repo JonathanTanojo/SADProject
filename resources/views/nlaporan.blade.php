@@ -18,28 +18,28 @@
         <nav class="navbar col-12 fixed-bottom">
             <ul class="navbar-nav nav-justified w-100">
                 <li>
-                    <a href="cashier" class="nav-link">
-                        <img src="img/cashier.png" alt="">
+                    <a href="/cashier" class="nav-link">
+                        <img src="{{ asset('img/cashier.png'); }}" alt="">
                     </a>
                 </li>
                 <li >
-                    <a href="produk" class="nav-link">
-                        <img src="img/box.png" alt="">
+                    <a href="/produk" class="nav-link">
+                        <img src="{{ asset('img/box.png'); }}" alt="">
                     </a>
                 </li>
-                <li class="active">
+                <li class="/active">
                     <a href="laporan" class="nav-link">
-                        <img src="img/cash-report.png" alt="">
+                        <img src="{{ asset('img/cash-report.png'); }}" alt="">
                     </a>
                 </li>
                 <li>
-                    <a href="supplier" class="nav-link">
-                        <img src="img/truck.png" alt="">
+                    <a href="/supplier" class="nav-link">
+                        <img src="{{ asset('img/truck.png'); }}" alt="">
                     </a>
                 </li>
                 <li>
-                    <a href="user" class="nav-link">
-                        <img src="img/user.png" alt="">
+                    <a href="/user" class="nav-link">
+                        <img src="{{ asset('img/user.png'); }}" alt="">
                     </a>
                 </li>
             </ul>

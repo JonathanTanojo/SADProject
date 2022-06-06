@@ -33,7 +33,8 @@ class LoginController extends Controller
 
             return redirect('/produk');
 
-        } else {
+        }
+        else {
             Session::flash('error', "Invalid signin, please try again");
             return redirect('/');
         }

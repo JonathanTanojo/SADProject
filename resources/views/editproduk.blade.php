@@ -56,7 +56,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value ="Nama Supplier" readonly>
+                        <input type="text" name="" id="" value ="" readonly>
                     </div>
                     <div class="judul col-4">
                         <label for="">

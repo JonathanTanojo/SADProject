@@ -52,7 +52,9 @@ Route::prefix('/')->group(function(){
 Route::get('navbar', function () {
     return view('navbar');
 });
-
+Route::get('tmbhsupplier', function () {
+    return view('tmbhsupplier');
+});
 
 //POST
 
