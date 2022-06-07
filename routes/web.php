@@ -36,10 +36,10 @@ Route::get('restok', function () {
 Route::get('tmbhprdk', function () {
     return view('addproduk');
 });
-Route::get('cashier', function () {
-    return view('ncashier');
-});
 
+Route::get('user', function () {
+    return view('nuser');
+});
 Route::get('/ubahpass', function () {
     return view('ubahpassword');
 });
