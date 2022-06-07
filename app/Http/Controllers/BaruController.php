@@ -11,9 +11,13 @@ class BaruController extends Controller
     {
         $input = TransaksiBaru::latest();
 
+        if(request('search')){
+            $input->WHERE('BARANG_NAMA', 'like', '%' . request('search') . '%');
+        }
+
         return view('baru', [
             "title" => "Transaksi Baru",
-            "data" => TransaksiBaru::latest()->get()
+            "data" => $input->get()
         ]);
     }
 }
