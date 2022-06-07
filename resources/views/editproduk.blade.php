@@ -36,7 +36,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="{{$i -> BARANG_NAMA }}">
+                        <input type="text" name="" id="" value="{{$datadetail[0]-> BARANG_NAMA}}">
                     </div>
                     <div class="judul col-5">
                         <label for="">
@@ -56,7 +56,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value ="" readonly>
+                        <input type="text" name="" id="" value ="{{$datadetail[0]-> SUPPLIER_NAMA}}" readonly>
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -64,7 +64,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="{{$i -> BARANG_HARGA_BELI }}">
+                        <input type="number" name="" id="" value="{{$datadetail[0]-> BARANG_HARGA_BELI}}">
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -72,7 +72,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="{{$i -> BARANG_HARGA_JUAL }}">
+                        <input type="number" name="" id="" value="{{$datadetail[0]-> BARANG_HARGA_JUAL}}">
                     </div>
                     <div class="judul col-6">
                         <label for="">

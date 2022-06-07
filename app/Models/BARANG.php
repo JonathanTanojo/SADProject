@@ -18,9 +18,6 @@ class BARANG extends Model
 
     public $timestamps = false;
 
-    public function barang()
-    {
-        return $this->hasMany(SUPPLIERALL::class,'SUPPLIER_ID','SUPLLIER_ID');
-    }
+    
 
 }
