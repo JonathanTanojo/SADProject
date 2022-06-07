@@ -37,7 +37,7 @@
                 <i class="fa fa-user icon"></i>
                 <input type="text" id="user" name="user" placeholder="Masukkan Username" class="text" style="margin-top: 5px" required>
                 <div class="signup">
-                    <a href="/login" style="text-decoration: none;color:grey;display:flex;justify-content:flex-end">Ingat Kata Sandi</a>
+                    <a href="/" style="text-decoration: none;color:grey;display:flex;justify-content:flex-end">Ingat Kata Sandi</a>
                 </div>
             </div>
             <br>
