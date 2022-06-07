@@ -17,22 +17,28 @@
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
-                <div class="baru col-6" style="background-color: #413B93">
-                    <label>Transaksi Baru</label>
+                <div class="baru col-6" style="background-color: #E0E4FF">
+                    <a href="/baru"><label class="label">Transaksi Baru</label></a>
                 </div>
-                <div class="detail col-6 " style="background-color: #E0E4FF">
-                    <label>Riwayat Transaksi</label>
+                <div class="detail col-6" style="background-color: #413B93; border-radius: 10px">
+                    <a href="/riwayat"><label class="label">Riwayat Transaksi</label></a>
                 </div>
             </div>
-            <div class="searchbox">
-                <input class="searchBox" type="text" placeholder="Search...">
-                {{-- <button type="submit"><i class="fa fa-search"></i></button> --}}
+            <div class="row" id="searchbox">
+                <div class="col-md-6">
+                    <form action="/result">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                          </div>
+                    </form>
+                </div>
             </div>
-            <div class="kontentable col-12">
+            <div class="kontentable col-12" id="table">
                 <table class="table align-middle">
                     <thead class="align-middle header">
                       <tr>
-                        <th scope="col">ID Transaksi</th>
+                        <th scope="col">ID Transasi</th>
                         <th scope="col">Tanggal</th>
                         <th scope="col">Jumlah</th>
                         <th scope="col">Total</th>
@@ -40,24 +46,9 @@
                       </tr>
                     </thead>
                     <tbody style="font-size: 11px">
-                    <?php
-                    $color = NULL;
-                    $color1 = "white";
-                    $color2 = "#F3F1FF";
-                    for ($x=0;$x<sizeof($tabel);$x++){
-                      $color == $color1 ? $color=$color2 : $color=$color1;
-                      echo"
-                      <tr style='background-color:$color; text-align: center;'>
-                        <td>{$tabel[$x]->Barang}</td>
-                        <td>{$tabel[$x]->Kategori}</td>
-                        <td>{$tabel[$x]->Harga_Beli}</td>
-                        <td>{$tabel[$x]->Harga_Jual}</td>
-                        <td> <a href='edit/{$tabel[$x]-> ID}'><img src='img/edit-icon.png'></a></td>
-                      </tr>";
-                    }
-                    ?>
+
                     </tbody>
-                  </table>
+                </table>
             </div>
         </div>
     </div>

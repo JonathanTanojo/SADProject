@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BaruController;
 use App\Http\Controllers\produkcontroller;
 use App\Http\Controllers\suppliercontroller;
 use App\Models\TransaksiBaru;
@@ -65,12 +66,7 @@ Route::get('/riwayat', function () {
     ]);
 });
 
-Route::get('/baru', function () {
-    return view('baru', [
-        "title" => "Transaksi Baru",
-        "data" => TransaksiBaru::all()
-    ]);
-});
+Route::get('/baru', [BaruController::class,'index']);
 
 Route::get('sproduk', function () {
     return view('produk');

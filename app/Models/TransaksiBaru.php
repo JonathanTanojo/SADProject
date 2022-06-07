@@ -14,7 +14,7 @@ class TransaksiBaru extends Model
         $run = DB::select($server);
         $value = "SELECT barang_nama as `Nama Barang`, barang_harga_jual as `Harga` FROM BARANG b WHERE BARANG_NAMA LIKE '%%';";
 
-        $produk = DB::select($value);
-        return $produk;
+        $latest = DB::select($value);
+        return $latest;
     }
 }

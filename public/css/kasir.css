@@ -23,6 +23,23 @@
 
 }
 
+.label{
+    color: black;
+}
+
 .btn .active{
     background-color: #413B93;
+}
+
+.input-group mb-3{
+    border-radius: 10px;
+}
+
+#searchbox{
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+#table{
+    margin-top: 5px;
 }
