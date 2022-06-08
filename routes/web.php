@@ -16,10 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// Route::get('/', function () { return view('produk');});
-Route::get('produk','App\Http\Controllers\produkcontroller@tableproduk');
-
-Route::post('/produk','App\Http\Controllers\logincontroller@login');
+Route::get('/produk','App\Http\Controllers\produkcontroller@tableproduk');
 
 Route::get('supplier','App\Http\Controllers\suppliercontroller@tableproduk');
 
@@ -27,16 +24,12 @@ Route::get('/supplier/edit/{id}',[suppliercontroller::class,"details"]);
 
 Route::get('/edit/{id}', [produkcontroller::class,"details"]);
 
-Route::get('restok', function () {
-    return view('restokproduk');
-});
+Route::get('/restok/{id}', [produkcontroller::class,"restok"]);
+
 Route::get('tmbhprdk', function () {
     return view('addproduk');
 });
 
-// Route::get('user', function () {
-//     return view('nuser');
-// });
 Route::get('/ubahpass', function () {
     return view('ubahpassword');
 });
@@ -48,7 +41,7 @@ Route::get('user', function () {
 
 Route::prefix('/')->group(function(){
     Route::get('', function () {return view('login');});
-    Route::post('','App\Http\Controllers\logincontroller@login');
+    Route::post('/produk','App\Http\Controllers\logincontroller@login');
 });
 
 Route::get('navbar', function () {
