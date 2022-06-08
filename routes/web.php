@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\akuncontroller;
 use App\Http\Controllers\produkcontroller;
 use App\Http\Controllers\suppliercontroller;
 use Illuminate\Support\Facades\Route;
@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('user', function () {
-    return view('akun');
-});
 
 // Route::get('/', function () { return view('produk');});
 Route::get('produk','App\Http\Controllers\produkcontroller@tableproduk');
@@ -37,12 +34,17 @@ Route::get('tmbhprdk', function () {
     return view('addproduk');
 });
 
-Route::get('user', function () {
-    return view('nuser');
-});
+// Route::get('user', function () {
+//     return view('nuser');
+// });
 Route::get('/ubahpass', function () {
     return view('ubahpassword');
 });
+Route::get('/akun','App\Http\Controllers\akuncontroller@tableakun');
+Route::get('user', function () {
+    return view('akun');
+});
+
 
 Route::prefix('/')->group(function(){
     Route::get('', function () {return view('login');});

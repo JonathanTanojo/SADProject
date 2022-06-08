@@ -41,10 +41,10 @@
     background-color: #413B93;
     color: white;
     font-size: 15px;
-    width: 120px;
+    width: 140px;
     height: 40px;
     padding: 7px 10px 7px 10px;
-    border-radius: 15px;
+    border-radius: 10px;
     border: none;
 }
 .buttonpassword{
@@ -55,7 +55,7 @@
     background-color: #413B93;
     color: white;
     font-size: 15px;
-    width: 155px;
+    width: 140px;
     height: 40px;
     padding: 7px 10px 7px 10px;
     border-radius: 10px;
@@ -66,7 +66,7 @@
     justify-content: center;
     margin-top: 45px;
 }
-.logout input[type="button"]{
+#keluar {
     background-color: red;
     color: white;
     border: none;

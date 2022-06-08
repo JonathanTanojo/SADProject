@@ -45,7 +45,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="nama" value="Bily Jefferson" readonly>
+                        <input type="text" name="nama" id="nama" value="{{$tabel[0]->Nama}}" readonly>
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -53,7 +53,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="status" value="Pemilik" readonly>
+                        <input type="text" name="status" id="status" value="{{$tabel[0]->Status}}" readonly>
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -61,7 +61,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="nomor" value="082233638839" readonly>
+                        <input type="number" name="nomor" id="nomor" value="{{$tabel[0]->Nomor_Telepon}}" readonly>
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -69,10 +69,12 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="alamat" value="Jl. Arif Rahman Hakim No.01 Gresik" readonly>
+                        <input type="text" name="alamat" id="alamat" value="{{$tabel[0]->Alamat}}" readonly>
                     </div>
-                    <div class="button col-10" id="ubah_profil">
-                        <input type="button" value="Ubah Profil" onclick="UbahProfil()" style="margin-right: 11px;">
+                    <div class="button col-10" >
+                        <input type="button" value="Ubah Profil" id="ubah_profil" class="" onclick="UbahProfil()" style="margin-right: 11px;">
+                        <input type="button" value="Simpan" class="btn-update" id="simpan" style="margin-right:-140px; background-color:chartreuse; visibility: hidden;">
+                        <input type="button" value="Batal" class="btn-betal" id="batal" onclick="UbahProfilBalik()" style="margin-right: 11px; background-color:red; visibility: hidden;">
                     </div>
                 </form>
             </div>
@@ -85,7 +87,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="Bily Jefferson" readonly>
+                        <input type="text" name="passbaru" id="passbaru" value="Bily Jefferson" readonly>
                     </div>
                     <div class="judul col-12">
                         <label for="">
@@ -93,10 +95,12 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="Pemilik" readonly>
+                        <input type="text" name="passkonfirm" id="passkonfirm" value="Pemilik" readonly>
                     </div>
-                    <div class="buttonpassword col-10" >
-                        <input type="button" value="Ubah Password" style="margin-right: 11px;">
+                    <div class="buttonpassword col-10" style="display: flex" >
+                        <input class="col-4" type="button" id="ubahpassword" value="Ubah Password" onclick="UbahPassword()"  style="margin-right: 11px;" >
+                        <input class="col-4" type="button" id="batalpass" value="Batal" onclick="UbahPasswordBalik()" style="margin-right: 11px; background-color:red; visibility: hidden;">
+                        <input class="col-4" type="button" id="simpanpass" value="Simpan"  style="margin-right:-291px; background-color:chartreuse;  visibility: hidden; ">
                     </div>
                 </form>
             </div>
@@ -104,7 +108,7 @@
                 <form action="">
                     @csrf
                     <a href="/">
-                        <input type="button" value="Keluar Akun">
+                        <input id="keluar" type="button" value="Keluar Akun" >
                     </a>
                 </form>
             </div>
