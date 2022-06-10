@@ -55,6 +55,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    padding-right: -100px;
 }
 .icon {
     padding: 5px 5px 5px 10px;
