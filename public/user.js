@@ -2,7 +2,7 @@ var BtnSimpan = document.getElementById("simpan");
 var BtnBatal = document.getElementById("batal");
 var BtnProfil = document.getElementById("ubah_profil");
 var LblNama =  document.getElementById('nama');
-var Status =  document.getElementById('status');
+// var Status =  document.getElementById('status');
 var Nomor =  document.getElementById('nomor');
 var Alamat =  document.getElementById('alamat');
 
@@ -20,8 +20,6 @@ function UbahProfil() {
     BtnPassword.style.disabled = true;
     LblNama.readOnly=false;
     LblNama.style.backgroundColor= '#ffffff';
-    Status.readOnly=false;
-    Status.style.backgroundColor= '#ffffff';
     Nomor.readOnly=false;
     Nomor.style.backgroundColor= '#ffffff';
     Alamat.readOnly=false;
@@ -35,8 +33,6 @@ function UbahProfil() {
     BtnSimpan.style.visibility = "hidden";
     LblNama.readOnly=true;
     LblNama.style.backgroundColor= '#EEEEEE';
-    Status.readOnly=true;
-    Status.style.backgroundColor= '#EEEEEE';
     Nomor.readOnly=true;
     Nomor.style.backgroundColor= '#EEEEEE';
     Alamat.readOnly=true;
@@ -64,3 +60,12 @@ function UbahPasswordBalik(){
     LblPassKonfirm.style.backgroundColor= '#EEEEEE';
     BtnProfil.disabled = false;
 }
+// $('#change_password_form').validate({
+//     ignore:'.ignore',
+//     errorClass:'invalid',
+//     validClass:'success',
+//     submitHandeler:function(form){
+//         $.LoadingOverlay("show");
+//         form.submit();
+//     }
+// });

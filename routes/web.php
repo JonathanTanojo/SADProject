@@ -34,10 +34,12 @@ Route::get('tmbhprdk', function () {
 Route::get('/ubahpass', function () {
     return view('ubahpassword');
 });
-Route::get('/akun','App\Http\Controllers\akuncontroller@tableakun');
-Route::get('user', function () {
-    return view('akun');
-});
+Route::get('/user','App\Http\Controllers\akuncontroller@tableakun');
+// Route::get('user', function () {
+//      return view('akun');
+// });
+Route::post('userupdate', 'App\Http\Controllers\akuncontroller@userupdate');
+Route::post('passwordupdate', 'App\Http\Controllers\akuncontroller@passwordupdate')->name('passwordupdate');
 
 
 Route::prefix('/')->group(function(){

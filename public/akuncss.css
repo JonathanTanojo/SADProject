@@ -25,6 +25,22 @@
     margin-bottom: 15px;
     padding-left: 10px;
 }
+/* .kontendata input[type="submit"]{
+    background-color: #EEEEEE;
+    border-radius: 7px;
+    line-height: 34px;
+    width: 312px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+} */
+.kontendata input[type="password"]{
+    background-color: #EEEEEE;
+    border-radius: 7px;
+    line-height: 34px;
+    width: 312px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
 .kontendata input[type="number"]{
     background-color: #EEEEEE;
     border-radius: 7px;
@@ -73,5 +89,9 @@
     border-radius: 5px;
     height: 40px;
     width: 180px;
+}
+#sukses{
+    position: absolute;
+    z-index: 1;
 }
 
