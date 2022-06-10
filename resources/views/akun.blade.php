@@ -25,6 +25,7 @@
     <title>Stok Produk</title>
 </head>
 <body>
+    @include("nuser")
     <div class="container">
         <div class="backgroundcolor-ungumudah" style="border-radius: 10px;background-color: #F3F1FF; height: 100vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="backgroundcolor-ungutua" style="border-radius: 10px;background-color: #665DB6; height: 14vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
@@ -44,7 +45,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="Bily Jefferson" readonly>
+                        <input type="text" name="" id="nama" value="Bily Jefferson" readonly>
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -52,7 +53,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="Pemilik" readonly>
+                        <input type="text" name="" id="status" value="Pemilik" readonly>
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -60,7 +61,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="082233638839" readonly>
+                        <input type="number" name="" id="nomor" value="082233638839" readonly>
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -68,10 +69,10 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="Jl. Arif Rahman Hakim No.01 Gresik" readonly>
+                        <input type="text" name="" id="alamat" value="Jl. Arif Rahman Hakim No.01 Gresik" readonly>
                     </div>
-                    <div class="button col-10" >
-                        <input type="button" value="Ubah Profil" style="margin-right: 11px;">
+                    <div class="button col-10" id="ubah_profil">
+                        <input type="button" value="Ubah Profil" onclick="UbahProfil()" style="margin-right: 11px;">
                     </div>
                 </form>
             </div>
@@ -102,13 +103,16 @@
             <div class="logout col-12">
                 <form action="">
                     @csrf
-                    <input type="button" value="Keluar Akun">
+                    <a href="/">
+                        <input type="button" value="Keluar Akun">
+                    </a>
                 </form>
             </div>
         </div>
     </div>
 </body>
 </html>
+<script src="user.js"></script>
 
 </body>
 </html>

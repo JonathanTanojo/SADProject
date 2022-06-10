@@ -17,12 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/akun', function () {
+Route::get('user', function () {
     return view('akun');
 });
 
-// Route::get('/', function () { return view('produk');});
-Route::get('/','App\Http\Controllers\produkcontroller@tableproduk');
+Route::get('/produk','App\Http\Controllers\produkcontroller@tableproduk');
 
 Route::get('supplier','App\Http\Controllers\suppliercontroller@tableproduk');
 
@@ -30,23 +29,12 @@ Route::get('/supplier/edit/{id}',[suppliercontroller::class,"details"]);
 
 Route::get('/edit/{id}', [produkcontroller::class,"details"]);
 
+Route::get('/restok/{id}', [produkcontroller::class,"restok"]);
+
 Route::get('tmbhprdk', function () {
     return view('addproduk');
 });
-Route::get('cashier', function () {
-    return view('ncashier');
-});
 
-Route::get('laporan', function () {
-    return view('nlaporan');
-});
-
-Route::get('produk', function () {
-    return view('nproduk');
-});
-Route::get('user', function () {
-    return view('nuser');
-});
 Route::get('/ubahpass', function () {
     return view('ubahpassword');
 });
@@ -54,6 +42,7 @@ Route::get('/ubahpass', function () {
 Route::prefix('/')->group(function(){
     Route::get('', function () {return view('login');});
     Route::post('','App\Http\Controllers\logincontroller@login');
+    Route::post('/produk','App\Http\Controllers\logincontroller@login');
 });
 
 Route::get('navbar', function () {
@@ -74,10 +63,14 @@ Route::get('sproduk', function () {
 
 Route::get('/keuangan', function () {
     return view('keuangan');
+Route::get('tmbhsupplier', function () {
+    return view('tmbhsupplier');
 });
+
 //POST
 
 Route::get('/','App\Http\Controllers\keuanganController@viewKeuangan');
 
 
-Route::get('/keuangan','App\Http\Controllers\keuanganController@viewKeuangan');
+Route::get('laporan','App\Http\Controllers\keuanganController@viewKeuangan');
+Route::get('detaillaporan','App\Http\Controllers\keuanganController@detailKeuangan');

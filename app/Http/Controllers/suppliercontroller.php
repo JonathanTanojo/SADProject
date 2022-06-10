@@ -18,13 +18,13 @@ class suppliercontroller extends Controller
     public function details($id,Request $req) {
         $item = SUPPLIERALL::query()->find($id);
 
-        // $value = "SELECT b.BARANG_ID AS `ID`,BARANG_NAMA AS `Barang`, BARANG_KATEGORI AS `Kategori`, BARANG_HARGA_BELI AS `Harga_Beli`,BARANG_HARGA_JUAL AS `Harga_Jual`, BARANG_JUMLAH AS `Jumlah`,SUPPLIER_NAMA as `NamaSupplier` FROM BARANG b, SUPPLIER s WHERE b.SUPPLIER_ID = s.SUPPLIER_ID  and b.BARANG_ID ='$id';";
+        //$value = "SELECT SUPPLIER_ID AS `ID`,SUPPLIER_NAMA AS `NamaSupplier`, SUPPLIER_KATEGORI as `Kategori`, SUPPLIER_NOTLP `notlp`, SUPPLIER_ALAMAT AS `alamat` FROM `SUPPLIER` WHERE SUPPLIER_ID ='$id';";
 
-        // $produk = DB::select($value);
+        //$produk = DB::select($value);
 
         return view('editsupplier',[
-            // "d" => $produk,
-            // "i" => $item,
+            //"d" => $produk,
+            "i" => $item,
         ]);
     }
 }

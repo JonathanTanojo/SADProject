@@ -22,10 +22,10 @@
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 100vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
-                <a href="" class="laporan col-6" style="text-decoration: none">
+                <a href="laporan" class="laporan col-6" style="text-decoration: none">
                     <label>Laporan Keuangan</label>
                 </a>
-                <a href="" class="detail col-6" style="text-decoration: none;color:black">
+                <a href="detaillaporan" class="detail col-6" style="text-decoration: none;color:black">
                     <label>Detail Keuangan</label>
                 </a>
             </div>

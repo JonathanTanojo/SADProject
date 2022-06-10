@@ -16,7 +16,7 @@
     <title>Document</title>
 </head>
 <body>
-    @include("nsupplier")
+    @include("nproduk")
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;padding-top:8px;padding-left:8px">
@@ -31,7 +31,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="{{$i -> SUPPLIER_NAMA }}">
+                        <input type="text" name="" id="" placeholder="Masukkan Nama Supplier">
                     </div>
                     <div class="judul col-5">
                         <label for="">
@@ -52,7 +52,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="{{$i -> SUPPLIER_NOTLP }}">
+                        <input type="number" name="" id="" placeholder="Masukkan No HP">
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -60,7 +60,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="{{$i -> SUPPLIER_ALAMAT }}" >
+                        <input type="number" name="" id="" placeholder="Masukkan Alamat" >
                     </div>
                     <div class="col-12" style="display: flex; margin-top: 30px;justify-content: flex-end;">
                         <div class="" style="display: flex">

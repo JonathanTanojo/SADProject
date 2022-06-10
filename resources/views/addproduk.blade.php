@@ -84,12 +84,12 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="date" name="" id="" value="2022-02-10">
+                        <input type="date" name="" id="" value="">
                     </div>
                     <div class="col-12" style="display: flex; margin-top: 30px;justify-content: flex-end;">
                         <div class="" style="display: flex">
                             <div class="buttonbatal">
-                                <a href="/">
+                                <a href="/produk">
                                     <input type="button" value="Batal" style="margin-right: 11px;">
                                 </a>
                             </div>

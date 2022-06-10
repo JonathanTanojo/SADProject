@@ -20,10 +20,10 @@
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
-                <a href="" class="detail col-6" style="text-decoration: none">
-                    <label>Riwayat Transaksi Supplier</label>
+                <a href="" class="riwayatsupplier col-6" style="text-decoration: none">
+                    <label style="font-size:13px">Riwayat Transaksi Supplier</label>
                 </a>
-                <a href="" class="restok col-6" style="text-decoration: none;color:black">
+                <a href="" class="daftarsupplier col-6" style="text-decoration: none;">
                     <label>Daftar Supplier</label>
                 </a>
             </div>
@@ -70,7 +70,14 @@
                         <td style='text-align: center;'>{$tabel[$x]->Kategori}</td>
                         <td style='text-align: center;'>{$tabel[$x]->notlp}</td>
                         <td style='text-align: center;'>{$tabel[$x]->alamat}</td>
-                        <td style='text-align: center;'> <a href='edit/{$tabel[$x]-> ID}'><img src='img/edit-icon.png'></a></td>
+                        <td style='text-align: center;'>
+                            <div style='display:flex'>
+                            <div>
+                            <a href='/supplier/edit/{$tabel[$x]-> ID}'><img src='img/edit-icon.png'></a></div>
+                            <div style='padding-left:5px'>
+                            <a href='/supplier/edit/{$tabel[$x]-> ID}'><img src='img/trash_can.png'></a></div>
+                            </div>
+                            </td>
                       </tr>";
                     }
                     ?>
@@ -79,5 +86,6 @@
             </div>
         </div>
     </div>
+    <div class="addbutton"> <a href="tmbhsupplier"><img src="img/add.png" alt=""></a></div>
 </body>
 </html>

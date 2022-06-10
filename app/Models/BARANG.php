@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\SUPPLIERALL;
 
 class BARANG extends Model
 {
     use HasFactory;
     protected $table = "BARANG";
-
 
     public $primaryKey = "BARANG_ID";
 
@@ -19,10 +18,13 @@ class BARANG extends Model
 
     public $timestamps = false;
 
-    public function tableproduk(){
-         $value = "SELECT b.BARANG_ID AS `ID`,BARANG_NAMA AS `Barang`, BARANG_KATEGORI AS `Kategori`, BARANG_PRICE AS `Harga_Beli`, BARANG_PRICE AS `Harga_Jual`, BARANG_QTY AS `Jumlah`,SUPPLIER_NAMA as `NamaSupplier` FROM BARANG b, SUPPLIER s WHERE b.SUPPLIER_ID = s.SUPPLIER_ID;";
+    public function tablekategori(){
+        $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
+        $run = DB::select($server);
+        $value = "SELECT BARANG_KATEGORI_ID,BARANG_KATEGORI FROM SAD_BAGHIZ.BARANG GROUP BY BARANG_KATEGORI;";
 
-         $produk = DB::select($value);
-         return $produk;
-     }
+        $kategori = DB::select($value);
+        return $kategori;
+    }
+
 }
