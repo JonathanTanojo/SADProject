@@ -45,7 +45,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="Bily Jefferson" readonly>
+                        <input type="text" name="" id="nama" value="Bily Jefferson" readonly>
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -53,7 +53,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="Pemilik" readonly>
+                        <input type="text" name="" id="status" value="Pemilik" readonly>
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -61,7 +61,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="082233638839" readonly>
+                        <input type="number" name="" id="nomor" value="082233638839" readonly>
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -69,10 +69,10 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="Jl. Arif Rahman Hakim No.01 Gresik" readonly>
+                        <input type="text" name="" id="alamat" value="Jl. Arif Rahman Hakim No.01 Gresik" readonly>
                     </div>
-                    <div class="button col-10" >
-                        <input type="button" value="Ubah Profil" style="margin-right: 11px;">
+                    <div class="button col-10" id="ubah_profil">
+                        <input type="button" value="Ubah Profil" onclick="UbahProfil()" style="margin-right: 11px;">
                     </div>
                 </form>
             </div>
@@ -112,6 +112,7 @@
     </div>
 </body>
 </html>
+<script src="user.js"></script>
 
 </body>
 </html>

@@ -20,10 +20,10 @@
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
-                <a href="/edit/" class="detailrestok col-6" style="text-decoration: none;color:black">
+                <a href="/edit/{{$datadetail[0]-> BARANG_ID}}" class="detailrestok col-6" style="text-decoration: none;color:black">
                     <label>Detail Produk</label>
                 </a>
-                <a href="/restok" class="restokrestok col-6" style="text-decoration: none;">
+                <a href="/restok/{{$datadetail[0]-> BARANG_ID}}" class="restokrestok col-6" style="text-decoration: none;">
                     <label>Restok Produk</label>
                 </a>
             </div>
@@ -36,7 +36,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="">
+                        <input type="text" name="" id="" value="{{$datadetail[0]-> BARANG_NAMA}}">
                     </div>
                     <div class="judul col-5">
                         <label for="">
@@ -45,18 +45,19 @@
                     </div>
                     <div class="inputbox col-8">
                         <select name="" id="">
-                            <option value="">Minyak Goreng</option>
-                            <option value="">Makanan Ringan</option>
-                            <option value="">Makanan Berat</option>
-                            <option value="">Minuman</option>
-                        </select>                    </div>
+                            <option value="{{$datadetail[0] -> BARANG_KATEGORI_ID}}" selected disabled hidden>{{$datadetail[0] -> BARANG_KATEGORI}}</option>
+                            @foreach ($kategori as $kate)
+                                <option value="{{$kate -> BARANG_KATEGORI_ID}}">{{$kate -> BARANG_KATEGORI}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="judul col-5">
                         <label for="">
                             Nama Supplier
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value ="Nama Supplier" readonly>
+                        <input type="text" name="" id="" value ="{{$datadetail[0]-> SUPPLIER_NAMA}}" readonly>
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -64,7 +65,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="">
+                        <input type="number" name="" id="" value="{{$datadetail[0]-> BARANG_HARGA_BELI}}">
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -72,7 +73,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="">
+                        <input type="number" name="" id="" value="{{$datadetail[0]-> BARANG_HARGA_JUAL}}">
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -80,7 +81,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="">
+                        <input type="number" name="" id="" value="{{$datadetail[0]-> BARANG_HARGA_BELI}}">
                     </div>
                     <div class="judul col-10">
                         <label for="">
