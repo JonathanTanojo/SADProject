@@ -9,10 +9,10 @@ class BaruController extends Controller
 {
     public function index()
     {
-        $input = TransaksiBaru::latest();
+        $input = TransaksiBaru::tabletransaksibaru();
 
         if(request('search')){
-            $input->WHERE('BARANG_NAMA', 'like', '%' . request('search') . '%');
+            $input>WHERE('BARANG_NAMA', 'like', '%' . request('search') . '%');
         }
 
         return view('baru', [
