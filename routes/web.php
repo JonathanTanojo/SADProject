@@ -63,6 +63,8 @@ Route::get('sproduk', function () {
 
 Route::get('/keuangan', function () {
     return view('keuangan');
+});
+
 Route::get('tmbhsupplier', function () {
     return view('tmbhsupplier');
 });
