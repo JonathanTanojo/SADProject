@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\produkcontroller;
 use App\Http\Controllers\suppliercontroller;
+use App\Http\Controllers\keuangancontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -64,3 +65,4 @@ Route::get('tmbhsupplier', function () {
 
 Route::get('laporan','App\Http\Controllers\keuanganController@viewKeuangan');
 Route::get('detaillaporan','App\Http\Controllers\keuanganController@detailKeuangan');
+Route::post('/laporan1',[keuangancontroller::class,"tarikdata"]);

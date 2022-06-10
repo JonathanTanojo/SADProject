@@ -17,8 +17,9 @@
 </head>
 @include("nlaporan")
 <body>
-<form method="POST" action="{{url('/keuangan')}}">
+<form method="POST" action="/laporan1">
   @csrf
+  <!-- <button>oke</button> -->
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 100vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
@@ -29,21 +30,27 @@
                     <label>Detail Keuangan</label>
                 </a>
             </div>
-            <div class="col-12 buttonfilteratas" style="display: flex; margin-top:15px">
-                <div class="combbox col-4">
+            <div class="col-12 buttonfilteratas" style="display: flex; margin-top:15px;width:100%;">
+                <div class="inputtanggal">
+                    <input type="date" name="tglawal" id="txtDate" style="width:100%;"value="data">
+                </div>
+                <!-- <div class="combbox col-4">
                     <select name="filter_produk_kategori" id="filter_produk" >
                         <option value="" selected disabled hidden>Minggu</option>
-                        <option value="mykgrg">Minggu</option>
-                        <option value="mknringan">Bulan</option>
+                        <option value="mykgrg" name="minggu">Minggu</option>
+                        <option value="mknringan" name="bulan">Bulan</option>
                     </select>
-                </div>
-                <div class="searchbox col-4">
+                </div> -->
+                <!-- <div class="searchbox col-4">
                     <input type="text" name="" value="21 Maret - 29 Maret"id="" style="font-size: 12px" readonly>
-                </div>
+                </div> -->
                 <div class="searchbox col-4">
                     <i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.624,15a8.03,8.03,0,0,0,10.619.659l5.318,5.318a1,1,0,0,0,1.414-1.414l-5.318-5.318A8.04,8.04,0,0,0,3.624,3.624,8.042,8.042,0,0,0,3.624,15Zm1.414-9.96a6.043,6.043,0,1,1-1.77,4.274A6,6,0,0,1,5.038,5.038Z"/></svg></i>
-                    <input type="text" placeholder="Search..">
+                    <input type="text" placeholder="Search.."style="width:100%">
                 </div>
+                <div class="butonsearch">
+                <input class="buttonsearch" value="Search" type="submit" style="width:100%;">
+            </div>
             </div>
             <div class="kontentable col-12">
                 <table class="table align-middle">
@@ -79,6 +86,41 @@
             </div>
         </div>
     </div>
-</body>
+    <!-- <script>
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        var tomorrow = new Date();
+        var dd1 = tomorrow.getDate() + 1;
+        var mm1 = tomorrow.getMonth() + 1; //January is 0!
+        var yyyy1 = tomorrow.getFullYear();
+
+        if (dd < 10) {
+        dd = '0' + dd;
+        }
+
+        if (mm < 10) {
+        mm = '0' + mm;
+        } 
+
+        if (dd1 < 10) {
+        dd1 = '0' + dd1;
+        }
+
+        if (mm1 < 10) {
+        mm1 = '0' + mm1;
+        } 
+            
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("txtDate").setAttribute("min", today);
+        document.getElementById("txtDate").setAttribute("value", today);    
+
+        tomorrow = yyyy1 + '-' + mm1 + '-' + dd1;
+        document.getElementById("txtDate2").setAttribute("min", tomorrow);
+        document.getElementById("txtDate2").setAttribute("value", tomorrow); 
+    </script> -->
 </form>
+</body>
 </html>
