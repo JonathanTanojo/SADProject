@@ -80,3 +80,24 @@ tr.table-putih{
 tr.table-ungu{
     background-color: #f3f1ff;
 }
+.inputtanggal input[type="date"]{
+    background-color: #ffffff;
+    border-radius: 7px;
+    line-height: 34px;
+    padding-left: 10px;
+    border-style: none;
+    margin-left: 5px;
+
+}
+.butonsearch input[type="Submit"]{
+    background-color: #413B93;
+    color: white;
+    font-size: 15px;
+    width: 100px;
+    height: 40px;
+    /* padding: 7px 10px 7px 10px; */
+    border-radius: 15px;
+    border: none;
+    background-image: url(../public/img/trashcan.png); /* 16px x 16px */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+}

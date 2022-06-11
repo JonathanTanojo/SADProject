@@ -25,7 +25,8 @@
     <br>
     <div class="head">
         <p><b>Login Account</b></p>
-    </div><br>
+    </div>
+    <br>
     <div class="subhead">
         <p>Selamat Datang</p>
     </div>
@@ -38,10 +39,7 @@
 
 
     <div class="background">
-        <!-- <div class="modal" tabindex="-1"> -->
-
-        <!-- </div> -->
-        <form method="POST" action="{{url('/produk')}}">
+        <form method="POST" action="/">
             @csrf
             <div class="login">
                 <div class="input-icons">

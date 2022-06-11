@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\login;
+use App\Models\produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -31,8 +32,16 @@ class LoginController extends Controller
             Session::put('pass', $password);
             // $req->session()->flash('authentication');
 
-            return redirect('/produk');
+            $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
+            $run = DB::select($server);
+            $kategori = DB::table('BARANG')
+            ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
+            ->groupBy('BARANG_KATEGORI')
+            ->get();
 
+            $user = new produk();
+            $tabel = $user->tableproduk();
+            return view('produk',compact(['tabel']), ["kategori" => $kategori]);
         }
         else {
             Session::flash('error', "Invalid signin, please try again");

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DateTime;
 use App\Models\keuangan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
 
@@ -21,25 +22,27 @@ class keuanganController extends Controller
         return view('detaillaporan',compact(['tabel']));
     }
     public function tarikdata(Request $req){
-       
-        // $validated = $req->validate([
-        //     'tglawal' => 'required|string'
-        // ]);
 
         $tglawal = $req->input('tglawal');
-        // dd($tglawal);
+
         $req->session()->put('tarikdata', [$tglawal]);
-        
+
         $user = new keuangan;
         $tabel = $user->tarikanmaut($tglawal);
         return view('keuangan',compact(['tabel']));
     }
 
-    // public function moneys(Request $req)
-    // {
-    //     $kategoribarang= $req->kategoribarang;
+    public function carilaporan(Request $req)
+    {
+        $namabarang = $req ->input('namaproduk');
 
-    //     $req->session()->put('moneys', [$kategoribarang]);
-    //     return view('keuangan');
-    // }
+        $req->session()->put('caribarang', [$namabarang]);
+
+        $user = new keuangan;
+        $tabel = $user->caribarang($namabarang);
+
+        return view('keuangan',compact(['tabel']));
+
+
+    }
 }

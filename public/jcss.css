@@ -124,6 +124,7 @@ tr.table-ungu{
     line-height: 34px;
     width: 312px;
     padding-left: 10px;
+    border-style: none;
 }
 .inputbox input[type="number"]{
     background-color: #ffffff;
@@ -131,6 +132,7 @@ tr.table-ungu{
     line-height: 34px;
     width: 312px;
     padding-left: 10px;
+    border-style: none;
 }
 .inputbox input[type="date"]{
     background-color: #ffffff;
@@ -138,6 +140,7 @@ tr.table-ungu{
     line-height: 34px;
     width: 312px;
     padding-left: 10px;
+    border-style: none;
 }
 .inputbox select{
     background-color: #ffffff;
@@ -145,8 +148,9 @@ tr.table-ungu{
     width: 312px;
     padding-left: 10px;
     height: 35px;
+    border-style: none;
 }
-.buttonhapus input[type="button"]{
+.buttonhapus button{
     background-color: #FF0000;
     color: white;
     font-size: 15px;
@@ -168,7 +172,7 @@ tr.table-ungu{
     border-radius: 15px;
     border: none;
 }
-.buttonsimpan input[type="button"]{
+.buttonsimpan button{
     background-color: #23A042;
     color: white;
     font-size: 15px;

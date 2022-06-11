@@ -23,7 +23,7 @@
                 <h4><b>Masukkan Produk Baru</b></h4>
             </div>
             <div class="kontendata col-11" style="margin-top: 25px;margin-left: 36px;">
-                <form action="">
+                <form action="tmbhprdk/proses" method="POST">
                     @csrf
                     <div class="judul col-4">
                         <label for="">
@@ -31,7 +31,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" placeholder="Masukkan Nama Produk">
+                        <input type="text" name="namaproduk" id="" placeholder="Masukkan Nama Produk">
                     </div>
                     <div class="judul col-5">
                         <label for="">
@@ -52,7 +52,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" placeholder="Pilih Nama Supplier">
+                        <input type="text" name="namasupplier" id="" placeholder="Pilih Nama Supplier">
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -60,7 +60,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" placeholder="Masukkan Harga Beli" >
+                        <input type="number" name="hargabeli" id="" placeholder="Masukkan Harga Beli" >
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -68,7 +68,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" placeholder="Masukkan Harga Jual" >
+                        <input type="number" name="hargajual" id="" placeholder="Masukkan Harga Jual" >
                     </div>
                     <div class="judul col-6">
                         <label for="">
@@ -76,7 +76,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" placeholder="Masukkan Jumlah Produk" >
+                        <input type="number" name="jumlah" id="" placeholder="Masukkan Jumlah Produk" >
                     </div>
                     <div class="judul col-6">
                         <label for="">
@@ -84,7 +84,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="date" name="" id="" value="">
+                        <input type="date" name="tanggal" id="" value="">
                     </div>
                     <div class="col-12" style="display: flex; margin-top: 30px;justify-content: flex-end;">
                         <div class="" style="display: flex">
@@ -94,7 +94,9 @@
                                 </a>
                             </div>
                             <div class="buttonsimpan">
-                                <input type="button" value="Simpan" style="margin-right: 11px;">
+                                <button style="margin-right: 11px;">Simpan</button>
+                                {{-- <input type="button" value="Simpan" > --}}
+                                </a>
                             </div>
                         </div>
                     </div>
