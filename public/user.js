@@ -12,6 +12,8 @@ var BtnSimpan2 = document.getElementById("simpanpass");
 var LblPassBaru = document.getElementById("passbaru");
 var LblPassKonfirm= document.getElementById("passkonfirm");
 
+var BtnLogout =  document.getElementById('keluar');
+
 function UbahProfil() {
 
     BtnProfil.style.visibility = "hidden";
@@ -59,13 +61,9 @@ function UbahPasswordBalik(){
     LblPassKonfirm.readOnly=true;
     LblPassKonfirm.style.backgroundColor= '#EEEEEE';
     BtnProfil.disabled = false;
+    LblPassBaru.value="";
+    LblPassKonfirm.value="";
 }
-// $('#change_password_form').validate({
-//     ignore:'.ignore',
-//     errorClass:'invalid',
-//     validClass:'success',
-//     submitHandeler:function(form){
-//         $.LoadingOverlay("show");
-//         form.submit();
-//     }
-// });
+function Logout(){
+    
+}

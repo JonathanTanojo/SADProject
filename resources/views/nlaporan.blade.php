@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/akun" class="nav-link">
+                    <a href="/user" class="nav-link">
                         <img src="{{ asset('img/user.png'); }}" alt="">
                     </a>
                 </li>

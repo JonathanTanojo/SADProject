@@ -27,30 +27,35 @@ class akuncontroller extends Controller
             'USER_ALAMAT'   =>  $request->alamat
         ];
         DB::table('PENGGUNA')->where('USER_ID','B0001')->update($userupdate);
-        return back()->with("status", "Password changed successfully!");
-        return redirect()->back()->with('userupdate','.');
-        //return redirect()->back()->with('message', 'IT WORKS!');
+        return back()->with('status','Profil Berhasil Diubah!');
+        //return redirect()->back()->with('userupdate','.');
+
     }
     public function passwordupdate( Request $request ){
         $passbaru = $request -> input("Kata_Sandi_Baru");
         $passbarukedua = $request -> input("Ulangi_Kata_Sandi");
-        $request->validate([
-            'Kata_Sandi_Baru'=>'required',
-            'KUlangi_Kata_Sandi'=>'required|same:Kata_Sandi_Baru',
-        ]);
         if($passbaru == $passbarukedua){
-           // dd($request->all());
 
-        DB::table('PENGGUNA')->where('USER_ID','B0001')->update([
-            'USER_KATASANDI' => ($request->Kata_Sandi_Baru)
-        ]);
-        return back()->with('success','Operator Berhasil Dimasukkan');
-    }
-    else{
-        return back()->with('fail','Kata Sandi dan Konfirmasi tidak sama!');
-    }
+            DB::table('PENGGUNA')->where('USER_ID','B0001')->update([
+                'USER_KATASANDI' => ($request->Kata_Sandi_Baru)
+            ]);
+            return back()->with('success','Kata Sandi Berhasil Diubah!');
+        }
+        elseif($passbaru=="" ){
+            return back()->with('fail2','Kata Sandi Baru Harap Diisi!');
+        }
+        elseif($passbarukedua=="" ){
+            return back()->with('fail3','Ulangi Kata Sandi Harap Diisi!');
+        }
+        else{
+            return back()->with('fail','Kata Sandi dan Konfirmasi tidak sama!');
+        }
 
-    //return redirect()->back()->with('error','Kata Sandi dan Konfirmasi tidak sama!');
+        // $request->validate([
+        //     'Ulangi_Kata_Sandi'=>'required',
+        // ]);
+        // dd($request->all());
+        //return redirect()->back()->with('error','Kata Sandi dan Konfirmasi tidak sama!');
     //return back()->with("status", "Password changed successfully!");
     //return redirect()->back()->with('passwordupdate','.');
         // User::find->id)->update([
