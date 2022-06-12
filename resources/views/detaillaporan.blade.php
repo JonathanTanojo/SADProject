@@ -31,21 +31,25 @@
                 <label>Detail Keuangan</label>
             </a>
         </div>
-        <div class="col-12 buttonfilteratas" style="display: flex; margin-top:15px">
-            <div class="combbox col-4">
-                <select name="filter_produk_kategori" id="filter_produk" >
-                    <option value="" selected disabled hidden>Minggu</option>
-                    <option value="mykgrg">Minggu</option>
-                    <option value="mknringan">Bulan</option>
-                </select>
+        <form method="POST" action="/laporan/tanggal">
+            <div class="col-12 buttonfilteratas" style="display: flex; margin-top:15px;width:100%; justify-content:space-between">
+                @csrf
+                <div class="inputtanggal col-6">
+                    <input type="date" name="tglawal" id="txtDate" style="width:100%;" value="data">
+                </div>
+                <div class="butonsearch col-4" style="margin-right:3px">
+                    <input class="buttonsearch" value="Search" type="submit" style="width:100%;">
+                </div>
             </div>
-            <div class="searchbox col-4">
-                <input type="text" name="" value="21 Maret - 29 Maret"id="" style="font-size: 12px" readonly>
-            </div>
-            <div class="searchbox col-4">
-                <i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.624,15a8.03,8.03,0,0,0,10.619.659l5.318,5.318a1,1,0,0,0,1.414-1.414l-5.318-5.318A8.04,8.04,0,0,0,3.624,3.624,8.042,8.042,0,0,0,3.624,15Zm1.414-9.96a6.043,6.043,0,1,1-1.77,4.274A6,6,0,0,1,5.038,5.038Z"/></svg></i>
-                <input type="text" placeholder="Search..">
-            </div>
+        </form>
+        <div class="col-12">
+            <form action="/laporan/search" method="POST">
+                @csrf
+                <div class="searchbox col-6" style="margin-left: 6px">
+                    <i class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.624,15a8.03,8.03,0,0,0,10.619.659l5.318,5.318a1,1,0,0,0,1.414-1.414l-5.318-5.318A8.04,8.04,0,0,0,3.624,3.624,8.042,8.042,0,0,0,3.624,15Zm1.414-9.96a6.043,6.043,0,1,1-1.77,4.274A6,6,0,0,1,5.038,5.038Z"/></svg></i>
+                    <input type="text" name='namaproduk'placeholder="Nama Produk"style="width:100%;">
+                </div>
+            </form>
         </div>
         <div class="kontentable col-12">
             <table class="table align-middle">
@@ -70,13 +74,13 @@
                   $color == $color1 ? $color=$color2 : $color=$color1;
                   echo"
                   <tr style='background-color:$color'>
-                    <td>{$tabel[$x]->NAMABARANG}</td>
-                    <td>{$tabel[$x]->HargaBeli}</td>
-                    <td>{$tabel[$x]->HargaJual}</td>
-                    <td>{$tabel[$x]->Terjual}</td>
-                    <td>{$tabel[$x]->Sisa}</td>
-                    <td>{$tabel[$x]->HargaSatuan}</td>
-                    <td>{$tabel[$x]->UangMasuk}</td>
+                    <td>{$tabel[$x]->NAMA_BARANG}</td>
+                    <td>{$tabel[$x]->HARGA_BELI}</td>
+                    <td>{$tabel[$x]->HARGA_SATUAN}</td>
+                    <td>{$tabel[$x]->TERJUAL}</td>
+                    <td>{$tabel[$x]->SISA}</td>
+                    <td>{$tabel[$x]->HARGA_SATUAN}</td>
+                    <td>{$tabel[$x]->UANG_MASUK}</td>
                     <td>{$tabel[$x]->Laba}</td>
                   </tr>";
                 }

@@ -22,29 +22,48 @@ Route::get('supplier',[suppliercontroller::class,"tableproduk"]);
 
 Route::get('/supplier/edit/{id}',[suppliercontroller::class,"details"]);
 
+//Login
+Route::prefix('/')->group(function(){
+    Route::get('', function () {return view('login');});
+    Route::post('',[logincontroller::class,"login"]);
+});
+//Produk
 Route::prefix('/produk')->group(function(){
     Route::get('/',[produkcontroller::class,"tableproduk"] );
     Route::post('/search',[produkcontroller::class,"searchproduk"]);
     Route::post('/filter',[produkcontroller::class,"filterproduk"]);
+    Route::get('/edit/{id}',[produkcontroller::class,"details"] );
 });
-
+//Ubah Data Produk
 Route::prefix('/edit')->group(function(){
     Route::get('/{id}',[produkcontroller::class,"details"] );
     Route::post('/{id}',[produkcontroller::class,"updatedatabarang"]);
     Route::post('/{id}/hps',[produkcontroller::class,"hapusbarang"]);
 
 });
-
-Route::get('produk/edit/{id}', [produkcontroller::class,"details"]);
-
+// Restok Produk
 Route::prefix('/restok')->group(function(){
     Route::get('/{id}',[produkcontroller::class,"restok"] );
     Route::POST('/{id}',[produkcontroller::class,"updatejumlahbarang"]);
 });
+//Tambah Produk
+Route::prefix('/tmbhprdk')->group(function(){
+    Route::get('/',[produkcontroller::class,"tableaddproduk"]);
+    Route::POST('/proses',[produkcontroller::class,"updatebarang"]);
+});
+//Laporan
+Route::prefix('/laporan')->group(function(){
+    Route::get('', [keuangancontroller::class,"viewKeuangan"]);
+    Route::post('/tanggal',[keuangancontroller::class,"tarikdata"]);
+    Route::post('/search',[keuangancontroller::class,"carilaporan"]);
+});
+//Detail Laporan
+Route::prefix('/detaillaporan')->group(function(){
+    Route::get('', [keuanganController::class,"detailKeuangan"]);
+    Route::post('/tanggal',[keuangancontroller::class,"tarikdata"]);
+    Route::post('/search',[keuangancontroller::class,"carilaporan"]);
+});
 
-Route::get('/tmbhprdk', function () {return view('addproduk');});
-
-Route::POST('/tmbhprdk/proses',[produkcontroller::class,"updatebarang"]);
 
 Route::get('/ubahpass', function () {
     return view('ubahpassword');
@@ -58,10 +77,7 @@ Route::post('userupdate', [akuncontroller::class,"userupdate"]);
 Route::post('passwordupdate', 'App\Http\Controllers\akuncontroller@passwordupdate')->name('passwordupdate');
 
 
-Route::prefix('/')->group(function(){
-    Route::get('', function () {return view('login');});
-    Route::post('',[logincontroller::class,"login"]);
-});
+
 
 Route::get('navbar', function () {
     return view('navbar');
@@ -70,11 +86,6 @@ Route::get('tmbhsupplier', function () {
     return view('tmbhsupplier');
 });
 
-Route::prefix('/laporan')->group(function(){
-    Route::get('', [keuangancontroller::class,"viewKeuangan"]);
-    Route::post('/tanggal',[keuangancontroller::class,"tarikdata"]);
-    Route::post('/search',[keuangancontroller::class,"carilaporan"]);
-});
-Route::get('','App\Http\Controllers\keuanganController@viewKeuangan');
-Route::get('detaillaporan','App\Http\Controllers\keuanganController@detailKeuangan');
+
+// Route::get('','App\Http\Controllers\keuanganController@viewKeuangan');
 Route::post('/laporan1',[keuangancontroller::class,"tarikdata"]);

@@ -23,7 +23,7 @@
                 <h4><b>Masukkan Produk Baru</b></h4>
             </div>
             <div class="kontendata col-11" style="margin-top: 25px;margin-left: 36px;">
-                <form action="tmbhprdk/proses" method="POST">
+                <form action="/tmbhprdk/proses" method="POST">
                     @csrf
                     <div class="judul col-4">
                         <label for="">
@@ -39,13 +39,13 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <select name="filter_produk_kategori" id="filter_produk" >
+                        <select name="kategoriproduk" id="">
                             <option value="" selected disabled hidden>Pilih Kategori Produk</option>
-                            <option value="mykgrg">Minyak Goreng</option>
-                            <option value="mknringan">Makanan Ringan</option>
-                            <option value="mknberat">Makanan Berat</option>
-                            <option value="minum">Minuman</option>
-                        </select>                    </div>
+                            @foreach ($kategori as $kate)
+                                <option value="{{$kate -> BARANG_KATEGORI_ID}}">{{$kate -> BARANG_KATEGORI}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="judul col-5">
                         <label for="">
                             Nama Supplier

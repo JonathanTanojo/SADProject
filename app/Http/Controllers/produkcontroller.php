@@ -283,26 +283,97 @@ class produkcontroller extends Controller
         return back()->with('berhasilditambah','update databerhasil');
         }
     }
+
+    //Add Product
+    public function tableaddproduk(){
+        $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
+        $run = DB::select($server);
+
+        $kategori = DB::table('BARANG')
+        ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
+        ->groupBy('BARANG_KATEGORI')
+        ->get();
+
+        return view('addproduk', ["kategori" => $kategori]);
+    }
+
     public function updatebarang(Request $req){
-        $req -> validate([
-            'namaproduk'=>'required',
-            'namasupplier'=>'required',
-            'hargabeli'=>'required',
-            'hargajual'=>'required',
-            'jumlah'=>'required',
-            'tanggal'=>'required'
-        ]);
-        $produkbaru = new produkbaru();
-        $produkbaru->BARANG_ID = 'T004';
-        $produkbaru->BARANG_NAMA = $req->namaproduk;
-        $produkbaru->BARANG_KATEGORI_ID = 'T01';
-        $produkbaru->BARANG_KATEGORI = $req ->filter_produk_kategori;
-        $produkbaru->SUPPLIER_ID = $req->namasupplier;
-        $produkbaru->BARANG_HARGA_BELI = $req->hargabeli;
-        $produkbaru->BARANG_HARGA_JUAL = $req->hargajual;
-        $produkbaru->BARANG_JUMLAH = $req->jumlah;
-        $produkbaru->BARANG_DELETE = '0';
-        $produkbaru->save();
+        $namaproduk = $req->input('namaproduk');
+
+        $data = [
+            'namaproduk' => $namaproduk,
+        ];
+
+        // $req -> validate([
+        //     'namaproduk'=>'required',
+        //     'namasupplier'=>'required',
+        //     'hargabeli'=>'required',
+        //     'hargajual'=>'required',
+        //     'jumlah'=>'required',
+        //     'tanggal'=>'required'
+        // ]);
+
+        $barang = New produk();
+        $namaprodukbaru = $barang->insert($data);
+
+        $kategoribarang = $req->input('kategoriproduk');
+        if($kategoribarang == "M01")
+        {
+
+            $produkbaru = new produkbaru();
+            $produkbaru->BARANG_ID = $namaprodukbaru;
+            $produkbaru->BARANG_NAMA = $req->namaproduk;
+            $produkbaru->BARANG_KATEGORI_ID = 'M01';
+            $produkbaru->BARANG_KATEGORI = 'Minuman';
+            $produkbaru->SUPPLIER_ID = $req->namasupplier;
+            $produkbaru->BARANG_HARGA_BELI = $req->hargabeli;
+            $produkbaru->BARANG_HARGA_JUAL = $req->hargajual;
+            $produkbaru->BARANG_JUMLAH = $req->jumlah;
+            $produkbaru->BARANG_DELETE = '0';
+            // dd($produkbaru);
+            $produkbaru->save();
+
+            dd("a");
+        }
+        else if($kategoribarang == "M02"){
+            $produkbaru = new produkbaru();
+            $produkbaru->BARANG_ID = $namaprodukbaru[0];
+            $produkbaru->BARANG_NAMA = $req->namaproduk;
+            $produkbaru->BARANG_KATEGORI_ID = 'M02';
+            $produkbaru->BARANG_KATEGORI = 'Makanan';
+            $produkbaru->SUPPLIER_ID = $req->namasupplier;
+            $produkbaru->BARANG_HARGA_BELI = $req->hargabeli;
+            $produkbaru->BARANG_HARGA_JUAL = $req->hargajual;
+            $produkbaru->BARANG_JUMLAH = $req->jumlah;
+            $produkbaru->BARANG_DELETE = '0';
+            $produkbaru->save();
+        }
+        else if($kategoribarang == "R01"){
+            $produkbaru = new produkbaru();
+            $produkbaru->BARANG_ID = $namaprodukbaru[0];
+            $produkbaru->BARANG_NAMA = $req->namaproduk;
+            $produkbaru->BARANG_KATEGORI_ID = 'R01';
+            $produkbaru->BARANG_KATEGORI = 'Rokok';
+            $produkbaru->SUPPLIER_ID = $req->namasupplier;
+            $produkbaru->BARANG_HARGA_BELI = $req->hargabeli;
+            $produkbaru->BARANG_HARGA_JUAL = $req->hargajual;
+            $produkbaru->BARANG_JUMLAH = $req->jumlah;
+            $produkbaru->BARANG_DELETE = '0';
+            $produkbaru->save();
+        }
+        else if($kategoribarang == "B01"){
+            $produkbaru = new produkbaru();
+            $produkbaru->BARANG_ID = $namaprodukbaru[0];
+            $produkbaru->BARANG_NAMA = $req->namaproduk;
+            $produkbaru->BARANG_KATEGORI_ID = 'B01';
+            $produkbaru->BARANG_KATEGORI = 'Bahan Pokok';
+            $produkbaru->SUPPLIER_ID = $req->namasupplier;
+            $produkbaru->BARANG_HARGA_BELI = $req->hargabeli;
+            $produkbaru->BARANG_HARGA_JUAL = $req->hargajual;
+            $produkbaru->BARANG_JUMLAH = $req->jumlah;
+            $produkbaru->BARANG_DELETE = '0';
+            $produkbaru->save();
+        }
 
         $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
         $run = DB::select($server);
@@ -314,6 +385,7 @@ class produkcontroller extends Controller
 
         $user = new produk();
         $tabel = $user->tableproduk();
-        return view('produk',compact(['tabel']), ["kategori" => $kategori]);
+        return back();
+        // return view('produk',compact(['tabel']), ["kategori" => $kategori]);
     }
 }

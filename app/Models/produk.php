@@ -17,4 +17,9 @@ class produk extends Model
         $produk = DB::select($value);
         return $produk;
     }
+
+    public function insert($data){
+        $run = DB::select('SELECT fungsibarang(:namaproduk)',$data);
+        return $run;
+    }
 }
