@@ -21,8 +21,9 @@ class keuanganController extends Controller
         $tabel = $user->detailKeuangan();
         return view('detaillaporan',compact(['tabel']));
     }
+    //Laporan Keuangan
     public function tarikdata(Request $req){
-
+        dd("hile");
         $tglawal = $req->input('tglawal');
 
         $req->session()->put('tarikdata', [$tglawal]);
@@ -42,7 +43,29 @@ class keuanganController extends Controller
         $tabel = $user->caribarang($namabarang);
 
         return view('keuangan',compact(['tabel']));
-
-
     }
+    //Detail Keuangan
+    public function detailtarikdata(Request $req){
+        dd("hola");
+        $tglawal = $req->input('tglawal');
+
+        $req->session()->put('tarikdata', [$tglawal]);
+
+        $user = new keuangan;
+        $tabel = $user->tarikanmaut($tglawal);
+        return view('detaillaporan',compact(['tabel']));
+    }
+
+    public function detailcarilaporan(Request $req)
+    {
+        $namabarang = $req ->input('namaproduk');
+
+        $req->session()->put('caribarang', [$namabarang]);
+
+        $user = new keuangan;
+        $tabel = $user->caribarang($namabarang);
+
+        return view('detaillaporan',compact(['tabel']));
+    }
+
 }

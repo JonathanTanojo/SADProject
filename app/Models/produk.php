@@ -19,7 +19,7 @@ class produk extends Model
     }
 
     public function insert($data){
-        $run = DB::select('SELECT fungsibarang(:namaproduk)',$data);
+        $run = DB::select('SELECT fungsibarang(:namaproduk) as id',$data);
         return $run;
     }
 }

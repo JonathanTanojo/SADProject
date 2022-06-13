@@ -298,11 +298,11 @@ class produkcontroller extends Controller
     }
 
     public function updatebarang(Request $req){
-        $namaproduk = $req->input('namaproduk');
+        //$namaproduk = $req->input('namaproduk');
 
-        $data = [
-            'namaproduk' => $namaproduk,
-        ];
+        // $data = [
+        //     'namaproduk' => $namaproduk,
+        // ];
 
         // $req -> validate([
         //     'namaproduk'=>'required',
@@ -313,15 +313,14 @@ class produkcontroller extends Controller
         //     'tanggal'=>'required'
         // ]);
 
-        $barang = New produk();
-        $namaprodukbaru = $barang->insert($data);
+        //$barang = New produk();
+        //$namaprodukbaru = $barang->insert($data);
+
 
         $kategoribarang = $req->input('kategoriproduk');
         if($kategoribarang == "M01")
         {
-
             $produkbaru = new produkbaru();
-            $produkbaru->BARANG_ID = $namaprodukbaru;
             $produkbaru->BARANG_NAMA = $req->namaproduk;
             $produkbaru->BARANG_KATEGORI_ID = 'M01';
             $produkbaru->BARANG_KATEGORI = 'Minuman';
@@ -330,14 +329,22 @@ class produkcontroller extends Controller
             $produkbaru->BARANG_HARGA_JUAL = $req->hargajual;
             $produkbaru->BARANG_JUMLAH = $req->jumlah;
             $produkbaru->BARANG_DELETE = '0';
-            // dd($produkbaru);
             $produkbaru->save();
+            $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
 
-            dd("a");
+            $run = DB::select($server);
+
+            $kategori = DB::table('BARANG')
+            ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
+            ->groupBy('BARANG_KATEGORI')
+            ->get();
+
+            $user = new produk();
+            $tabel = $user->tableproduk();
+            return view('produk',compact(['tabel']), ["kategori" => $kategori]);
         }
         else if($kategoribarang == "M02"){
             $produkbaru = new produkbaru();
-            $produkbaru->BARANG_ID = $namaprodukbaru[0];
             $produkbaru->BARANG_NAMA = $req->namaproduk;
             $produkbaru->BARANG_KATEGORI_ID = 'M02';
             $produkbaru->BARANG_KATEGORI = 'Makanan';
@@ -350,7 +357,6 @@ class produkcontroller extends Controller
         }
         else if($kategoribarang == "R01"){
             $produkbaru = new produkbaru();
-            $produkbaru->BARANG_ID = $namaprodukbaru[0];
             $produkbaru->BARANG_NAMA = $req->namaproduk;
             $produkbaru->BARANG_KATEGORI_ID = 'R01';
             $produkbaru->BARANG_KATEGORI = 'Rokok';
@@ -363,7 +369,6 @@ class produkcontroller extends Controller
         }
         else if($kategoribarang == "B01"){
             $produkbaru = new produkbaru();
-            $produkbaru->BARANG_ID = $namaprodukbaru[0];
             $produkbaru->BARANG_NAMA = $req->namaproduk;
             $produkbaru->BARANG_KATEGORI_ID = 'B01';
             $produkbaru->BARANG_KATEGORI = 'Bahan Pokok';
@@ -374,7 +379,6 @@ class produkcontroller extends Controller
             $produkbaru->BARANG_DELETE = '0';
             $produkbaru->save();
         }
-
         $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
         $run = DB::select($server);
 
@@ -385,7 +389,6 @@ class produkcontroller extends Controller
 
         $user = new produk();
         $tabel = $user->tableproduk();
-        return back();
-        // return view('produk',compact(['tabel']), ["kategori" => $kategori]);
+        return view("produk");
     }
 }

@@ -29,7 +29,7 @@
 <body>
     @include("nuser")
     <div class="container">
-        <div class="backgroundcolor-ungumudah" style="border-radius: 10px;background-color: #F3F1FF; height: 100vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
+        <div class="backgroundcolor-ungumudah" style="border-radius: 10px;background-color: #F3F1FF; height: 117vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="backgroundcolor-ungutua" style="border-radius: 10px;background-color: #665DB6; height: 14vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
                 <div class="judul col-6" style="position: absolute; margin-left: 8%;padding-top:19px;font-size: 29px;font-weight: 600;color: white;">
                     <p>Akun Profil</p>
@@ -79,41 +79,37 @@
                     <div class="inputbox col-8">
                         <input type="text" name="alamat" id="alamat" value="{{$tabel[0]->Alamat}}" readonly>
                     </div>
-                    @if (Session::get('success'))
-                    <div class="alert alert-success alert-dismissible" style="margin-top:18px; position:absolute; float:left;">
-                        {{ Session::get('success') }}
-                        <a href="#" class="close" onclick="this.parentElement.style.display='none';" data-dismiss="alert" aria-label="close" style="float:right;padding-left:7px;font-size:22px" title="close">×</a>
-
-                      </div>
-                    @endif
-                    @if (Session::get('fail'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top:18px; position:absolute; float:left;">
-                        {{ Session::get('fail') }}
-                        <a href="#" class="close" onclick="this.parentElement.style.display='none';" data-dismiss="alert" aria-label="close" style="float:right;padding-left:7px;font-size:22px" title="close">×</a>
-                      </div>
-                    @endif
-                    @if (Session::get('fail2'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top:18px; position:absolute; float:left;">
-                        {{ Session::get('fail2') }}
-                        <a href="#" class="close" onclick="this.parentElement.style.display='none';" data-dismiss="alert" aria-label="close" style="float:right;padding-left:7px;font-size:22px" title="close">×</a>
-                      </div>
-                    @endif
-                    @if (Session::get('fail3'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top:18px; position:absolute; float:left;">
-                        {{ Session::get('fail3') }}
-                        <a href="#" class="close" onclick="this.parentElement.style.display='none';" data-dismiss="alert" aria-label="close" style="float:right;padding-left:7px;font-size:22px" title="close">×</a>
-
-                      </div>
-                    @endif
                     <div class="button col-10" >
                         <input type="button" value="Ubah Profil" id="ubah_profil" class="" onclick="UbahProfil()" style="margin-right: 11px;">
-
                         <input type="submit" value="Simpan" class="btn-update" id="simpan" style="margin-right:-140px; background-color:#23A042; visibility: hidden;">
                         <input type="button" value="Batal" class="btn-betal" id="batal" onclick="UbahProfilBalik()" style="margin-right: 11px; background-color: #FF0000; visibility: hidden;">
                     </div>
                 </form>
             </div>
-
+            @if (Session::get('success'))
+                <div class="alert alert-success alert-dismissible" style="margin-top:20px;">
+                    <h4>Berhasil!</h4> Kata sandi berhasil di ubah!.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if (Session::get('fail'))
+            <div class="alert alert-danger alert-dismissible" style="margin-top:20px;">
+                <h4>Gagal!</h4> Kata sandi yang di masukan tidak sama.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+            @if (Session::get('fail2'))
+            <div class="alert alert-danger alert-dismissible" style="margin-top:20px;">
+                <h4>Gagal!</h4> Kata sandi baru harap diisi.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+            @if (Session::get('fail3'))
+            <div class="alert alert-danger alert-dismissible" style="margin-top:20px;">
+                <h4>Gagal!</h4> Ulangi kata sandi harap diisi.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
             <div class="kontendata col-12" style="margin-top: 10px;margin-left: 36px;">
                 <form action="{{route('passwordupdate')}}" method="POST" id="change-password-form">
                     @csrf
@@ -138,7 +134,6 @@
                     <div class="buttonpassword col-10" style="display: flex" >
                         <input class="col-4" type="button" id="ubahpassword" value="Ubah Password" onclick="UbahPassword()"  style="margin-right: 11px;" >
                         <input class="col-4" type="button" id="batalpass" value="Batal" onclick="UbahPasswordBalik()" style="margin-right: 11px; background-color: #FF0000; visibility: hidden;">
-
                         <input class="col-4" type="submit" id="simpanpass" value="Simpan"  style="margin-right:-291px; background-color:#23A042;  visibility: hidden; ">
                 </form>
             </div>
@@ -146,7 +141,7 @@
                 <form action="">
                     @csrf
                     <a>
-                        <input id="keluar" type="button" onclick="Logout() value="Keluar Akun" >
+                        <input id="keluar" type="button" onclick="Logout()"" value="Keluar Akun" >
                     </a>
                 </form>
             </div>

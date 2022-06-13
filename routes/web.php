@@ -60,8 +60,8 @@ Route::prefix('/laporan')->group(function(){
 //Detail Laporan
 Route::prefix('/detaillaporan')->group(function(){
     Route::get('', [keuanganController::class,"detailKeuangan"]);
-    Route::post('/tanggal',[keuangancontroller::class,"tarikdata"]);
-    Route::post('/search',[keuangancontroller::class,"carilaporan"]);
+    Route::post('/tanggal',[keuangancontroller::class,"detailtarikdata"]);
+    Route::post('/search',[keuangancontroller::class,"detailcarilaporan"]);
 });
 
 
