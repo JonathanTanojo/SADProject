@@ -330,6 +330,7 @@ class produkcontroller extends Controller
             $produkbaru->BARANG_JUMLAH = $req->jumlah;
             $produkbaru->BARANG_DELETE = '0';
             $produkbaru->save();
+
             $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
 
             $run = DB::select($server);
@@ -354,6 +355,19 @@ class produkcontroller extends Controller
             $produkbaru->BARANG_JUMLAH = $req->jumlah;
             $produkbaru->BARANG_DELETE = '0';
             $produkbaru->save();
+
+            $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
+
+            $run = DB::select($server);
+
+            $kategori = DB::table('BARANG')
+            ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
+            ->groupBy('BARANG_KATEGORI')
+            ->get();
+
+            $user = new produk();
+            $tabel = $user->tableproduk();
+            return view('produk',compact(['tabel']), ["kategori" => $kategori]);
         }
         else if($kategoribarang == "R01"){
             $produkbaru = new produkbaru();
@@ -366,6 +380,19 @@ class produkcontroller extends Controller
             $produkbaru->BARANG_JUMLAH = $req->jumlah;
             $produkbaru->BARANG_DELETE = '0';
             $produkbaru->save();
+
+            $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
+
+            $run = DB::select($server);
+
+            $kategori = DB::table('BARANG')
+            ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
+            ->groupBy('BARANG_KATEGORI')
+            ->get();
+
+            $user = new produk();
+            $tabel = $user->tableproduk();
+            return view('produk',compact(['tabel']), ["kategori" => $kategori]);
         }
         else if($kategoribarang == "B01"){
             $produkbaru = new produkbaru();
@@ -378,6 +405,19 @@ class produkcontroller extends Controller
             $produkbaru->BARANG_JUMLAH = $req->jumlah;
             $produkbaru->BARANG_DELETE = '0';
             $produkbaru->save();
+
+            $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
+
+            $run = DB::select($server);
+
+            $kategori = DB::table('BARANG')
+            ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
+            ->groupBy('BARANG_KATEGORI')
+            ->get();
+
+            $user = new produk();
+            $tabel = $user->tableproduk();
+            return view('produk',compact(['tabel']), ["kategori" => $kategori]);
         }
         $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
         $run = DB::select($server);

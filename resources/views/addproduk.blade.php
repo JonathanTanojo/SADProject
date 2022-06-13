@@ -23,7 +23,7 @@
                 <h4><b>Masukkan Produk Baru</b></h4>
             </div>
             <div class="kontendata col-11" style="margin-top: 25px;margin-left: 36px;">
-                <form action="/tmbhprdk/proses" method="POST">
+                <form action="/produk" method="POST">
                     @csrf
                     <div class="judul col-4">
                         <label for="">

@@ -79,10 +79,6 @@ Route::post('autopass', 'App\Http\Controllers\logincontroller@autopass');
 
 
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 
 Route::get('navbar', function () {
     return view('navbar');

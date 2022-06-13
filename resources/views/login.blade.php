@@ -27,16 +27,13 @@
         <p><b>Login Account</b></p>
     </div>
     <br>
-<<<<<<< Updated upstream
-=======
     @if (Session::get('bisa'))
-    <div class="alert alert-success alert-dismissible" style="margin-top:18px; position:absolute; float:left;">
+    <div class="alert alert-success alert-dismissible" style="margin-top: 29px;position:absolute;float:left;width: -webkit-fill-available;text-align: center;">
         {{ Session::get('bisa') }}
         <a href="#" class="close"  data-dismiss="alert" aria-label="close" style="float:right;padding-left:7px;font-size:22px"></a>
 
       </div>
     @endif
->>>>>>> Stashed changes
     <div class="subhead">
         <p>Selamat Datang</p>
     </div>
