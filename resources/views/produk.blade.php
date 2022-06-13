@@ -29,6 +29,9 @@
                                     <option value="{{$kate -> BARANG_KATEGORI_ID}}">{{$kate -> BARANG_KATEGORI}}</option>
                                 @endforeach
                             </select>
+                            <div class="butonsearch col-4" style="margin-right:3px;width:100%;">
+                                <input class="buttonsearch" value="Search" type="submit" name="submit">
+                            </div>
                         </form>
                     </div>
                 </div>

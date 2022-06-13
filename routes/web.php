@@ -32,6 +32,7 @@ Route::prefix('/produk')->group(function(){
     Route::get('/',[produkcontroller::class,"tableproduk"] );
     Route::post('/search',[produkcontroller::class,"searchproduk"]);
     Route::post('/filter',[produkcontroller::class,"filterproduk"]);
+    Route::post('/filter',[produkcontroller::class,"filterdrop"]);
     Route::get('/edit/{id}',[produkcontroller::class,"details"] );
 });
 //Ubah Data Produk

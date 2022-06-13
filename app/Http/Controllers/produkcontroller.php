@@ -391,4 +391,24 @@ class produkcontroller extends Controller
         $tabel = $user->tableproduk();
         return view("produk");
     }
+
+    public function filterdrop(Request $req)
+    {
+
+        $validated = $req->validate([
+            'filter' => 'required|string'
+        ]);
+        
+        $filter = $req->filter;
+        $user = new produk;
+        $tabel = $user->filter($filter);
+
+        $kategori = DB::table('BARANG')
+        ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
+        ->groupBy('BARANG_KATEGORI')
+        ->get();
+
+        return view('produk',compact(['tabel']), ["kategori" => $kategori]);
+
+    }
 }
