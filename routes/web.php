@@ -75,9 +75,14 @@ Route::prefix('/user')->group(function(){
 
 Route::post('userupdate', [akuncontroller::class,"userupdate"]);
 Route::post('passwordupdate', 'App\Http\Controllers\akuncontroller@passwordupdate')->name('passwordupdate');
+Route::post('autopass', 'App\Http\Controllers\logincontroller@autopass');
 
 
 
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
 
 Route::get('navbar', function () {
     return view('navbar');

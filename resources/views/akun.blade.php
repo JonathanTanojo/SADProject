@@ -141,7 +141,15 @@
                 <form action="">
                     @csrf
                     <a>
+<<<<<<< Updated upstream
                         <input id="keluar" type="button" onclick="Logout()"" value="Keluar Akun" >
+=======
+<<<<<<< HEAD
+                        <input href="/" id="keluar" type="button" onclick="Logout()" value="Keluar Akun" >
+=======
+                        <input id="keluar" type="button" onclick="Logout()"" value="Keluar Akun" >
+>>>>>>> 95e5593123ac5cefd2ae51077856a2e089209f36
+>>>>>>> Stashed changes
                     </a>
                 </form>
             </div>

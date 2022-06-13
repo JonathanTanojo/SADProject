@@ -20,6 +20,12 @@
 <div class="head">
     <p><b>Lupa Password</b></p>
 </div><br>
+@if (Session::get('fail0'))
+<div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top:18px; position:absolute; float:left;">
+    {{ Session::get('fail0') }}
+    <a href="#" class="close" onclick="this.parentElement.style.display='none';" data-dismiss="alert" aria-label="close" style="float:right;padding-left:7px;font-size:22px" title="close">×</a>
+  </div>
+@endif
 <div class="subhead">
     <p>Selamat Datang</p>
 </div>
@@ -29,17 +35,20 @@
 <div class="toko">
     <p>Tirta Anugerah</p>
 </div>
+
 <div class="background">
-    <form method="" action="">
+    <form method="post" action="/autopass">
+        @csrf
         <div class="login">
             <div class="input-icons">
-                <label class="title" for="user">Username :</label><br>
+                <label class="title" for="user">Makanan Favorit :</label><br>
                 <i class="fa fa-user icon"></i>
-                <input type="text" id="user" name="user" placeholder="Masukkan Username" class="text" style="margin-top: 5px" required>
+                <input type="text" id="user" name="makanan" placeholder="Masukkan Makanan Favorit" class="text" style="margin-top: 5px" required>
                 <div class="signup">
                     <a href="/" style="text-decoration: none;color:grey;display:flex;justify-content:flex-end">Ingat Kata Sandi</a>
                 </div>
             </div>
+
             <br>
                 <!-- <button class="button" id="myBtn" value="ubah" type="">Ubah Kata Sandi</button>
                 <div id="myModal" class="modal">
@@ -53,18 +62,18 @@
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Konfirmasi</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                       Yakin mengubah kata sandi?
+                       Anda yakin mengubah kata sandi?
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <a href = "/"><button type="submit" class="btn btn-outline-success">Save changes</button></a>
+                        <button type="submit" class="btn btn-outline-success">Save changes</button>
                     </div>
                     </div>
                 </div>
@@ -72,7 +81,7 @@
             </div>
         </form>
 </div>
-<script>
+{{-- <script>
 function myFunction() {
   var x = document.getElementById("password");
   if (x.type === "password") {
@@ -81,6 +90,6 @@ function myFunction() {
     x.type = "password";
   }
 }
-</script>
+</script> --}}
 </body>
 </html>

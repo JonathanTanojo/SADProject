@@ -27,6 +27,16 @@
         <p><b>Login Account</b></p>
     </div>
     <br>
+<<<<<<< Updated upstream
+=======
+    @if (Session::get('bisa'))
+    <div class="alert alert-success alert-dismissible" style="margin-top:18px; position:absolute; float:left;">
+        {{ Session::get('bisa') }}
+        <a href="#" class="close"  data-dismiss="alert" aria-label="close" style="float:right;padding-left:7px;font-size:22px"></a>
+
+      </div>
+    @endif
+>>>>>>> Stashed changes
     <div class="subhead">
         <p>Selamat Datang</p>
     </div>
@@ -36,7 +46,6 @@
     <div class="toko">
         <p>Tirta Anugerah</p>
     </div>
-
 
     <div class="background">
         <form method="POST" action="/">
@@ -67,7 +76,7 @@
             </div>
         </form>
     </div>
-    <script>
+    {{-- <script>
     function myFunction() {
     var x = document.getElementById("password");
     if (x.type === "password") {
@@ -76,6 +85,6 @@
         x.type = "password";
     }
     }
-    </script>
+    </script> --}}
 </body>
 </html>
