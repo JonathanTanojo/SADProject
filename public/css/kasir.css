@@ -43,3 +43,36 @@
 #table{
     margin-top: 5px;
 }
+
+.btn-periksa{
+    background-color: #413B93;
+    color: #fff;
+    border: 0;
+    border-radius: 15px;
+    padding: 10px 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 11px;
+}
+
+.modal-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    top: 75vh;
+    left: 100vw;
+    height: 15vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal{
+    background-color: #fff;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2);
+
+}
