@@ -23,7 +23,6 @@ class keuanganController extends Controller
     }
     //Laporan Keuangan
     public function tarikdata(Request $req){
-        dd("hile");
         $tglawal = $req->input('tglawal');
 
         $req->session()->put('tarikdata', [$tglawal]);
@@ -46,7 +45,6 @@ class keuanganController extends Controller
     }
     //Detail Keuangan
     public function detailtarikdata(Request $req){
-        dd("hola");
         $tglawal = $req->input('tglawal');
 
         $req->session()->put('tarikdata', [$tglawal]);

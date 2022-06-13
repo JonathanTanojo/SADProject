@@ -37,7 +37,7 @@
             @endif
             @if (Session::get('tidakadaperubahan'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 20px">
-                    <h4>Tidak ada perubahan!</h4> Masukan data yang ingin ditambahkan.
+                    <h4>Tidak ada perubahan!</h4> Masukan jumlah yang ingin ditambahkan.
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
@@ -105,14 +105,14 @@
                     <div class="inputbox col-8">
                         <input type="number" name="stokbaru" id="" value="">
                     </div>
-                    <div class="judul col-6">
+                    {{-- <div class="judul col-6">
                         <label for="">
                             Tanggal Perubahan
                         </label>
                     </div>
                     <div class="inputbox col-8">
                         <input type="date" name="tanggal" value="<?php echo date('Y-m-d'); ?>" >
-                    </div>
+                    </div> --}}
                     <div class="col-12" style="display: flex; margin-top: 30px;justify-content:flex-end">
                         <div class="" style="display: flex">
                             <div class="buttonbatal">

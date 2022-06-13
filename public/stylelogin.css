@@ -15,6 +15,17 @@ body{
 header{
     border-bottom: 2px solid black;
 }
+header button{
+    width: 75px;
+    height: 35px;
+    background: #413B93;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
 .image {
     display: flex;
     justify-content: space-around;
@@ -116,7 +127,7 @@ form{
 
 form button{
     width: 250px;
-    height: 34px;
+    height: 40px;
     margin-left: 30px;
     margin-top: 20px;
     color: white;
@@ -125,7 +136,7 @@ form button{
 }
 .btnubah{
     width: 250px;
-    height: 34px;
+    height: 40px;
     margin-left: 30px;
     margin-top: 20px;
     color: white;

@@ -89,10 +89,13 @@
     border-radius: 10px;
     border: none;
 }
-.logout{
-    display: flex;
-    justify-content: center;
-    margin-top: 45px;
+.logout button{
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 180px;
 }
 #keluar {
     background-color: #FF0000;

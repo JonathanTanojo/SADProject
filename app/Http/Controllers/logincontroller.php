@@ -50,8 +50,7 @@ class LoginController extends Controller
             return view('produk',compact(['tabel']), ["kategori" => $kategori]);
         }
         else {
-            Session::flash('error', "Invalid signin, please try again");
-            return redirect('/');
+            return redirect('/')->with('salahpass','Katasandisalah');;
         }
 
     }
@@ -82,7 +81,7 @@ class LoginController extends Controller
             DB::table('PENGGUNA')->where('USER_ID','B0001')->update([
                 'USER_KATASANDI' => ('123')
             ]);
-            return redirect('/')->with('bisa','Kata sandi diubah menjadi "123"');
+            return redirect('/')->with('autopass','Kata sandi diubah menjadi "123"');
         }else{
             return back()->with('fail0','Input makanan salah!');
         }

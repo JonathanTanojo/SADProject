@@ -15,6 +15,7 @@ class produkcontroller extends Controller
     public function tableproduk(){
         $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
         $run = DB::select($server);
+
         $kategori = DB::table('BARANG')
         ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
         ->groupBy('BARANG_KATEGORI')
@@ -25,20 +26,20 @@ class produkcontroller extends Controller
         return view('produk',compact(['tabel']), ["kategori" => $kategori]);
     }
     public function filterproduk(Request $req){
-        $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
-        $run = DB::select($server);
+        // $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
+        // $run = DB::select($server);
 
-        $kategori = DB::table('BARANG')
-        ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
-        ->groupBy('BARANG_KATEGORI')
-        ->get();
+        // $kategori = DB::table('BARANG')
+        // ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
+        // ->groupBy('BARANG_KATEGORI')
+        // ->get();
 
-        $filter =$req -> input('filter');
-        dd($filter);
+        // $filter =$req -> input('filter');
+        // dd($filter);
 
-        $user = new produk();
-        $tabel = $user->tableproduk();
-        return view('produk',compact(['tabel']), ["kategori" => $kategori]);
+        // $user = new produk();
+        // $tabel = $user->tableproduk();
+        // return view('produk',compact(['tabel']), ["kategori" => $kategori]);
     }
     public function searchproduk(Request $req){
         $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
@@ -76,7 +77,7 @@ class produkcontroller extends Controller
 
         $transdet = BARANG::join('SUPPLIER', 'BARANG.SUPPLIER_ID', '=', 'SUPPLIER.SUPPLIER_ID')
         ->select('BARANG_NAMA','BARANG_ID','BARANG_KATEGORI_ID','SUPPLIER_NAMA','BARANG_HARGA_JUAL','BARANG_HARGA_BELI','BARANG_JUMLAH','BARANG_KATEGORI')->where('BARANG_ID', $id)->get();
-        // dd($transdet);
+
         return view('editproduk',[
             "datadetail" => $transdet,
             "kategori" => $kategori
@@ -438,7 +439,7 @@ class produkcontroller extends Controller
         $validated = $req->validate([
             'filter' => 'required|string'
         ]);
-        
+
         $filter = $req->filter;
         $user = new produk;
         $tabel = $user->filter($filter);

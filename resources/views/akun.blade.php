@@ -137,20 +137,11 @@
                         <input class="col-4" type="submit" id="simpanpass" value="Simpan"  style="margin-right:-291px; background-color:#23A042;  visibility: hidden; ">
                 </form>
             </div>
-            <div class="logout col-12">
-                <form action="">
+            <div class="logout col-10" style="display: flex;justify-content: center;margin-top: 55px;">
+                <form action="/user/logout" method="POST">
                     @csrf
-                    <a>
-<<<<<<< Updated upstream
-                        <input id="keluar" type="button" onclick="Logout()"" value="Keluar Akun" >
-=======
-<<<<<<< HEAD
-                        <input href="/" id="keluar" type="button" onclick="Logout()" value="Keluar Akun" >
-=======
-                        <input id="keluar" type="button" onclick="Logout()"" value="Keluar Akun" >
->>>>>>> 95e5593123ac5cefd2ae51077856a2e089209f36
->>>>>>> Stashed changes
-                    </a>
+                    <button>Keluar Akun</button>
+                    {{-- <input id="keluar" type="button" onclick="Logout()" value="Keluar Akun" > --}}
                 </form>
             </div>
         </div>

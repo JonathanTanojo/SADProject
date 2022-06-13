@@ -25,7 +25,8 @@
     border-radius: 5px;
     width: -webkit-fill-available;
     height: 35px;
-    border: none;
+    border: solid;
+    border-width: 1px;
     padding-left: 5px;
     margin-right: 5px;
     outline: none;
@@ -151,7 +152,7 @@ tr.table-ungu{
     border-style: none;
 }
 .buttonhapus button{
-    background-color: #FF0000;
+    background-color: #FF0000ff;
     color: white;
     font-size: 15px;
     width: 100px;
@@ -163,14 +164,15 @@ tr.table-ungu{
     background-repeat: no-repeat;  /* make the background image appear only once */
 }
 .buttonbatal input[type="button"]{
-    background-color: #FF0000;
-    color: white;
+    background-color: #ffff;
+    color: rgb(0, 0, 0);
     font-size: 15px;
     width: 100px;
     height: 40px;
     padding: 7px 10px 7px 10px;
     border-radius: 15px;
-    border: none;
+    border-color: red;
+
 }
 .buttonsimpan button{
     background-color: #23A042;
@@ -212,4 +214,16 @@ tr.table-ungu{
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+.butonsearch input[type="Submit"]{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    width: 100px;
+    height: 35px;
+    /* padding: 7px 10px 7px 10px; */
+    border-radius: 15px;
+    border-style: solid;
+    background-image: url(../public/img/trashcan.png); /* 16px x 16px */
+    background-repeat: no-repeat;  /* make the background image appear only once */
 }
