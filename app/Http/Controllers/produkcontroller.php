@@ -35,6 +35,7 @@ class produkcontroller extends Controller
             "kategori" => $kategori
         ]);
     }
+    
     public function restok($id,Request $req) {
 
         $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";

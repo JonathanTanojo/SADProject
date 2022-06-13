@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/kasir.css" />
     <link rel="stylesheet" href="jcss.css" />
     <script src="js/kasir.js"></script>
-    <script src="./src/bootstrap-input-spinner.js"></script>
     <title>Transaksi Baru</title>
 </head>
 <body>
@@ -27,7 +26,8 @@
             </div>
             <div class="row" id="searchbox">
                 <div class="col-md-6">
-                    <form action="/baru">
+                    <form action="/baru" method="post">
+                        @csrf
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Search..." name="search">
                             <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
@@ -45,22 +45,6 @@
                       </tr>
                     </thead>
                     <tbody style="font-size: 11px">
-                    <?php
-                        $color = NULL;
-                        $color1 = "white";
-                        $color2 = "#F3F1FF";
-                        for ($x=0;$x<sizeof($tabel);$x++){
-                          $color == $color1 ? $color=$color2 : $color=$color1;
-                          echo"
-                          <tr style='background-color:$color; text-align: center;'>
-                            <td>{$tabel[$x]->Barang}</td>
-                            <td>{$tabel[$x]->Harga_Jual}</td>
-                            <td>
-                                <input type='number' id='quantity' name='quantity' min='0'>
-                            </td>
-                          </tr>";
-                        }
-                    ?>
                     </tbody>
                 </table>
             </div>

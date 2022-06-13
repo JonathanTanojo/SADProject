@@ -55,7 +55,12 @@ Route::get('/riwayat', function () {
     ]);
 });
 
-Route::get('/baru', [BaruController::class,'index']);
+Route::prefix('/baru')->group(function(){
+    Route::get('', function () {return view('barukosong');});
+});
+
+Route::post('/baru', [BaruController::class,'tabletransaksi']);
+
 
 Route::get('sproduk', function () {
     return view('produk');

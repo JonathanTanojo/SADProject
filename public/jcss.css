@@ -182,6 +182,8 @@ tr.table-ungu{
     margin-top: 15px;
     border-radius: 10px;
     box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.25);
+}
+
 .daftarsupplier{
     background: #413B93;
     border-radius: 10px;
@@ -191,6 +193,7 @@ tr.table-ungu{
     justify-content: center;
     align-items: center;
 }
+
 .riwayatsupplier{
     display: flex;
     text-align: center;
