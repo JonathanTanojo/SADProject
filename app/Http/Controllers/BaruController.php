@@ -17,4 +17,9 @@ class BaruController extends Controller
         ->get();
         return view('baru',['tabel'=>$search]);
     }
+
+    public function show(Request $request, $id)
+    {
+        $value = $request->session()->get('key');
+    }
 }
