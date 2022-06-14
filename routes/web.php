@@ -81,3 +81,7 @@ Route::get('/','App\Http\Controllers\keuanganController@viewKeuangan');
 
 Route::get('laporan','App\Http\Controllers\keuanganController@viewKeuangan');
 Route::get('detaillaporan','App\Http\Controllers\keuanganController@detailKeuangan');
+
+Route::get('/receipt', function () {
+    return view('receipt');
+});

@@ -49,6 +49,21 @@
                 </table>
             </div>
         </div>
+        <div class="modal-container fixed-bottom">
+            <div class="modal">
+                <div class="col-12">
+                    <div class="col-6">
+                        <h2>Jumlah Produk</h2>
+                        <h2>Total</h2>
+                    </div>
+                    <div class="col-6">
+                        <h2>15</h2>
+                        <h2>Rp 250.000</h2>
+                    </div>
+                    <button class="btn-periksa">Periksa</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

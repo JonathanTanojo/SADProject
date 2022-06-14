@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/31f04b09a4.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/kasir.css" />
+    <link rel="stylesheet" href="css/.css" />
     <link rel="stylesheet" href="jcss.css" />
     <script src="js/kasir.js"></script>
     <script src="./src/bootstrap-input-spinner.js"></script>
@@ -25,15 +25,8 @@
                     <a href="/riwayat"><label class="label">Riwayat Transaksi</label></a>
                 </div>
             </div>
-            <div class="row" id="searchbox">
-                <div class="col-md-6">
-                    <form action="/baru">
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Search..." name="search">
-                            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
-                        </div>
-                    </form>
-                </div>
+            <div>
+                <h2>Masukkan Transaksi Baru</h2>
             </div>
             <div class="kontentable col-12" id="table">
                 <table class="table align-middle">
@@ -42,11 +35,11 @@
                         <th scope="col">Nama Barang</th>
                         <th scope="col">Harga</th>
                         <th scope="col">Jumlah</th>
-                        <th scope="col">Submit</th>
+                        <th scope="col">Total</th>
                       </tr>
                     </thead>
                     <tbody style="font-size: 11px">
-                    <?php
+                    {{-- <?php
                         $color = NULL;
                         $color1 = "white";
                         $color2 = "#F3F1FF";
@@ -62,7 +55,7 @@
                             <td><button class='btn-submit'>Submit</button></td>
                           </tr>";
                         }
-                    ?>
+                    ?> --}}
                     </tbody>
                 </table>
             </div>
@@ -70,15 +63,20 @@
         <div class="modal-container fixed-bottom">
             <div class="modal">
                 <div class="col-12">
-                    <div class="col-6">
+                    <div class="col-6 label">
                         <h2>Jumlah Produk</h2>
                         <h2>Total</h2>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 harga">
                         <h2>15</h2>
                         <h2>Rp 250.000</h2>
                     </div>
-                    <button class="btn-periksa">Periksa</button>
+                    <div class="col-6 kembali">
+                        <button class="btn-periksa">Kembali</button>
+                    </div>
+                    <div class="col-6 masuk">
+                        <button class="btn-periksa">Masukkan Transaksi</button>
+                    </div>
                 </div>
             </div>
         </div>
