@@ -19,7 +19,7 @@
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
                 <div class="baru col-6" style="background-color: #413B93">
-                    <a href="/baru"><label class="label">Transaksi Baru</label></a>
+                    <a href="/baru"><label class="labelbaru">Transaksi Baru</label></a>
                 </div>
                 <div class="detail col-6" style="background-color: #E0E4FF; border-radius: 10px">
                     <a href="/riwayat"><label class="label">Riwayat Transaksi</label></a>
@@ -35,8 +35,9 @@
                     </form>
                 </div>
             </div>
+
             <div class="kontentable col-12" id="table">
-                <table class="table align-middle">
+                <table class="table table-striped align-middle">
                     <thead class="align-middle header">
                       <tr>
                         <th scope="col">Nama Barang</th>
@@ -46,43 +47,20 @@
                       </tr>
                     </thead>
                     <tbody style="font-size: 11px">
-                        <form action="{{ route('/receipt') }}" method="post">
+                        @foreach ($tabel as $detail)
+                        <form action="/addtocart" method="post">
                         @csrf
-                            <?php
-                        $color = NULL;
-                        $color1 = "white";
-                        $color2 = "#F3F1FF";
-                        for ($x=0;$x<sizeof($tabel);$x++){
-                            $color == $color1 ? $color=$color2 : $color=$color1;
-                            echo"
-                            <tr style='background-color:$color; text-align: center;'>
-                                <td>{$tabel[$x]->Barang}</td>
-                                <td>{$tabel[$x]->Harga_Jual}</td>
-                                <td>
-                                    <input type='number' id='quantity' placeholder='Qty' value='Send.' name='quantity' min='0'/>
-                                </td>
-                                <td><button class='btn-submit' type='submit'>Submit</button></td>
-                            </tr>";
-                            }
-                            ?>
+                            <tr>
+                                <td><input type="hidden" name="namaBarang" value="{{$detail->Barang}}">{{$detail->Barang}}</td>
+                                <td><input type="hidden" name="hargaBarang" value="{{$detail->Harga_Jual}}">{{$detail->Harga_Jual}}</td>
+                                <td><input type="number" name="quantityBarang" id="quantity" placeholder="Qty" min="0"></td>
+                                <td><button class="btn-submit">Submit</button></td>
+                            </tr>
                         </form>
+                        @endforeach
                     </tbody>
                 </table>
-            </div>
-        </div>
-        <div class="modal-container fixed-bottom">
-            <div class="modal">
-                <div class="col-12">
-                    <div class="col-6">
-                        <h2>Jumlah Produk</h2>
-                        <h2>Total</h2>
-                    </div>
-                    <div class="col-6">
-                        <h2>15</h2>
-                        <h2>Rp 250.000</h2>
-                    </div>
-                    <button class="btn-periksa">Periksa</button>
-                </div>
+                <a href="/receipt"><button class="btn-periksa">Check Barang</button></a>
             </div>
         </div>
     </div>

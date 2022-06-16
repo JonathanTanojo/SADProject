@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faktur;
 use App\Models\TransaksiBaru;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,15 +20,34 @@ class BaruController extends Controller
         return view('baru',['tabel'=>$search]);
     }
 
-    public function getData(Request $request)
+    public function getData()
     {
-        return $request->all();
+        $search = DB::table('KERANJANG')
+        ->select('BARANG_NAMA as Barang', 'BARANG_HARGA as Harga', 'BARANG_QTY as Qty', 'KERANJANG_TOTAL as Subtotal')
+        ->where('KERANJANG_DELETE','=',0)
+        ->get();
+
+        return view('receipt',['tabel'=>$search]);
     }
 
-    public function createSession(Request $request)
+    public function insertData(Request $req)
     {
-        $request->session()->put('namaBarang', 'Aqua');
-        $request->session()->put('jumlahPesanan', '2');
+        $produkbaru = new TransaksiBaru();
+            $produkbaru->BARANG_NAMA = $req->namaBarang;
+            $produkbaru->BARANG_HARGA = $req->hargaBarang;
+            $produkbaru->BARANG_QTY = $req->quantityBarang;
+            $produkbaru->KERANJANG_TOTAL = $req->hargaBarang * $req->quantityBarang;
+            $produkbaru->KERANJANG_DELETE = '0';
+            $produkbaru->save();
 
+        return back()->with('berhasilditambah','updatedataberhasil');
+    }
+
+    public function insertFaktur(Request $request)
+    {
+        $transaksibaru = new Faktur();
+            $transaksibaru->JUAL_ID = 'TJ';
+            $transaksibaru->JUAL_ID = $request->namaBarang;
+            $transaksibaru->JUAL_ID = $request->namaBarang;
     }
 }

@@ -7,11 +7,11 @@
     <script src="https://kit.fontawesome.com/31f04b09a4.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/.css" />
+    <link rel="stylesheet" href="css/kasir.css" />
     <link rel="stylesheet" href="jcss.css" />
     <script src="js/kasir.js"></script>
     <script src="./src/bootstrap-input-spinner.js"></script>
-    <title>Transaksi Baru</title>
+    <title>Receipt</title>
 </head>
 <body>
 @include("ncashier")
@@ -19,14 +19,14 @@
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
                 <div class="baru col-6" style="background-color: #413B93">
-                    <a href="/baru"><label class="label">Transaksi Baru</label></a>
+                    <a href="/baru"><label class="labelbaru">Transaksi Baru</label></a>
                 </div>
                 <div class="detail col-6" style="background-color: #E0E4FF; border-radius: 10px">
                     <a href="/riwayat"><label class="label">Riwayat Transaksi</label></a>
                 </div>
             </div>
             <div>
-                <h2>Masukkan Transaksi Baru</h2>
+                <h4 style="margin-top: 10px">Masukkan Transaksi Baru</h4>
             </div>
             <div class="kontentable col-12" id="table">
                 <table class="table align-middle">
@@ -39,45 +39,17 @@
                       </tr>
                     </thead>
                     <tbody style="font-size: 11px">
-                    {{-- <?php
-                        $color = NULL;
-                        $color1 = "white";
-                        $color2 = "#F3F1FF";
-                        for ($x=0;$x<sizeof($tabel);$x++){
-                          $color == $color1 ? $color=$color2 : $color=$color1;
-                          echo"
-                          <tr style='background-color:$color; text-align: center;'>
-                            <td>{$tabel[$x]->Barang}</td>
-                            <td>{$tabel[$x]->Harga_Jual}</td>
-                            <td>
-                                <input type='number' id='quantity' name='quantity' min='0'/>
-                            </td>
-                            <td><button class='btn-submit'>Submit</button></td>
-                          </tr>";
-                        }
-                    ?> --}}
+                    @foreach ($tabel as $cart)
+                        <tr>
+                            <td><input type="hidden" name="namaBarang">{{$cart->Barang}}</td>
+                            <td><input type="hidden" name="hargaBarang">{{$cart->Harga}}</td>
+                            <td><input type="hidden" name="qtyBarang">{{$cart->Qty}}</td>
+                            <td><input type="hidden" name="subtotalBarang">{{$cart->Subtotal}}</td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
-            </div>
-        </div>
-        <div class="modal-container fixed-bottom">
-            <div class="modal">
-                <div class="col-12">
-                    <div class="col-6 label">
-                        <h2>Jumlah Produk</h2>
-                        <h2>Total</h2>
-                    </div>
-                    <div class="col-6 harga">
-                        <h2>15</h2>
-                        <h2>Rp 250.000</h2>
-                    </div>
-                    <div class="col-6 kembali">
-                        <button class="btn-periksa">Kembali</button>
-                    </div>
-                    <div class="col-6 masuk">
-                        <button class="btn-periksa">Masukkan Transaksi</button>
-                    </div>
-                </div>
+                <a href="/faktur"><button class="btn-insert">Masukkan Transaksi</button></a>
             </div>
         </div>
     </div>

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/kasir.css" />
     <link rel="stylesheet" href="jcss.css" />
     <script src="js/kasir.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <title>Transaksi Baru</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
                 <div class="baru col-6" style="background-color: #413B93">
-                    <a href="/baru"><label class="label">Transaksi Baru</label></a>
+                    <a href="/baru"><label class="labelbaru">Transaksi Baru</label></a>
                 </div>
                 <div class="detail col-6" style="background-color: #E0E4FF; border-radius: 10px">
                     <a href="/riwayat"><label class="label">Riwayat Transaksi</label></a>
@@ -35,6 +36,18 @@
                     </form>
                 </div>
             </div>
+            @if (Session::get('berhasilditambah'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 10px">
+                    <h4>Berhasil!</h4> Keranjang berhasil di update.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if (Session::get('tidakadaperubahan'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px">
+                    <h4>Tidak ada perubahan!</h4> Masukan jumlah yang ingin ditambahkan.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="kontentable col-12" id="table">
                 <table class="table align-middle">
                     <thead class="align-middle header">
@@ -47,7 +60,9 @@
                     <tbody style="font-size: 11px">
                     </tbody>
                 </table>
+                <a href="/receipt"><button class="btn-periksa">Check Barang</button></a>
             </div>
+
         </div>
     </div>
 </body>

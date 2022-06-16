@@ -9,6 +9,16 @@ use Illuminate\Support\Facades\DB;
 class TransaksiBaru extends Model
 {
     use HasFactory;
+
+    protected $table = "KERANJANG";
+
+    public $primaryKey = "BARANG_ID";
+
+    public $incrementing = false;
+
+    public $timestamps = false;
+
+
     public function tabletransaksibaru(){
         $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
         $run = DB::select($server);
