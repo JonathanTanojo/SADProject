@@ -25,6 +25,14 @@
     margin-bottom: 15px;
     padding-left: 10px;
 }
+.kontendata input[type="password"]{
+    background-color: #EEEEEE;
+    border-radius: 7px;
+    line-height: 34px;
+    width: 312px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
 .kontendata input[type="number"]{
     background-color: #EEEEEE;
     border-radius: 7px;
@@ -41,10 +49,20 @@
     background-color: #413B93;
     color: white;
     font-size: 15px;
-    width: 120px;
+    width: 140px;
     height: 40px;
     padding: 7px 10px 7px 10px;
-    border-radius: 15px;
+    border-radius: 10px;
+    border: none;
+}
+.button input[type="submit"]{
+    background-color: #413B93;
+    color: white;
+    font-size: 15px;
+    width: 140px;
+    height: 40px;
+    padding: 7px 10px 7px 10px;
+    border-radius: 10px;
     border: none;
 }
 .buttonpassword{
@@ -55,23 +73,40 @@
     background-color: #413B93;
     color: white;
     font-size: 15px;
-    width: 155px;
+    width: 140px;
     height: 40px;
     padding: 7px 10px 7px 10px;
     border-radius: 10px;
     border: none;
 }
-.logout{
-    display: flex;
-    justify-content: center;
-    margin-top: 45px;
+.buttonpassword input[type="submit"]{
+    background-color: #413B93;
+    color: white;
+    font-size: 15px;
+    width: 140px;
+    height: 40px;
+    padding: 7px 10px 7px 10px;
+    border-radius: 10px;
+    border: none;
 }
-.logout input[type="button"]{
-    background-color: red;
+.logout button{
+    background-color: #FF0000;
     color: white;
     border: none;
     border-radius: 5px;
     height: 40px;
     width: 180px;
+}
+#keluar {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 180px;
+}
+#sukses{
+    position: absolute;
+    z-index: 1;
 }
 

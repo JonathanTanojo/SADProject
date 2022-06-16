@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{-- CSS --}}
     <link rel ="stylesheet" href = "stylelogin.css">
+    {{-- Bootstrap --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     {{-- Icon --}}
     <script src="https://kit.fontawesome.com/4e31525354.js" crossorigin="anonymous"></script>
     {{-- Font --}}
@@ -25,7 +27,20 @@
     <br>
     <div class="head">
         <p><b>Login Account</b></p>
-    </div><br>
+    </div>
+    <br>
+    @if (Session::get('autopass'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 20px;text-align:center">
+            Kata sandi berubah menjadi "123".
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    @if (Session::get('salahpass'))
+    <div class="alert alert-danger alert-dismissible" style="margin-top: 29px;position:absolute;float:left;width: -webkit-fill-available;text-align: center;">
+        Kata sandi yang dimasukkan salah !
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="subhead">
         <p>Selamat Datang</p>
     </div>
@@ -36,12 +51,8 @@
         <p>Tirta Anugerah</p>
     </div>
 
-
     <div class="background">
-        <!-- <div class="modal" tabindex="-1"> -->
-
-        <!-- </div> -->
-        <form method="POST" action="{{url('/produk')}}">
+        <form method="POST" action="/">
             @csrf
             <div class="login">
                 <div class="input-icons">
@@ -69,7 +80,7 @@
             </div>
         </form>
     </div>
-    <script>
+    {{-- <script>
     function myFunction() {
     var x = document.getElementById("password");
     if (x.type === "password") {
@@ -78,6 +89,6 @@
         x.type = "password";
     }
     }
-    </script>
+    </script> --}}
 </body>
 </html>

@@ -18,4 +18,9 @@ class login extends Model
         }
         return false;
     }
+    public function cek_makanan($request) {
+        if (DB::table('PENGGUNA')->where('USER_MAKANAN', '=',$request->makanan)->exists()){
+            return DB::table('PENGGUNA')->where('USER_MAKANAN', '=',$request->makanan)->get();
+        }
+    }
 }

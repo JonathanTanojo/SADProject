@@ -27,8 +27,8 @@
                         <img src="{{ asset('img/box.png'); }}" alt="">
                     </a>
                 </li>
-                <li class="/active">
-                    <a href="laporan" class="nav-link">
+                <li class="active">
+                    <a href="/laporan" class="nav-link">
                         <img src="{{ asset('img/cash-report.png'); }}" alt="">
                     </a>
                 </li>

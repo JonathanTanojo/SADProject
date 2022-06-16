@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Restok Produk</title>
     {{-- CSS --}}
     <link href="{{ URL::asset('jcss.css') }}" rel="stylesheet" type="text/css" >
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     {{-- Font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +29,20 @@
                     <label>Restok Produk</label>
                 </a>
             </div>
-            <div class="kontendata col-11" style="margin-top: 55px;margin-left: 36px;">
-                <form action="">
+            @if (Session::get('berhasilditambah'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 20px">
+                    <h4>Berhasil!</h4> Data berhasil di ubah.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if (Session::get('tidakadaperubahan'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 20px">
+                    <h4>Tidak ada perubahan!</h4> Masukan jumlah yang ingin ditambahkan.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            <div class="kontendata col-11" style="margin-top: 35px;margin-left: 36px;">
+                <form action="/restok/{{$datadetail[0]-> BARANG_ID}}" method="POST">
                     @csrf
                     <div class="judul col-4">
                         <label for="">
@@ -36,7 +50,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value="{{$datadetail[0]-> BARANG_NAMA}}">
+                        <input type="text" name="" id="" value="{{$datadetail[0]-> BARANG_NAMA}}" readonly style="background-color: rgb(219, 219, 219)">
                     </div>
                     <div class="judul col-5">
                         <label for="">
@@ -44,7 +58,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <select name="" id="">
+                        <select name="" id="" disabled="false" style="background-color: rgb(219, 219, 219)">
                             <option value="{{$datadetail[0] -> BARANG_KATEGORI_ID}}" selected disabled hidden>{{$datadetail[0] -> BARANG_KATEGORI}}</option>
                             @foreach ($kategori as $kate)
                                 <option value="{{$kate -> BARANG_KATEGORI_ID}}">{{$kate -> BARANG_KATEGORI}}</option>
@@ -57,7 +71,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value ="{{$datadetail[0]-> SUPPLIER_NAMA}}" readonly>
+                        <input type="text" name="" id="" value ="{{$datadetail[0]-> SUPPLIER_NAMA}}" readonly style="background-color: rgb(219, 219, 219)">
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -65,7 +79,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="{{$datadetail[0]-> BARANG_HARGA_BELI}}">
+                        <input type="number" name="" id="" value="{{$datadetail[0]-> BARANG_HARGA_BELI}}" readonly style="background-color: rgb(219, 219, 219)">
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -73,7 +87,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="{{$datadetail[0]-> BARANG_HARGA_JUAL}}">
+                        <input type="number" name="" id="" value="{{$datadetail[0]-> BARANG_HARGA_JUAL}}"readonly style="background-color: rgb(219, 219, 219)">
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -81,7 +95,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="{{$datadetail[0]-> BARANG_HARGA_BELI}}">
+                        <input type="number" name="stoklama" id="" value="{{$datadetail[0]-> BARANG_JUMLAH}}" readonly style="background-color: rgb(219, 219, 219)">
                     </div>
                     <div class="judul col-10">
                         <label for="">
@@ -89,16 +103,16 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="">
+                        <input type="number" name="stokbaru" id="" value="">
                     </div>
-                    <div class="judul col-6">
+                    {{-- <div class="judul col-6">
                         <label for="">
                             Tanggal Perubahan
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="date" name="" id="" value="2022-02-10" readonly>
-                    </div>
+                        <input type="date" name="tanggal" value="<?php echo date('Y-m-d'); ?>" >
+                    </div> --}}
                     <div class="col-12" style="display: flex; margin-top: 30px;justify-content:flex-end">
                         <div class="" style="display: flex">
                             <div class="buttonbatal">
@@ -107,7 +121,7 @@
                                 </a>
                             </div>
                             <div class="buttonsimpan">
-                                <input type="button" value="Simpan" style="margin-right: 11px;">
+                                <button style="margin-right: 40px">Simpan</button>
                             </div>
                         </div>
                     </div>

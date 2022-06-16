@@ -1,40 +1,77 @@
 <?php
 
 use App\Http\Controllers\BaruController;
+use App\Http\Controllers\akuncontroller;
 use App\Http\Controllers\produkcontroller;
 use App\Http\Controllers\ReceiptController;
 use App\Http\Controllers\suppliercontroller;
 use App\Models\TransaksiBaru;
+use App\Http\Controllers\keuangancontroller;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('user', function () {
-    return view('akun');
+//Login
+Route::prefix('/')->group(function(){
+    Route::get('', function () {return view('login');});
+    Route::post('',[logincontroller::class,"login"]);
 });
-
-Route::get('/produk','App\Http\Controllers\produkcontroller@tableproduk');
-
-Route::get('supplier','App\Http\Controllers\suppliercontroller@tableproduk');
+//Produk
+Route::prefix('/produk')->group(function(){
+    Route::get('/',[produkcontroller::class,"tableproduk"] );
+    Route::post('/search',[produkcontroller::class,"searchproduk"]);
+    //Route::post('/filter',[produkcontroller::class,"filterproduk"]);
+    Route::post('/filter',[produkcontroller::class,"filterdrop"]);
+    Route::get('/edit/{id}',[produkcontroller::class,"details"] );
+});
+//Ubah Data Produk
+Route::prefix('/edit')->group(function(){
+    Route::get('/{id}',[produkcontroller::class,"details"] );
+    Route::post('/{id}',[produkcontroller::class,"updatedatabarang"]);
+    Route::post('/{id}/hps',[produkcontroller::class,"hapusbarang"]);
+});
+// Restok Produk
+Route::prefix('/restok')->group(function(){
+    Route::get('/{id}',[produkcontroller::class,"restok"] );
+    Route::POST('/{id}',[produkcontroller::class,"updatejumlahbarang"]);
+});
+//Tambah Produk
+Route::prefix('/tmbhprdk')->group(function(){
+    Route::get('/',[produkcontroller::class,"tableaddproduk"]);
+    Route::POST('/proses',[produkcontroller::class,"updatebarang"]);
+});
+//Laporan
+Route::prefix('/laporan')->group(function(){
+    Route::get('', [keuangancontroller::class,"viewKeuangan"]);
+    Route::post('/tanggal',[keuangancontroller::class,"tarikdata"]);
+    Route::post('/search',[keuangancontroller::class,"carilaporan"]);
+});
+//Detail Laporan
+Route::prefix('/detaillaporan')->group(function(){
+    Route::get('', [keuanganController::class,"detailKeuangan"]);
+    Route::post('/tanggal',[keuangancontroller::class,"detailtarikdata"]);
+    Route::post('/search',[keuangancontroller::class,"detailcarilaporan"]);
+});
+//Supplier
+Route::prefix('/supplier')->group(function(){
+    Route::get('', [suppliercontroller::class,"tableproduk"]);
+    Route::post('/search',[suppliercontroller::class,"searchsupplier"]);
+    Route::post('/filter',[suppliercontroller::class,"filterdrop"]);
+    Route::get('/edit/{id}',[suppliercontroller::class,"details"] );
+});
+//Ubah Data Supplier
+Route::prefix('/editsup')->group(function(){
+    Route::get('/{id}',[suppliercontroller::class,"details"] );
+    Route::post('/{id}',[suppliercontroller::class,"updatedatasupplier"]);
+    Route::post('/{id}/hps',[suppliercontroller::class,"hapusupplier"]);
+});
+//Tambah Supplier
+Route::prefix('/tmbhsupplier')->group(function(){
+    Route::get('/',[suppliercontroller::class,"tableaddsupplier"]);
+    Route::POST('/proses',[suppliercontroller::class,"updatesupplier"]);
+});
 
 Route::get('/supplier/edit/{id}',[suppliercontroller::class,"details"]);
 
-Route::get('/edit/{id}', [produkcontroller::class,"details"]);
-
-Route::get('/restok/{id}', [produkcontroller::class,"restok"]);
-
-Route::get('tmbhprdk', function () {
-    return view('addproduk');
-});
 
 Route::get('/ubahpass', function () {
     return view('ubahpassword');
@@ -45,6 +82,18 @@ Route::prefix('/')->group(function(){
     Route::post('','App\Http\Controllers\logincontroller@login');
     Route::post('/produk','App\Http\Controllers\logincontroller@login');
 });
+
+Route::prefix('/user')->group(function(){
+    Route::get('/',[akuncontroller::class,"tableakun"]);
+    Route::POST('/logout',[logincontroller::class,"logout"]);
+});
+
+Route::post('userupdate', [akuncontroller::class,"userupdate"]);
+Route::post('passwordupdate', 'App\Http\Controllers\akuncontroller@passwordupdate')->name('passwordupdate');
+Route::post('autopass', 'App\Http\Controllers\logincontroller@autopass');
+
+
+//Gatau perlu di pake engga
 
 Route::get('navbar', function () {
     return view('navbar');
@@ -58,10 +107,12 @@ Route::get('/riwayat', function () {
 
 Route::prefix('/baru')->group(function(){
     Route::get('', function () {return view('barukosong');});
-    Route::get('receipt', [BaruController::class, 'createSession']);
+    Route::post('', [BaruController::class,'tabletransaksi']);
 });
 
-Route::post('/baru', [BaruController::class,'tabletransaksi']);
+Route::post('/addtocart', [BaruController::class, 'insertData']);
+Route::get('/receipt', [BaruController::class, 'getData']);
+
 
 
 Route::get('sproduk', function () {
@@ -82,5 +133,3 @@ Route::get('/','App\Http\Controllers\keuanganController@viewKeuangan');
 
 Route::get('laporan','App\Http\Controllers\keuanganController@viewKeuangan');
 Route::get('detaillaporan','App\Http\Controllers\keuanganController@detailKeuangan');
-
-Route::get('/receipt', [BaruController::class, 'getData']);
