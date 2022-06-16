@@ -13,11 +13,11 @@
     <title>Kasir</title>
 </head>
 <body>
-
+    
     <div class="alert alert-success alert-dismissible" style="margin-top:18px; position:absolute; float:left;">
         <a href="#" class="close" onclick="this.parentElement.style.display='none';" data-dismiss="alert" aria-label="close" style="float:right;padding-left:7px;font-size:22px" title="close">×</a>
     </div>
-    
+
     <div class="col-12">
         <!-- Bottom Navbar -->
         <nav class="navbar col-12 fixed-bottom" style="background-color: white; border-radius: 10px">

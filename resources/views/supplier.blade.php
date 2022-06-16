@@ -16,13 +16,11 @@
 
 </head>
 <body>
+    @if(Session('login'))
     @include("nsupplier")
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
-                <a href="" class="riwayatsupplier col-6" style="text-decoration: none">
-                    <label style="font-size:13px">Riwayat Transaksi Supplier</label>
-                </a>
                 <a href="/supplier" class="daftarsupplier col-6" style="text-decoration: none;">
                     <label>Daftar Supplier</label>
                 </a>
@@ -92,6 +90,9 @@
         </div>
     </div>
     <div class="addbutton"> <a href="/tmbhsupplier"><img src="../img/add.png" alt=""></a></div>
+    @else
+    @include("nonlogin");
+    @endif
 </body>
 <script type="text/javascript">
     $(".filter").on('change',function(){

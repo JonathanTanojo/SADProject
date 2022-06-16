@@ -27,6 +27,7 @@
     <title>Stok Produk</title>
 </head>
 <body>
+    @if(Session('login'))
     @include("nuser")
     <div class="container">
         <div class="backgroundcolor-ungumudah" style="border-radius: 10px;background-color: #F3F1FF; height: 117vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
@@ -146,6 +147,9 @@
             </div>
         </div>
     </div>
+    @else
+    @include("nonlogin");
+    @endif
 </body>
 </html>
 <script src="user.js"></script>

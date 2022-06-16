@@ -17,6 +17,7 @@
     <title>Document</title>
 </head>
 <body>
+    @if(Session('login'))
     @include("nsupplier")
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
@@ -101,5 +102,8 @@
             </div>
         </div>
     </div>
+    @else
+    @include("nonlogin");
+    @endif
 </body>
 </html>

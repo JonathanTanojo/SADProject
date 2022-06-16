@@ -18,6 +18,7 @@
 
 </head>
 <body>
+    @if(Session('login'))
     @include("nproduk")
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
@@ -71,7 +72,10 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="text" name="" id="" value ="{{$datadetail[0]-> SUPPLIER_NAMA}}" readonly style="background-color: rgb(219, 219, 219)">
+                        <select name="namasupplier" id="" style="background-color: rgb(219, 219, 219)">
+                            <option value="{{$datadetail[0] -> SUPPLIER_ID}}" selected hidden>{{$datadetail[0] -> SUPPLIER_NAMA}}</option>
+                        </select>
+                        {{-- <input type="text" name="" id="" value ="{{$datadetail[0]-> SUPPLIER_NAMA}}" readonly style="background-color: rgb(219, 219, 219)"> --}}
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -79,7 +83,7 @@
                         </label>
                     </div>
                     <div class="inputbox col-8">
-                        <input type="number" name="" id="" value="{{$datadetail[0]-> BARANG_HARGA_BELI}}" readonly style="background-color: rgb(219, 219, 219)">
+                        <input type="number" name="hargabeli" id="" value="{{$datadetail[0]-> BARANG_HARGA_BELI}}" readonly style="background-color: rgb(219, 219, 219)">
                     </div>
                     <div class="judul col-4">
                         <label for="">
@@ -105,14 +109,14 @@
                     <div class="inputbox col-8">
                         <input type="number" name="stokbaru" id="" value="">
                     </div>
-                    {{-- <div class="judul col-6">
+                    <div class="judul col-6">
                         <label for="">
                             Tanggal Perubahan
                         </label>
                     </div>
                     <div class="inputbox col-8">
                         <input type="date" name="tanggal" value="<?php echo date('Y-m-d'); ?>" >
-                    </div> --}}
+                    </div>
                     <div class="col-12" style="display: flex; margin-top: 30px;justify-content:flex-end">
                         <div class="" style="display: flex">
                             <div class="buttonbatal">
@@ -130,5 +134,8 @@
             </div>
         </div>
     </div>
+    @else
+    @include("nonlogin");
+    @endif
 </body>
 </html>

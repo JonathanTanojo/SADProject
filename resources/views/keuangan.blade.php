@@ -15,8 +15,9 @@
 
     <title>Stok Produk</title>
 </head>
-@include("nlaporan")
 <body>
+    @if(Session('login'))
+    @include("nlaporan")
         <div class="container">
             <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 100vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
                 <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
@@ -53,7 +54,6 @@
                         <tr>
                             <th scope="col">Nama Barang</th>
                             <th scope="col">Terjual</th>
-                            <th scope="col">Harga Satuan</th>
                             <th scope="col">Uang Masuk</th>
                             <th scope="col">Laba</th>
                         </tr>
@@ -69,7 +69,6 @@
                         <tr style='background-color:$color'>
                             <td>{$tabel[$x]->NAMA_BARANG}</td>
                             <td>{$tabel[$x]->TERJUAL}</td>
-                            <td>{$tabel[$x]->HARGA_SATUAN}</td>
                             <td>{$tabel[$x]->UANG_MASUK}</td>
                             <td>{$tabel[$x]->Laba}</td>
                         </tr>";
@@ -81,5 +80,8 @@
                 </div>
             </div>
         </div>
+    @else
+    @include("nonlogin");
+    @endif
 </body>
 </html>

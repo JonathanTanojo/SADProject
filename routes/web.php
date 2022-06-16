@@ -73,6 +73,10 @@ Route::get('/ubahpass', function () {
     return view('ubahpassword');
 });
 
+Route::get('/nonlogin', function () {
+    return view('nonlogin');
+});
+
 Route::prefix('/user')->group(function(){
     Route::get('/',[akuncontroller::class,"tableakun"]);
     Route::POST('/logout',[logincontroller::class,"logout"]);
