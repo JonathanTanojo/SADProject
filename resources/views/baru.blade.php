@@ -46,23 +46,26 @@
                       </tr>
                     </thead>
                     <tbody style="font-size: 11px">
-                    <?php
+                        <form action="{{ route('/receipt') }}" method="post">
+                        @csrf
+                            <?php
                         $color = NULL;
                         $color1 = "white";
                         $color2 = "#F3F1FF";
                         for ($x=0;$x<sizeof($tabel);$x++){
-                          $color == $color1 ? $color=$color2 : $color=$color1;
-                          echo"
-                          <tr style='background-color:$color; text-align: center;'>
-                            <td>{$tabel[$x]->Barang}</td>
-                            <td>{$tabel[$x]->Harga_Jual}</td>
-                            <td>
-                                <input type='number' id='quantity' name='quantity' min='0'/>
-                            </td>
-                            <td><button class='btn-submit'>Submit</button></td>
-                          </tr>";
-                        }
-                    ?>
+                            $color == $color1 ? $color=$color2 : $color=$color1;
+                            echo"
+                            <tr style='background-color:$color; text-align: center;'>
+                                <td>{$tabel[$x]->Barang}</td>
+                                <td>{$tabel[$x]->Harga_Jual}</td>
+                                <td>
+                                    <input type='number' id='quantity' placeholder='Qty' value='Send.' name='quantity' min='0'/>
+                                </td>
+                                <td><button class='btn-submit' type='submit'>Submit</button></td>
+                            </tr>";
+                            }
+                            ?>
+                        </form>
                     </tbody>
                 </table>
             </div>

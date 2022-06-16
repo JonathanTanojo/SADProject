@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BaruController;
 use App\Http\Controllers\produkcontroller;
+use App\Http\Controllers\ReceiptController;
 use App\Http\Controllers\suppliercontroller;
 use App\Models\TransaksiBaru;
 use Illuminate\Support\Facades\Route;
@@ -57,6 +58,7 @@ Route::get('/riwayat', function () {
 
 Route::prefix('/baru')->group(function(){
     Route::get('', function () {return view('barukosong');});
+    Route::get('receipt', [BaruController::class, 'createSession']);
 });
 
 Route::post('/baru', [BaruController::class,'tabletransaksi']);
@@ -78,10 +80,7 @@ Route::get('tmbhsupplier', function () {
 
 Route::get('/','App\Http\Controllers\keuanganController@viewKeuangan');
 
-
 Route::get('laporan','App\Http\Controllers\keuanganController@viewKeuangan');
 Route::get('detaillaporan','App\Http\Controllers\keuanganController@detailKeuangan');
 
-Route::get('/receipt', function () {
-    return view('receipt');
-});
+Route::get('/receipt', [BaruController::class, 'getData']);

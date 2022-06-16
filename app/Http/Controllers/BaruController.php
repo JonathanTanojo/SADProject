@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\TransaksiBaru;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Input\Input;
 
 class BaruController extends Controller
 {
@@ -18,8 +19,15 @@ class BaruController extends Controller
         return view('baru',['tabel'=>$search]);
     }
 
-    public function show(Request $request, $id)
+    public function getData(Request $request)
     {
-        $value = $request->session()->get('key');
+        return $request->all();
+    }
+
+    public function createSession(Request $request)
+    {
+        $request->session()->put('namaBarang', 'Aqua');
+        $request->session()->put('jumlahPesanan', '2');
+
     }
 }
