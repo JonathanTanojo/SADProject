@@ -40,12 +40,14 @@
                     </thead>
                     <tbody style="font-size: 11px">
                     @foreach ($tabel as $cart)
+                    <form action="/receipt">
                         <tr>
                             <td><input type="hidden" name="namaBarang">{{$cart->Barang}}</td>
                             <td><input type="hidden" name="hargaBarang">{{$cart->Harga}}</td>
                             <td><input type="hidden" name="qtyBarang">{{$cart->Qty}}</td>
                             <td><input type="hidden" name="subtotalBarang">{{$cart->Subtotal}}</td>
                         </tr>
+                    </form>
                     @endforeach
                     </tbody>
                 </table>

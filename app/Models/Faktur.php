@@ -11,6 +11,8 @@ class Faktur extends Model
 
     protected $table = "TRANSAKSI_JUAL";
 
+    protected $table2 = "DETAIL_TRANS_JUAL";
+
     public $primaryKey = "JUAL_ID";
 
     public $incrementing = false;

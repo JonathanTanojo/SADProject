@@ -126,7 +126,7 @@ Route::get('tmbhsupplier', function () {
 
 //POST
 
-Route::get('/','App\Http\Controllers\keuanganController@viewKeuangan');
+//Route::get('/','App\Http\Controllers\keuanganController@viewKeuangan');
 
 Route::get('laporan','App\Http\Controllers\keuanganController@viewKeuangan');
 Route::get('detaillaporan','App\Http\Controllers\keuanganController@detailKeuangan');
