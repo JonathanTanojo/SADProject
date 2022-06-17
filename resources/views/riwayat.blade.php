@@ -18,7 +18,7 @@
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
                 <div class="baru col-6" style="background-color: #E0E4FF">
-                    <a href="/baru"><label class="label">Transaksi Baru</label></a>
+                    <a href="/cashier"><label class="label">Transaksi Baru</label></a>
                 </div>
                 <div class="detail col-6" style="background-color: #413B93; border-radius: 10px">
                     <a href="/riwayat"><label class="label">Riwayat Transaksi</label></a>

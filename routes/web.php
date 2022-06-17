@@ -101,7 +101,7 @@ Route::get('navbar', function () {
 
 Route::get('/riwayat', [BaruController::class,"show"]);
 
-Route::prefix('/cashier')->group(function(){
+Route::prefix('/baru')->group(function(){
     Route::get('', function () {return view('barukosong');});
     Route::post('', [BaruController::class,'tabletransaksi']);
     Route::post('/baru',[TransaksiBaru::class,"show"]);
