@@ -17,14 +17,15 @@
     <title>Stok Produk</title>
 </head>
 <body>
+    @if(Session('login'))
     @include("nproduk")
     <div class="container">
         <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 97vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
             <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
-                <a href="/edit/{{$datadetail[0]-> BARANG_NAMA}}" class="detail col-6" style="text-decoration: none">
+                <a href="/edit/{{$tabel[0]-> Barang}}" class="detail col-6" style="text-decoration: none">
                     <label>Detail Produk</label>
                 </a>
-                <a href="/restok/{{$datadetail[0]-> BARANG_ID}}" class="restok col-6" style="text-decoration: none;color:black">
+                <a href="/restok/{{$tabel[0]-> ID}}" class="restok col-6" style="text-decoration: none;color:black">
                     <label>Restok Produk</label>
                 </a>
             </div>
@@ -44,7 +45,7 @@
             </a>
             @endif
             <div class="kontendata col-11" style="margin-top: 35px;margin-left: 36px;">
-                <form action="/edit/{{$datadetail[0]-> BARANG_ID}}" method="POST">
+                <form action="/edit/{{$tabel[0]-> ID}}" method="POST">
                     @csrf
                 <div class="judul col-4">
                     <label for="">
@@ -52,7 +53,7 @@
                     </label>
                 </div>
                 <div class="inputbox col-8">
-                    <input type="text" name="namaproduk" id="" value="{{$datadetail[0]-> BARANG_NAMA}}">
+                    <input type="text" name="namaproduk" id="" value="{{$tabel[0]-> Barang}}">
                 </div>
                 <div class="judul col-5">
                     <label for="">
@@ -61,7 +62,7 @@
                 </div>
                 <div class="inputbox col-8">
                     <select name="kategoriproduk" id="">
-                        <option value="{{$datadetail[0] -> BARANG_KATEGORI_ID}}" selected disabled hidden>{{$datadetail[0] -> BARANG_KATEGORI}}</option>
+                        <option value="{{$tabel[0] -> ID}}" selected disabled hidden>{{$tabel[0] -> Kategori}}</option>
                         @foreach ($kategori as $kate)
                             <option value="{{$kate -> BARANG_KATEGORI_ID}}">{{$kate -> BARANG_KATEGORI}}</option>
                         @endforeach
@@ -73,7 +74,7 @@
                     </label>
                 </div>
                 <div class="inputbox col-8">
-                    <input type="text" name="namasupplier" id="" value ="{{$datadetail[0]-> SUPPLIER_NAMA}}" readonly style="background-color: rgb(219, 219, 219)">
+                    <input type="text" name="namasupplier" id="" value ="{{$tabel[0]-> NamaSupplier}}" readonly style="background-color: rgb(219, 219, 219)">
                 </div>
                 <div class="judul col-4">
                     <label for="">
@@ -81,7 +82,7 @@
                     </label>
                 </div>
                 <div class="inputbox col-8">
-                    <input type="number" name="stoklama" id="" value="{{$datadetail[0]-> BARANG_JUMLAH}}">
+                    <input type="number" name="stoklama" id="" value="{{$tabel[0]-> Jumlah}}" readonly style="background-color: rgb(219, 219, 219)">
                 </div>
                 <div class="judul col-4">
                     <label for="">
@@ -89,7 +90,7 @@
                     </label>
                 </div>
                 <div class="inputbox col-8">
-                    <input type="number" name="hargabeli" id="" value="{{$datadetail[0]-> BARANG_HARGA_BELI}}">
+                    <input type="number" name="hargabeli" id="" value="{{$tabel[0]-> Harga_Beli}}" readonly style="background-color: rgb(219, 219, 219)">
                 </div>
                 <div class="judul col-4">
                     <label for="">
@@ -97,19 +98,11 @@
                     </label>
                 </div>
                 <div class="inputbox col-8">
-                    <input type="number" name="hargajual" id="" value="{{$datadetail[0]-> BARANG_HARGA_JUAL}}">
-                </div>
-                <div class="judul col-6">
-                    <label for="">
-                        Tanggal Perubahan
-                    </label>
-                </div>
-                <div class="inputbox col-8">
-                    <input type="date" name="tanggal" id="" value="<?php echo date('Y-m-d'); ?>" readonly>
+                    <input type="number" name="hargajual" id="" value="{{$tabel[0]-> Harga_Jual}}">
                 </div>
                 <div class="col-12" style="display: flex; margin-top: 30px;">
                     </form>
-                    <form action="/edit/{{$datadetail[0]-> BARANG_ID}}/hps" method="POST">
+                    <form action="/edit/{{$tabel[0]-> ID}}/hps" method="POST">
                         @csrf
                         <div class="buttonhapus">
                             <button style="margin-right: 11px;">Hapus</button>
@@ -129,5 +122,8 @@
             </div>
         </div>
     </div>
+    @else
+    @include("nonlogin");
+    @endif
 </body>
 </html>

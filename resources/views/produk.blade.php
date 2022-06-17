@@ -85,11 +85,7 @@
             </div>
         </div>
    @else
-   <div class="col-12" style="display: flex;height: 100vh; align-items: center;justify-content: center;">
-        <div class="Kotak col-5" style="background: #ff0000c7;display:flex;color: white;height: 800px;width: 300px;align-items: center;justify-content: center;">
-            <h1>Harus Login !!!</h1>
-        </div>
-    </div>
+    @include("nonlogin");
     @endif
 </body>
 <script type="text/javascript">

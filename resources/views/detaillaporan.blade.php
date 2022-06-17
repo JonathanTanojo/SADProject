@@ -19,75 +19,75 @@
 </head>
 @include("nlaporan")
 <body>
-<div class="container">
-    <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 100vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
-        <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
-            <a href="/laporan" class="laporandetail col-6" style="text-decoration: none;color:black">
-                <label>Laporan  Keuangan</label>
-            </a>
-            <a href="/detaillaporan" class="detaildetail col-6" style="text-decoration: none;">
-                <label>Detail Keuangan</label>
-            </a>
-        </div>
-        <form method="POST" action="/detaillaporan/tanggal">
-            <div class="col-12 buttonfilteratas" style="display: flex; margin-top:15px;width:100%; justify-content:space-between">
-                @csrf
-                <div class="inputtanggal col-6">
-                    <input type="date" name="tglawal" id="txtDate" style="width:100%;" value="<?php echo date('Y-m-d'); ?>">
-                </div>
-                <div class="butonsearch col-4" style="margin-right:3px">
-                    <input class="buttonsearch" value="Search" type="submit" style="width:100%;">
-                </div>
+    @if(Session('login'))
+    <div class="container">
+        <div class="backgroundcolor" style="border-radius: 10px;background-color: #F3F1FF; height: 100vh;box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);margin-top: 15px;">
+            <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;">
+                <a href="/laporan" class="laporandetail col-6" style="text-decoration: none;color:black">
+                    <label>Laporan  Keuangan</label>
+                </a>
+                <a href="/detaillaporan" class="detaildetail col-6" style="text-decoration: none;">
+                    <label>Detail Keuangan</label>
+                </a>
             </div>
-        </form>
-        <div class="col-12">
-            <form action="/detaillaporan/search" method="POST">
-                @csrf
-                <div class="searchbox col-6" style="margin-left: 6px">
-                    <i class="icon" style="margin-top: 5px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.624,15a8.03,8.03,0,0,0,10.619.659l5.318,5.318a1,1,0,0,0,1.414-1.414l-5.318-5.318A8.04,8.04,0,0,0,3.624,3.624,8.042,8.042,0,0,0,3.624,15Zm1.414-9.96a6.043,6.043,0,1,1-1.77,4.274A6,6,0,0,1,5.038,5.038Z"/></svg></i>
-                    <input type="text" name='namaproduk'placeholder="Nama Produk"style="width:100%;">
+            <form method="POST" action="/detaillaporan/tanggal">
+                <div class="col-12 buttonfilteratas" style="display: flex; margin-top:15px;width:100%; justify-content:space-between">
+                    @csrf
+                    <div class="inputtanggal col-6">
+                        <input type="date" name="tglawal" id="txtDate" style="width:100%;" value="<?php echo date('Y-m-d'); ?>">
+                    </div>
+                    <div class="butonsearch col-4" style="margin-right:3px">
+                        <input class="buttonsearch" value="Search" type="submit" style="width:100%;">
+                    </div>
                 </div>
             </form>
-        </div>
-        <div class="kontentable col-12">
-            <table class="table align-middle">
-                <thead class="align-middle header">
-                  <tr>
-                    <th scope="col">Nama Barang</th>
-                    <th scope="col">Harga Beli</th>
-                    <th scope="col">Harga Jual</th>
-                    <th scope="col">Terjual</th>
-                    <th scope="col">Sisa</th>
-                    <th scope="col">Harga Satuan</th>
-                    <th scope="col">Uang Masuk</th>
-                    <th scope="col">Laba</th>
-                  </tr>
-                </thead>
-                <tbody style="font-size: 11px;text-align:center">
-                <?php
-                $color = NULL;
-                $color1 = "white";
-                $color2 = "#F3F1FF";
-                for ($x=0;$x<sizeof($tabel);$x++){
-                  $color == $color1 ? $color=$color2 : $color=$color1;
-                  echo"
-                  <tr style='background-color:$color'>
-                    <td>{$tabel[$x]->NAMA_BARANG}</td>
-                    <td>{$tabel[$x]->HARGA_BELI}</td>
-                    <td>{$tabel[$x]->HARGA_SATUAN}</td>
-                    <td>{$tabel[$x]->TERJUAL}</td>
-                    <td>{$tabel[$x]->SISA}</td>
-                    <td>{$tabel[$x]->HARGA_SATUAN}</td>
-                    <td>{$tabel[$x]->UANG_MASUK}</td>
-                    <td>{$tabel[$x]->Laba}</td>
-                  </tr>";
-                }
-                ?>
+            <div class="col-12">
+                <form action="/detaillaporan/search" method="POST">
+                    @csrf
+                    <div class="searchbox col-6" style="margin-left: 6px">
+                        <i class="icon" style="margin-top: 5px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.624,15a8.03,8.03,0,0,0,10.619.659l5.318,5.318a1,1,0,0,0,1.414-1.414l-5.318-5.318A8.04,8.04,0,0,0,3.624,3.624,8.042,8.042,0,0,0,3.624,15Zm1.414-9.96a6.043,6.043,0,1,1-1.77,4.274A6,6,0,0,1,5.038,5.038Z"/></svg></i>
+                        <input type="text" name='namaproduk'placeholder="Nama Produk"style="width:100%;">
+                    </div>
+                </form>
+            </div>
+            <div class="kontentable col-12">
+                <table class="table align-middle">
+                    <thead class="align-middle header">
+                    <tr>
+                        <th scope="col">Nama Barang</th>
+                        <th scope="col">Harga Beli</th>
+                        <th scope="col">Terjual</th>
+                        <th scope="col">Sisa</th>
+                        <th scope="col">Uang Masuk</th>
+                        <th scope="col">Laba</th>
+                    </tr>
+                    </thead>
+                    <tbody style="font-size: 11px;text-align:center">
+                    <?php
+                    $color = NULL;
+                    $color1 = "white";
+                    $color2 = "#F3F1FF";
+                    for ($x=0;$x<sizeof($tabel);$x++){
+                    $color == $color1 ? $color=$color2 : $color=$color1;
+                    echo"
+                    <tr style='background-color:$color'>
+                        <td>{$tabel[$x]->NAMA_BARANG}</td>
+                        <td>{$tabel[$x]->HARGA_BELI}</td>
+                        <td>{$tabel[$x]->TERJUAL}</td>
+                        <td>{$tabel[$x]->SISA}</td>
+                        <td>{$tabel[$x]->UANG_MASUK}</td>
+                        <td>{$tabel[$x]->Laba}</td>
+                    </tr>";
+                    }
+                    ?>
 
-                </tbody>
-              </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
+    @else
+    @include("nonlogin");
+    @endif
 </body>
 </html>

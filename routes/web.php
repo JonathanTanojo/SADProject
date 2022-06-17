@@ -77,11 +77,11 @@ Route::get('/ubahpass', function () {
     return view('ubahpassword');
 });
 
-Route::prefix('/')->group(function(){
-    Route::get('', function () {return view('login');});
-    Route::post('','App\Http\Controllers\logincontroller@login');
-    Route::post('/produk','App\Http\Controllers\logincontroller@login');
-});
+// Route::prefix('/')->group(function(){
+//     Route::get('', function () {return view('login');});
+//     Route::post('','App\Http\Controllers\logincontroller@login');
+//     Route::post('/produk','App\Http\Controllers\logincontroller@login');
+// });
 
 Route::prefix('/user')->group(function(){
     Route::get('/',[akuncontroller::class,"tableakun"]);
