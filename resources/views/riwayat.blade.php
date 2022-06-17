@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="kontentable col-12" id="table">
-                <table class="table align-middle">
+                <table class="table align-middle" style="height:800px;">
                     <thead class="align-middle header">
                       <tr>
                         <th scope="col">ID Transasi</th>
@@ -46,7 +46,14 @@
                       </tr>
                     </thead>
                     <tbody style="font-size: 11px">
-
+                    @foreach($tabel  as $x)
+                        <tr>
+                            <td>{{ $x->ID }}</td>
+                            <td>{{ $x->TANGGAL }}</td>
+                            <td>{{ $x->JUMLAH }}</td>
+                            <td>{{ $x->TOTAL }}</td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>

@@ -47,7 +47,7 @@ class TransaksiBaruController extends Controller
      */
     public function show(TransaksiBaru $transaksiBaru)
     {
-        //
+ 
     }
 
     /**

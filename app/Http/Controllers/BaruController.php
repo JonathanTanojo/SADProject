@@ -50,4 +50,17 @@ class BaruController extends Controller
             $transaksibaru->JUAL_ID = $request->namaBarang;
             $transaksibaru->JUAL_ID = $request->namaBarang;
     }
+    public function show()
+    {        // $search = DB::table('KERANJANG')
+        // ->select('BARANG_NAMA as Barang', 'BARANG_HARGA as Harga', 'BARANG_QTY as Qty', 'KERANJANG_TOTAL as Subtotal')
+        // ->where('KERANJANG_DELETE','=',0)
+        // ->get();
+
+        // return view('receipt',['tabel'=>$search]);
+
+        $user = new TransaksiBaru;
+        $tabel = $user->show();
+        return view('riwayat', compact(['tabel']));
+       
+    }
 }

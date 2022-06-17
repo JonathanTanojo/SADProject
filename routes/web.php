@@ -99,15 +99,12 @@ Route::get('navbar', function () {
     return view('navbar');
 });
 
-Route::get('/riwayat', function () {
-    return view('riwayat', [
-        "title" => "Riwayat Transaksi"
-    ]);
-});
+Route::get('/riwayat', [BaruController::class,"show"]);
 
-Route::prefix('/baru')->group(function(){
+Route::prefix('/cashier')->group(function(){
     Route::get('', function () {return view('barukosong');});
     Route::post('', [BaruController::class,'tabletransaksi']);
+    Route::post('/baru',[TransaksiBaru::class,"show"]);
 });
 
 Route::post('/addtocart', [BaruController::class, 'insertData']);
