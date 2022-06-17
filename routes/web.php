@@ -128,5 +128,6 @@ Route::get('tmbhsupplier', function () {
 
 //Route::get('/','App\Http\Controllers\keuanganController@viewKeuangan');
 
+Route::get('/faktur', [BaruController::class,'belumbisa']);
 Route::get('laporan','App\Http\Controllers\keuanganController@viewKeuangan');
 Route::get('detaillaporan','App\Http\Controllers\keuanganController@detailKeuangan');

@@ -49,7 +49,7 @@ class BaruController extends Controller
             $transaksibaru->JUAL_ID = 'TJ';
             $transaksibaru->JUAL_ID = $request->namaBarang;
             $transaksibaru->JUAL_ID = $request->namaBarang;
-            
+
     }
     public function show()
     {        // $search = DB::table('KERANJANG')
@@ -63,5 +63,12 @@ class BaruController extends Controller
         $tabel = $user->show();
         return view('riwayat', compact(['tabel']));
 
+    }
+
+    public function belumbisa()
+    {
+        dd('MAAF LAGI MAINTENANCE');
+        return view('faktur',['alert'=>'FITUR INI BELUM BISA']
+    );
     }
 }
