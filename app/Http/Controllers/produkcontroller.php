@@ -242,44 +242,45 @@ class produkcontroller extends Controller
         }
         else
         {
-            $jumlhprdkbaru = new transaksipembelian();
-            $jumlhprdkbaru->SUPPLIER_ID = $req->namasupplier;
-            $jumlhprdkbaru->BARANG_ID = $id;
-            $jumlhprdkbaru->BELI_TANGGAL = $req->tanggal;
-            $jumlhprdkbaru->BELI_JUMLAH = $req ->stokbaru;
-            $jumlhprdkbaru->BELI_HARGABELI = $req ->hargabeli;
-            $jumlhprdkbaru->BELI_DELETE ='0';
-            $jumlhprdkbaru->save();
+            $databaru = DB::table('BARANG')
+            ->where('BARANG_ID',$id)
+            ->update(['BARANG_JUMLAH' => $totaljumlah]);
 
-        $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
-        $run = DB::select($server);
+            $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
+            $run = DB::select($server);
 
-        $kategori = DB::table('BARANG')
-        ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
-        ->groupBy('BARANG_KATEGORI')
-        ->get();
+            $kategori = DB::table('BARANG')
+            ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
+            ->groupBy('BARANG_KATEGORI')
+            ->get();
 
-        $user = new produk();
-        $tabel = $user->tableproduk();
+            $user = new produk();
+            $tabel = $user->tableproduk();
 
-        $transdet = BARANG::join('SUPPLIER', 'BARANG.SUPPLIER_ID', '=', 'SUPPLIER.SUPPLIER_ID')
-        ->select('BARANG_NAMA','BARANG_ID','BARANG_KATEGORI_ID','SUPPLIER_NAMA','BARANG_HARGA_JUAL','BARANG_HARGA_BELI','BARANG_JUMLAH','BARANG_KATEGORI')->where('BARANG_ID', $id)->get();
+            $transdet = BARANG::join('SUPPLIER', 'BARANG.SUPPLIER_ID', '=', 'SUPPLIER.SUPPLIER_ID')
+            ->select('BARANG_NAMA','BARANG_ID','BARANG_KATEGORI_ID','SUPPLIER_NAMA','BARANG_HARGA_JUAL','BARANG_HARGA_BELI','BARANG_JUMLAH','BARANG_KATEGORI')->where('BARANG_ID', $id)->get();
 
-        return back()->with('berhasilditambah','update databerhasil');
+            return back()->with('berhasilditambah','update databerhasil');
         }
     }
 
     //Add Product
     public function tableaddproduk(){
+
+
         $server = "SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));";
         $run = DB::select($server);
+
+        $supplier = DB::table('SUPPLIER')
+        ->select('SUPPLIER_ID', 'SUPPLIER_NAMA')
+        ->get();
 
         $kategori = DB::table('BARANG')
         ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
         ->groupBy('BARANG_KATEGORI')
         ->get();
 
-        return view('addproduk', ["kategori" => $kategori]);
+        return view('addproduk', ["kategori" => $kategori,"tabel"=> $supplier]);
     }
 
     public function updatebarang(Request $req){
@@ -290,7 +291,7 @@ class produkcontroller extends Controller
             $produkbaru->BARANG_NAMA = $req->namaproduk;
             $produkbaru->BARANG_KATEGORI_ID = 'M01';
             $produkbaru->BARANG_KATEGORI = 'Minuman';
-            $produkbaru->SUPPLIER_ID = $req->namasupplier;
+            $produkbaru->SUPPLIER_ID = $req->kategorisupplier;
             $produkbaru->BARANG_HARGA_BELI = $req->hargabeli;
             $produkbaru->BARANG_HARGA_JUAL = $req->hargajual;
             $produkbaru->BARANG_JUMLAH = $req->jumlah;
@@ -301,6 +302,13 @@ class produkcontroller extends Controller
 
             $run = DB::select($server);
 
+            $user = new produk();
+            $tabel = $user->tableproduk();
+
+            $supplier = DB::table('SUPPLIER')
+            ->select('SUPPLIER_ID', 'SUPPLIER_NAMA')
+            ->get();
+
             $kategori = DB::table('BARANG')
             ->select('BARANG_KATEGORI_ID', 'BARANG_KATEGORI')
             ->groupBy('BARANG_KATEGORI')
@@ -308,14 +316,15 @@ class produkcontroller extends Controller
 
             $user = new produk();
             $tabel = $user->tableproduk();
-            return view('produk',compact(['tabel']), ["kategori" => $kategori]);
+            return back()->with('berhasil','udpate data berhasil');
+            // return view('produk',compact(['tabel']), ["kategori" => $kategori,"tabel"=> $supplier]);
         }
         else if($kategoribarang == "M02"){
             $produkbaru = new produkbaru();
             $produkbaru->BARANG_NAMA = $req->namaproduk;
             $produkbaru->BARANG_KATEGORI_ID = 'M02';
             $produkbaru->BARANG_KATEGORI = 'Makanan';
-            $produkbaru->SUPPLIER_ID = $req->namasupplier;
+            $produkbaru->SUPPLIER_ID = $req->kategorisupplier;
             $produkbaru->BARANG_HARGA_BELI = $req->hargabeli;
             $produkbaru->BARANG_HARGA_JUAL = $req->hargajual;
             $produkbaru->BARANG_JUMLAH = $req->jumlah;
@@ -340,7 +349,7 @@ class produkcontroller extends Controller
             $produkbaru->BARANG_NAMA = $req->namaproduk;
             $produkbaru->BARANG_KATEGORI_ID = 'R01';
             $produkbaru->BARANG_KATEGORI = 'Rokok';
-            $produkbaru->SUPPLIER_ID = $req->namasupplier;
+            $produkbaru->SUPPLIER_ID = $req->kategorisupplier;
             $produkbaru->BARANG_HARGA_BELI = $req->hargabeli;
             $produkbaru->BARANG_HARGA_JUAL = $req->hargajual;
             $produkbaru->BARANG_JUMLAH = $req->jumlah;
@@ -365,7 +374,7 @@ class produkcontroller extends Controller
             $produkbaru->BARANG_NAMA = $req->namaproduk;
             $produkbaru->BARANG_KATEGORI_ID = 'B01';
             $produkbaru->BARANG_KATEGORI = 'Bahan Pokok';
-            $produkbaru->SUPPLIER_ID = $req->namasupplier;
+            $produkbaru->SUPPLIER_ID = $req->kategorisupplier;
             $produkbaru->BARANG_HARGA_BELI = $req->hargabeli;
             $produkbaru->BARANG_HARGA_JUAL = $req->hargajual;
             $produkbaru->BARANG_JUMLAH = $req->jumlah;

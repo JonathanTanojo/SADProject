@@ -23,6 +23,20 @@
                 <div class="col-12 buttonfilteratas" style="display: flex;background: #E0E4FF; border-radius: 10px;height: 45px;padding-top:8px;padding-left:8px">
                     <h4><b>Masukkan Produk Baru</b></h4>
                 </div>
+                @if (Session::get('berhasil'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 20px">
+                    <h4>Berhasil!</h4> Data berhasil di ubah.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+                @if (Session::get('hapus'))
+                <a href="/produk" style="text-decoration: none">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 20px">
+                        <h4>Hapus!</h4> Data berhasil di ubah.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </a>
+                @endif
                 <div class="kontendata col-11" style="margin-top: 25px;margin-left: 36px;">
                     <form action="/tmbhprdk/proses" method="POST">
                         @csrf
@@ -39,6 +53,7 @@
                                 Kategori Produk
                             </label>
                         </div>
+
                         <div class="inputbox col-8">
                             <select name="kategoriproduk" id="">
                                 <option value="" selected disabled hidden>Pilih Kategori Produk</option>
@@ -53,7 +68,12 @@
                             </label>
                         </div>
                         <div class="inputbox col-8">
-                            <input type="text" name="namasupplier" id="" placeholder="Pilih Nama Supplier">
+                            <select name="kategorisupplier" id="">
+                                <option value="" selected disabled hidden>Pilih Supplier Nama</option>
+                                @foreach ($tabel as $tab)
+                                    <option value="{{$tab -> SUPPLIER_ID}}">{{$tab -> SUPPLIER_NAMA}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="judul col-4">
                             <label for="">
