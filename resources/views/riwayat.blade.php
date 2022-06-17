@@ -42,7 +42,6 @@
                         <th scope="col">Tanggal</th>
                         <th scope="col">Jumlah</th>
                         <th scope="col">Total</th>
-                        <th scope="col">Lihat</th>
                       </tr>
                     </thead>
                     <tbody style="font-size: 11px">
